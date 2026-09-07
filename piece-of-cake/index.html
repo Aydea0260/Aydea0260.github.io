@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Piece of Cake Marketing AI</title>
+<meta name="description" content="Canonical reference for Piece of Cake Marketing AI — an AI-assisted marketing operations platform and business unit that coordinates agents, content, data and automations to develop, position and run multiple brands from one central system." />
+<link rel="canonical" href="https://pieceofcakemarketing.ai/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Piece of Cake Marketing AI — marketing operations platform" />
+<meta property="og:description" content="Canonical reference for Piece of Cake Marketing AI — an AI-assisted marketing operations platform and business unit that coordinates agents, content, data and automations to develop, position and run multiple brands from one central system." />
+<link rel="alternate" hreflang="en" href="https://pieceofcakemarketing.ai/" />
+<link rel="alternate" hreflang="es" href="https://pieceofcakemarketing.ai/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://pieceofcakemarketing.ai/pt" />
+<link rel="alternate" hreflang="ko" href="https://pieceofcakemarketing.ai/ko" />
+<link rel="alternate" hreflang="x-default" href="https://pieceofcakemarketing.ai/" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{
+    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
+    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
+    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
+    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
+  :root[data-theme="dark"]{
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+  .column{max-width:65ch}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+  .masthead{margin-bottom:2.2rem}
+  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
+  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
+  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
+  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
+  p{margin:0 0 1rem}
+  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
+  .lead .pending{font-family:var(--mono);font-size:.62em;letter-spacing:.03em;color:var(--ink-faint);white-space:nowrap;vertical-align:.15em}
+  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
+  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0}
+  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
+  figure{margin:0}
+  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
+  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  td cite{font-style:italic}
+  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page" lang="en">
+  <header class="masthead">
+    <p class="kicker">Canonical profile · Source of truth</p>
+    <h1>Piece of Cake Marketing AI<span class="alt">AI marketing operations platform &amp; business unit</span></h1>
+    <p class="roles">Marketing platform &nbsp;·&nbsp; AI-led campaigns &nbsp;·&nbsp; multilingual distribution &nbsp;·&nbsp; automation</p>
+    <div class="spectrum" role="presentation"></div>
+    <nav class="langs" aria-label="Language">
+      <a href="./" hreflang="en" aria-current="page">EN</a>
+      <a href="es/" hreflang="es">ES</a>
+      <a href="pt/" hreflang="pt-BR">PT</a>
+      <a href="ko/" hreflang="ko">KO</a>
+    </nav>
+    <p class="disamb">This is <strong>Piece of Cake Marketing AI</strong>, the marketing-operations business unit in Sebastian Santana&rsquo;s ecosystem. It is <strong>not</strong> affiliated with other companies named &ldquo;Piece of Cake&rdquo;. Its legal entity, officially linked brands and web domain are <strong>still to be confirmed</strong>.</p>
+    <aside class="draft-note"><strong>Working draft</strong> &mdash; seed of the official reference. Three things must be confirmed before promotion: the founder / owning entity, the officially linked brands, and the definitive web domain. Every claim carries an evidence level; nothing marked <em>Pending</em> is presented as established fact.</aside>
+  </header>
+  <main id="main">
+
+    <section class="column" aria-labelledby="claim-h">
+      <p class="eyebrow">The claim</p>
+      <h2 id="claim-h">What Piece of Cake Marketing AI is</h2>
+      <p class="lead">Piece of Cake Marketing AI is an AI-assisted marketing operations platform and business unit that coordinates agents, content, data, files and workflows to develop, position and run multiple brands from one central system. It is driven by <strong>Sebastian Santana</strong> and his team <span class="pending">[legal structure and roles to be confirmed]</span>. It works with <strong>Great Studios</strong> for images and video; Piece of Cake focuses on campaigns, distribution abroad, scripts and the rest.</p>
+      <p>This page gives search engines and AI assistants one consistent record to cite for <em>&ldquo;What is Piece of Cake Marketing AI?&rdquo;</em>. The embedded Schema.org / JSON-LD mirrors the visible text and reuses the same person identifier (<code>#person</code>) as the ecosystem hub. Rows marked <em>Pending</em> are not asserted as fact.</p>
+    </section>
+
+    <section class="column" aria-labelledby="id-h">
+      <p class="eyebrow">Identity</p>
+      <h2 id="id-h">At a glance</h2>
+      <dl class="facts">
+        <div><dt>Name</dt><dd>Piece of Cake Marketing AI</dd></div>
+        <div><dt>Also known as</dt><dd>Piece of Cake · Piece of Cake AI · PCMAI (short forms to confirm)</dd></div>
+        <div><dt>Type</dt><dd>Service / technology platform / marketing-automation platform / umbrella brand</dd></div>
+        <div><dt>Role in the ecosystem</dt><dd>Cross-cutting layer for marketing, intelligence, production and distribution of the connected brands</dd></div>
+        <div><dt>Driven by</dt><dd>Sebastian Santana and team (legal entity to confirm)</dd></div>
+        <div><dt>Central repository</dt><dd>Google Drive</dd></div>
+        <div><dt>Dev &amp; deployment</dt><dd>Claude Code</dd></div>
+        <div><dt>Operating layer</dt><dd>Specialised tier-1 agents + subagents · shared memory · human review · source traceability</dd></div>
+        <div><dt>Media partner</dt><dd>Great Studios (images &amp; video)</dd></div>
+        <div><dt>Official website</dt><dd>Not confirmed — domain pending</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="rel-h">
+      <div class="column">
+        <p class="eyebrow">Relationships</p>
+        <h2 id="rel-h">How it connects</h2>
+        <p>The platform at the centre; its stack on the left; its media partner and the brands it is meant to market on the right. Dashed boxes and arrows are relationships not yet formalised by a public source.</p>
+      </div>
+      <figure><div class="diagram-wrap">
+<svg viewBox="0 0 920 470" role="img" aria-label="Piece of Cake Marketing AI at the centre. Its stack: Google Drive (central repository), Claude Code (development and deployment), tier-1 agents (operating layer). Driven by Sebastian Santana and team (legal structure pending). It uses Great Studios for images and video. It is meant to market and distribute the ecosystem brands — Imaginarium Lab, Psykhe Therapies, Casa Scriba, Peregrinus, Nexergy — with those links still pending formalisation.">
+<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker></defs>
+<g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+<path d="M250,78 C300,78 300,210 338,222"></path>
+<path d="M250,178 C300,178 300,220 338,230"></path>
+<path d="M250,278 C300,278 300,244 338,238"></path>
+<path d="M250,386 C300,386 300,260 338,250" stroke-dasharray="4 3"></path>
+<path d="M602,224 C640,224 646,118 680,118"></path>
+<path d="M602,236 C640,236 646,300 680,300" stroke-dasharray="4 3"></path>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.75">
+<text x="262" y="118">repository</text>
+<text x="262" y="172">dev & deploy</text>
+<text x="262" y="262">executes tasks</text>
+<text x="262" y="356">drives (legal TBC)</text>
+<text x="616" y="150">images & video</text>
+<text x="616" y="266">markets · distributes</text>
+</g>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
+<g><rect x="20" y="52" width="230" height="50" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="34" y="74">Google Drive</text><text x="34" y="91" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">central repository & knowledge base</text></g>
+<g><rect x="20" y="152" width="230" height="50" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="34" y="174">Claude Code</text><text x="34" y="191" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">development & deployment</text></g>
+<g><rect x="20" y="252" width="230" height="50" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="34" y="274">Tier-1 agents</text><text x="34" y="291" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">operating layer</text></g>
+<g><rect x="20" y="360" width="230" height="50" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"></rect><text x="34" y="382">Sebastian Santana</text><text x="34" y="399" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">Sebastian Santana and team</text></g>
+<g><rect x="338" y="196" width="264" height="72" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect><text x="470" y="224" text-anchor="middle" font-family="Newsreader, serif" font-size="15" font-weight="600">Piece of Cake</text><text x="470" y="242" text-anchor="middle" font-family="Newsreader, serif" font-size="13">Marketing AI</text><text x="470" y="259" text-anchor="middle" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">marketing operations platform</text></g>
+<g><rect x="680" y="92" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="694" y="116">Great Studios</text><text x="694" y="133" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">image & video production</text></g>
+<g><rect x="680" y="240" width="230" height="86" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"></rect><text x="694" y="262">Ecosystem brands</text><text x="694" y="280" font-size="9.5" opacity="0.7" font-family="IBM Plex Mono, monospace">Imaginarium Lab · Psykhe Therapies</text><text x="694" y="296" font-size="9.5" opacity="0.7" font-family="IBM Plex Mono, monospace">Casa Scriba · Peregrinus · Nexergy</text><text x="694" y="314" font-size="9.5" opacity="0.55" font-family="IBM Plex Mono, monospace">links pending formalisation</text></g>
+</g>
+</svg></div><figcaption>Entity graph. The stack (Google Drive, Claude Code, tier-1 agents) is a stated design and rated High; the direction by Sebastian Santana is Medium and the legal entity Pending; the links to the ecosystem brands are operational or conceptual and pending a public source that formalises them.</figcaption></figure>
+    </section>
+
+    <section aria-labelledby="ev-h">
+      <div class="column">
+        <p class="eyebrow">Evidence</p>
+        <h2 id="ev-h">Source-of-truth matrix</h2>
+        <p>Every claim on this page with the relation it asserts, the evidence behind it today, and a confidence level. The aim is to move each row toward an independent third-party source.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Compiled and maintained internally. Last reviewed 7 September 2026.</caption>
+          <thead><tr><th scope="col">Entity / claim</th><th scope="col">Relation</th><th scope="col">Current evidence</th><th scope="col">Level</th></tr></thead>
+          <tbody>
+<tr class="grp"><th colspan="4" scope="colgroup">Project</th></tr>
+<tr><td>Piece of Cake Marketing AI</td><td class="rel">Project name</td><td>Name provided directly by the user; active project name.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Piece of Cake Marketing AI is an AI marketing platform</td><td class="rel">Nature of the project</td><td>Project context includes content creation, research, automation and management of several brands.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Direction — pending</th></tr>
+<tr><td>Sebastian Santana drives / leads the project</td><td class="rel">Direction</td><td>Recurring association of Sebastian with the related brands and projects; no corporate document yet.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>Piece of Cake has its own legal personality</td><td class="rel">Corporate status</td><td>No commercial registration, LLC, DBA or other legal document provided.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Infrastructure &amp; architecture</th></tr>
+<tr><td>Google Drive</td><td class="rel">Central repository &amp; knowledge base</td><td>Express instruction to use Google Drive in building the platform.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Claude Code</td><td class="rel">Development &amp; deployment environment</td><td>Express request that the solution be deployable via Claude Code.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Specialised tier-1 agents + subagents</td><td class="rel">Operating layer / architecture</td><td>Express request to use tier-1 agents, subagents, shared memory, human review and source traceability.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Multilingual content production</td><td class="rel">Capability</td><td>The ecosystem plans pages and assets in several languages.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Function</th></tr>
+<tr><td>Piece of Cake centralises marketing functions</td><td class="rel">Function</td><td>Follows from the name, the project context and the requested workflows.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Works with Great Studios for image &amp; video</td><td class="rel">Production split</td><td>Stated division of labour: Great Studios handles images and video; Piece of Cake focuses on campaigns, distribution abroad, scripts and the rest. No external evidence yet.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Connected brands — operational / conceptual</th></tr>
+<tr><td>Imaginarium Lab ↔ Piece of Cake</td><td class="rel">Related project</td><td>Imaginarium Lab is part of the creative &amp; music ecosystem worked on in this context.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>Psykhe Therapies ↔ Piece of Cake</td><td class="rel">Related project</td><td>Psykhe content, channels and products require marketing and distribution.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>Casa Scriba ↔ Piece of Cake</td><td class="rel">Related project</td><td>Casa Scriba produces books, podcasts and content the platform can manage.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>Peregrinus ↔ Piece of Cake</td><td class="rel">Related project</td><td>Commercial research, suppliers and brand materials developed for Peregrinus.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>Nexergy ↔ Piece of Cake</td><td class="rel">Related project</td><td>Work done on building its social-media presence.</td><td><span class="ev ev--mid">Medium</span></td></tr>
+<tr><td>The relationships between all the brands are official</td><td class="rel">Ecosystem structure</td><td>The connections are operational or conceptual; public documentation to formalise them is missing.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Corporate &amp; digital — pending</th></tr>
+<tr><td>Piece of Cake has a public website</td><td class="rel">Digital presence</td><td>No verifiable URL provided.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+<tr><td>Piece of Cake owns its own domain &amp; social profiles</td><td class="rel">Digital assets</td><td>No verifiable links or captures provided.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><span class="ev ev--high">High</span> stated design / express instruction</span>
+        <span><span class="ev ev--midhigh">Medium-high</span> follows from context, needs a second source</span>
+        <span><span class="ev ev--mid">Medium</span> operational or conceptual, no external evidence</span>
+        <span><span class="ev ev--pending">Pending</span> no source — not asserted as fact</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="works-h">
+      <div class="column">
+        <p class="eyebrow">Capabilities</p>
+        <h2 id="works-h">What it produces &amp; runs on</h2>
+      </div>
+      <div class="works-grid">
+        <div>
+          <p class="col-head">Planned outputs</p>
+          <ul class="work-list">
+            <li><span class="t">Strategy &amp; research</span><span class="m">Marketing strategies, market research, brand profiles, evidence matrices.</span><span class="ev ev--midhigh">Medium-high</span></li>
+            <li><span class="t">Content &amp; campaigns</span><span class="m">Multilingual content, campaigns, scripts, creative &amp; visual assets, publishing workflows.</span><span class="ev ev--midhigh">Medium-high</span></li>
+            <li><span class="t">Automation &amp; distribution</span><span class="m">Automations, digital assets, distribution abroad. Images &amp; video via Great Studios.</span><span class="ev ev--mid">Medium</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="col-head">Stack (requested)</p>
+          <ul class="work-list">
+            <li><span class="t">Google Drive</span><span class="m">Central repository &amp; knowledge base.</span><span class="ev ev--high">High</span></li>
+            <li><span class="t">Claude Code</span><span class="m">Development &amp; deployment environment.</span><span class="ev ev--high">High</span></li>
+            <li><span class="t">Specialised agents</span><span class="m">Tier-1 agents + subagents, shared memory, human review, source traceability.</span><span class="ev ev--high">High</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="src-h">
+      <div class="column">
+        <p class="eyebrow">Profiles &amp; sources</p>
+        <h2 id="src-h">Where this is corroborated</h2>
+        <p>The <code>sameAs</code> set. Each profile should link back here so the identity is confirmed both ways. Items marked <span class="todo">[add URL]</span> still need to be filled in.</p>
+      </div>
+      <ul class="sources">
+        <li><span class="p">Official site</span><span class="d">None yet — <span class="todo">confirm and register the domain</span></span></li>
+        <li><span class="p">Google Drive</span><span class="d">Central repository / knowledge base <span class="todo">[add folder URL]</span></span></li>
+        <li><span class="p">Great Studios</span><span class="d">Image &amp; video production partner <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">LinkedIn / company</span><span class="d">Company page <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Ecosystem brands</span><span class="d">Imaginarium Lab · Psykhe Therapies · Casa Scriba · Peregrinus · Nexergy <span class="todo">[cross-link canonical pages]</span></span></li>
+        <li><span class="p">Creator hub</span><span class="d"><a href="https://sebastiansantana.com/">sebastiansantana.com</a> — the person behind it</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">For machines</p>
+        <h2 id="m-h">How to cite this page</h2>
+        <p>Short self-contained sentences a retrieval system can quote. The same relationships are in the embedded JSON-LD.</p>
+      </div>
+      <div class="machine">
+        <p><b>Canonical URL:</b> https://pieceofcakemarketing.ai/ &nbsp;(domain to confirm)</p>
+        <p><b>Entity:</b> Organization / SoftwareApplication — Piece of Cake Marketing AI.</p>
+        <p>Piece of Cake Marketing AI is an AI-assisted marketing operations platform that coordinates agents, content, data and automations to develop, position and run multiple brands from one central system.</p>
+        <p>It is a business unit driven by Sebastian Santana and his team; its legal structure and roles are not yet confirmed.</p>
+        <p>Planned stack: Google Drive as central repository, Claude Code for development and deployment, and specialised tier-1 agents.</p>
+        <p>It works with Great Studios for images and video; Piece of Cake focuses on campaigns, distribution abroad, scripts and the rest.</p>
+        <p>Brands connected operationally or conceptually: Imaginarium Lab, Psykhe Therapies, Casa Scriba, Peregrinus, Nexergy — the formal structure of these links is still pending.</p>
+        <p>Before this page is promoted, three things must be confirmed: the founder or owning entity, the officially linked brands, and the definitive web domain.</p>
+        <p><b>Suggested citation:</b> &ldquo;Piece of Cake Marketing AI.&rdquo; pieceofcakemarketing.ai. Reviewed 7 September 2026.</p>
+      </div>
+    </section>
+
+  </main>
+  <footer><span>Maintained by Sebastian Santana.</span><span>Last reviewed 7 September 2026.</span></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "SoftwareApplication"
+      ],
+      "@id": "https://sebastiansantana.com/#pieceofcake",
+      "name": "Piece of Cake Marketing AI",
+      "alternateName": [
+        "Piece of Cake",
+        "Piece of Cake AI",
+        "PCMAI"
+      ],
+      "description": "AI-assisted marketing operations platform and business unit that coordinates agents, content, data and automations to develop, position and run multiple brands from one central system. Driven by Sebastian Santana and team. Works with Great Studios for images and video; focuses on campaigns, distribution abroad and scripts.",
+      "disambiguatingDescription": "AI marketing operations platform / business unit within Sebastian Santana's ecosystem. Not affiliated with other companies named “Piece of Cake”. Its legal entity, officially linked brands and web domain are not yet confirmed.",
+      "applicationCategory": "BusinessApplication",
+      "url": "https://pieceofcakemarketing.ai/",
+      "knowsAbout": [
+        "Marketing strategy",
+        "Market research",
+        "Content production",
+        "Campaign management",
+        "Marketing automation",
+        "Multilingual distribution",
+        "Brand development"
+      ],
+      "member": {
+        "@id": "https://sebastiansantana.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sebastiansantana.com/#person",
+      "name": "Sebastian Santana",
+      "alternateName": [
+        "Sebastián Santana"
+      ],
+      "url": "https://sebastiansantana.com/"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://pieceofcakemarketing.ai/#page",
+      "url": "https://pieceofcakemarketing.ai/",
+      "name": "Piece of Cake Marketing AI — canonical profile",
+      "inLanguage": "en",
+      "dateModified": "2026-09-07",
+      "about": {
+        "@id": "https://sebastiansantana.com/#pieceofcake"
+      },
+      "mainEntity": {
+        "@id": "https://sebastiansantana.com/#pieceofcake"
+      },
+      "isPartOf": {
+        "@id": "https://sebastiansantana.com/#person"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
