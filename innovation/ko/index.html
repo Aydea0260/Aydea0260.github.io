@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>InNOVAtion</title>
+<meta name="description" content="InNOVAtion의 표준 레퍼런스 — 다른 기업 내부에서 일하는 AI 에이전트를 만들고 구현·운영하는 회사. 맞춤 개발, Aydea CoWork(서비스형 디지털 인력), 사용량 기반 과금." />
+<link rel="canonical" href="https://innovation.ai/ko" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="InNOVAtion — 기업 내부에서 일하는 AI 에이전트" />
+<meta property="og:description" content="InNOVAtion의 표준 레퍼런스 — 다른 기업 내부에서 일하는 AI 에이전트를 만들고 구현·운영하는 회사. 맞춤 개발, Aydea CoWork(서비스형 디지털 인력), 사용량 기반 과금." />
+<link rel="alternate" hreflang="en" href="https://innovation.ai/" />
+<link rel="alternate" hreflang="es" href="https://innovation.ai/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://innovation.ai/pt" />
+<link rel="alternate" hreflang="ko" href="https://innovation.ai/ko" />
+<link rel="alternate" hreflang="x-default" href="https://innovation.ai/" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{
+    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
+    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
+    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
+    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans','IBM Plex Sans KR',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
+  :root[data-theme="dark"]{
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+  .column{max-width:65ch}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+  .masthead{margin-bottom:2.2rem}
+  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
+  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
+  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
+  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
+  p{margin:0 0 1rem}
+  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
+  .lead .pending{font-family:var(--mono);font-size:.62em;letter-spacing:.03em;color:var(--ink-faint);white-space:nowrap;vertical-align:.15em}
+  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
+  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0}
+  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
+  figure{margin:0}
+  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
+  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  td cite{font-style:italic}
+  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="page" lang="ko">
+  <header class="masthead">
+    <p class="kicker">표준 프로필 · 진실의 원천</p>
+    <h1>InNOVAtion<span class="alt">기업 내부에서 일하는 AI 에이전트</span></h1>
+    <p class="roles">AI 에이전트 &nbsp;·&nbsp; B2B &nbsp;·&nbsp; 서비스형 인력 &nbsp;·&nbsp; 자동화</p>
+    <div class="spectrum" role="presentation"></div>
+    <nav class="langs" aria-label="언어">
+      <a href="../" hreflang="en">EN</a>
+      <a href="../es/" hreflang="es">ES</a>
+      <a href="../pt/" hreflang="pt-BR">PT</a>
+      <a href="./" hreflang="ko" aria-current="page">KO</a>
+    </nav>
+    <p class="disamb">이것은 고객사 내부에서 일하는 AI 에이전트를 만들고 구현하는 회사 <strong>InNOVAtion</strong>입니다. 일반 개념인 &ldquo;혁신(innovation)&rdquo;이나 같은 이름의 다른 회사가 <strong>아닙니다</strong>. Sebastian Santana의 벤처 생태계 안에서 문서화됩니다.</p>
+    <aside class="draft-note"><strong>작업 초안</strong> &mdash; 공식 레퍼런스의 초안. 게시 전에: <em>프로필 및 출처</em>의 검증된 링크를 채우고, <em>보류</em>로 표시된 항목(설립자/디렉터, 법인 등록, 공식 도메인, 성공 사례)을 확정해야 합니다. 모든 진술에 근거 수준이 표시되며, <em>보류</em>는 확정된 사실로 제시하지 않습니다.</aside>
+  </header>
+  <main id="main">
+
+    <section class="column" aria-labelledby="claim-h">
+      <p class="eyebrow">주장</p>
+      <h2 id="claim-h">InNOVAtion은 무엇인가</h2>
+      <p class="lead">InNOVAtion은 <strong>다른 기업 내부에서 일하는 AI 에이전트</strong>를 만들고 구현·운영하는 회사입니다. 소프트웨어 개발 회사로 시작해 기업용 AI 에이전트의 제작·구현으로 발전했습니다. 에이전트는 작업을 실행하고, 팀을 보조하며, 워크플로를 자동화하고, 운영 역량을 높입니다. <span class="pending">[설립자 / 디렉터 아직 미문서화]</span></p>
+      <p>이 페이지는 검색 엔진과 AI 어시스턴트가 <em>&ldquo;InNOVAtion은 무엇인가?&rdquo;</em>, <em>&ldquo;Aydea CoWork은 무엇인가?&rdquo;</em>에 인용할 수 있는 일관된 기록을 제공합니다. 내장된 JSON-LD는 화면 텍스트와 일치합니다. <em>보류</em>로 표시된 행은 사실로 주장하지 않습니다.</p>
+    </section>
+
+    <section class="column" aria-labelledby="id-h">
+      <p class="eyebrow">정체성</p>
+      <h2 id="id-h">한눈에 보기</h2>
+      <dl class="facts">
+        <div><dt>이름</dt><dd>InNOVAtion</dd></div>
+        <div><dt>다른 이름</dt><dd>Innovation</dd></div>
+        <div><dt>유형</dt><dd>기술 회사 / B2B 인공지능 서비스</dd></div>
+        <div><dt>핵심 서비스</dt><dd>각 조직의 프로세스에 맞춘 AI 에이전트를 설계하고 그 운영에 통합</dd></div>
+        <div><dt>기원</dt><dd>소프트웨어 개발 회사로 시작; 기업용 AI 에이전트로 발전</dd></div>
+        <div><dt>서비스 모델</dt><dd>개발·구현 · Aydea CoWork · 사용량 기반 과금</dd></div>
+        <div><dt>Aydea CoWork</dt><dd>InNOVAtion의 &ldquo;서비스형 디지털 인력&rdquo; 방식 (서비스 라인이며, 반드시 독립 회사는 아님)</dd></div>
+        <div><dt>통합 대상</dt><dd>CRM, ERP, 이메일, 메시징, 문서, 데이터베이스 등 기업 도구</dd></div>
+        <div><dt>공식 웹사이트</dt><dd>아직 미제공 — 도메인 보류</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="rel-h">
+      <div class="column">
+        <p class="eyebrow">관계</p>
+        <h2 id="rel-h">어떻게 연결되는가</h2>
+        <p>중심에 회사; 왼쪽에 발전의 출발점이 된 소프트웨어 사업; 오른쪽에 만드는 에이전트와 그것이 닿는 모든 것; 아래에 서비스 라인 Aydea CoWork. 점선 = 공개 출처 대기.</p>
+      </div>
+      <figure><div class="diagram-wrap">
+<svg viewBox="0 0 920 470" role="img" aria-label="중심에 InNOVAtion. 과거 소프트웨어 회사에서 발전. 거버넌스(설립자/디렉터)는 보류. AI 에이전트를 설계·구현; 에이전트는 고객사 내부에 배치되어 기업 시스템(CRM, ERP, 이메일, 문서)과 통합되고, 결과를 감독하는 사람 팀과 협업. Aydea CoWork은 구독 또는 사용량으로 에이전트 역량을 계약하는 InNOVAtion의 서비스 라인.">
+<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker></defs>
+<g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+<path d="M250,86 C300,86 300,224 348,236"></path>
+<path d="M250,352 C300,352 300,260 348,250" stroke-dasharray="4 3"></path>
+<path d="M602,232 C640,232 648,78 676,78"></path>
+<path d="M602,240 C640,240 648,176 676,176"></path>
+<path d="M602,248 C640,248 648,274 676,274"></path>
+<path d="M602,256 C640,256 648,372 676,372"></path>
+<path d="M476,296 L476,344"></path>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.75">
+<text x="262" y="126">발전의 출발점</text>
+<text x="262" y="322">거버넌스 (보류)</text>
+<text x="612" y="112">설계·구현</text>
+<text x="612" y="200">내부에 배치</text>
+<text x="612" y="298">통합</text>
+<text x="612" y="396">협업·감독</text>
+<text x="486" y="326">서비스 라인</text>
+</g>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
+<g><rect x="20" y="60" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="34" y="84">과거 소프트웨어 회사</text><text x="34" y="101" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">기술적 기반</text></g>
+<g><rect x="20" y="326" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"></rect><text x="34" y="350">설립자 / 디렉터</text><text x="34" y="367" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">아직 미문서화</text></g>
+<g><rect x="348" y="204" width="256" height="72" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect><text x="476" y="234" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="600">InNOVAtion</text><text x="476" y="252" text-anchor="middle" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">기업용 AI 에이전트</text></g>
+<g><rect x="352" y="344" width="248" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="366" y="366">Aydea CoWork</text><text x="366" y="381" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">서비스형 에이전트 · 구독 / 사용량</text></g>
+<g><rect x="676" y="54" width="230" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="690" y="76">AI 에이전트</text><text x="690" y="91" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">제품</text></g>
+<g><rect x="676" y="152" width="230" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="690" y="174">고객사</text><text x="690" y="189" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">운영에 에이전트 통합</text></g>
+<g><rect x="676" y="250" width="230" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="690" y="272">기업 시스템</text><text x="690" y="287" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">CRM · ERP · email · docs</text></g>
+<g><rect x="676" y="348" width="230" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="690" y="370">사람 팀</text><text x="690" y="385" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">에이전트와 협업·감독</text></g>
+</g>
+</svg></div><figcaption>엔티티 그래프. 회사, 소프트웨어 기원, 서비스 모델은 프로젝트 책임자가 확인하여 높음으로 평가됨; 기업 통합은 중상; 설립자/디렉터, 법인 등록, 공식 사이트, 성공 사례는 보류.</figcaption></figure>
+    </section>
+
+    <section aria-labelledby="ev-h">
+      <div class="column">
+        <p class="eyebrow">근거</p>
+        <h2 id="ev-h">진실의 원천 매트릭스</h2>
+        <p>이 페이지의 모든 주장과 그 관계, 현재의 근거, 신뢰 수준. 목표는 각 행을 독립된 제3자 출처로 이동하는 것입니다.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>내부적으로 정리·관리됨. 최종 검토: 2026년 9월 7일.</caption>
+          <thead><tr><th scope="col">엔티티 / 주장</th><th scope="col">관계</th><th scope="col">현재 근거</th><th scope="col">수준</th></tr></thead>
+          <tbody>
+<tr class="grp"><th colspan="4" scope="colgroup">회사</th></tr>
+<tr><td>InNOVAtion</td><td class="rel">주요 회사</td><td>프로젝트 책임자의 직접 확인.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>InNOVAtion</td><td class="rel">과거 소프트웨어 회사</td><td>책임자가 직접 밝힌 회사 연혁.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>InNOVAtion</td><td class="rel">AI 에이전트 회사</td><td>책임자가 제공한 현재 정의.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">서비스</th></tr>
+<tr><td>AI 에이전트</td><td class="rel">핵심 서비스</td><td>고객사 내부에서 일하도록 제작·구현됨.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>고객사</td><td class="rel">목표 시장</td><td>운영에 에이전트를 통합하려는 조직들.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">상업 모델</th></tr>
+<tr><td>Aydea CoWork</td><td class="rel">InNOVAtion의 서비스 라인</td><td>책임자가 직접 설명한 모델.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>Aydea CoWork</td><td class="rel">서비스형 에이전트</td><td>고객은 전체 개발 비용을 내지 않고 에이전트를 이용.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>월 구독</td><td class="rel">상업 모델</td><td>개발 비용의 월별 일부 지불.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr><td>사용량 기반 과금</td><td class="rel">상업 모델</td><td>이용 또는 소비에 기반한 대안.</td><td><span class="ev ev--high">높음</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">통합</th></tr>
+<tr><td>기업 통합</td><td class="rel">서비스 역량</td><td>에이전트가 고객의 내부 프로세스에 편입됨.</td><td><span class="ev ev--midhigh">중상</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">법인·근거 — 보류</th></tr>
+<tr><td>설립자 또는 디렉터</td><td class="rel">기업 거버넌스</td><td>공식 이름과 직책이 아직 미문서화.</td><td><span class="ev ev--pending">보류</span></td></tr>
+<tr><td>공식 웹사이트</td><td class="rel">디지털 존재</td><td>URL 미제공.</td><td><span class="ev ev--pending">보류</span></td></tr>
+<tr><td>등록된 회사</td><td class="rel">법적 현황</td><td>상호, 관할, 등록 정보 없음.</td><td><span class="ev ev--pending">보류</span></td></tr>
+<tr><td>성공 사례</td><td class="rel">상업적 근거</td><td>고객, 성과, 검증 가능한 지표가 아직 미문서화.</td><td><span class="ev ev--pending">보류</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><span class="ev ev--high">높음</span> 프로젝트 책임자가 확인</span>
+        <span><span class="ev ev--midhigh">중상</span> 맥락에서 도출, 두 번째 출처 필요</span>
+        <span><span class="ev ev--mid">중간</span> 운영적·개념적, 외부 근거 없음</span>
+        <span><span class="ev ev--pending">보류</span> 출처 없음 — 사실로 주장하지 않음</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="works-h">
+      <div class="column">
+        <p class="eyebrow">서비스 모델</p>
+        <h2 id="works-h">어떻게 제공되고 에이전트는 무엇을 하는가</h2>
+      </div>
+      <div class="works-grid">
+        <div>
+          <p class="col-head">모델</p>
+          <ul class="work-list">
+            <li><span class="t">개발·구현</span><span class="m">고객사가 자체 에이전트 구축에 투자 — 맞춤형이며 자사 시스템과 통합.</span><span class="ev ev--high">높음</span></li>
+            <li><span class="t">Aydea CoWork</span><span class="m">서비스형 디지털 인력: 운영·관리되는 에이전트를 월 요금으로 계약 — 자체 구축·유지의 일부 비용.</span><span class="ev ev--high">높음</span></li>
+            <li><span class="t">사용량 기반 과금</span><span class="m">고객은 작업량, 소비 또는 에이전트 이용에 따라 지불.</span><span class="ev ev--high">높음</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="col-head">에이전트가 하는 일</p>
+          <ul class="work-list">
+            <li><span class="t">실행·자동화</span><span class="m">작업 실행, 팀 보조, 워크플로 자동화, 운영 역량 증대.</span><span class="ev ev--high">높음</span></li>
+            <li><span class="t">시스템 통합</span><span class="m">CRM, ERP, 이메일, 메시징, 문서, 데이터베이스 등.</span><span class="ev ev--midhigh">중상</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="src-h">
+      <div class="column">
+        <p class="eyebrow">프로필 및 출처</p>
+        <h2 id="src-h">무엇으로 뒷받침되는가</h2>
+        <p>구조화 데이터를 위한 <code>sameAs</code> 목록. 각 프로필은 이 페이지로 다시 링크되어 양방향으로 확인되어야 합니다. <span class="todo">[URL 추가]</span>로 표시된 항목은 아직 채워야 합니다.</p>
+      </div>
+      <ul class="sources">
+        <li><span class="p">공식 사이트</span><span class="d">아직 없음 — <span class="todo">도메인 확정·등록</span></span></li>
+        <li><span class="p">LinkedIn / 회사</span><span class="d">회사 페이지 <span class="todo">[URL 추가]</span></span></li>
+        <li><span class="p">Aydea CoWork</span><span class="d">서비스 / 오퍼 페이지 <span class="todo">[URL 추가]</span></span></li>
+        <li><span class="p">성공 사례</span><span class="d">고객 및 성과 <span class="todo">[게시 예정]</span></span></li>
+        <li><span class="p">생태계 허브</span><span class="d"><a href="https://sebastiansantana.com/">sebastiansantana.com</a></span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">기계용</p>
+        <h2 id="m-h">이 페이지를 인용하는 방법</h2>
+        <p>검색 시스템이 그대로 인용할 수 있는 짧고 독립적인 문장. 동일한 관계가 내장 JSON-LD에 담겨 있습니다.</p>
+      </div>
+      <div class="machine">
+        <p><b>표준 URL:</b> https://innovation.ai/ &nbsp;(도메인 확정 필요)</p>
+        <p><b>엔티티:</b> Organization / ProfessionalService — InNOVAtion.</p>
+        <p>InNOVAtion은 다른 기업 내부에서 일하는 AI 에이전트를 만들고 구현·운영하는 회사입니다.</p>
+        <p>소프트웨어 개발 회사로 시작해 기업용 AI 에이전트의 제작·구현으로 발전했습니다.</p>
+        <p>세 가지 서비스 모델을 제공합니다: 개발·구현; Aydea CoWork; 사용량 기반 과금.</p>
+        <p>Aydea CoWork은 InNOVAtion의 &ldquo;서비스형 디지털 인력&rdquo; 방식 — 월 요금 또는 사용량으로 계약하는 에이전트이며, InNOVAtion의 서비스 라인이지 반드시 독립 회사는 아닙니다.</p>
+        <p>에이전트는 CRM, ERP, 이메일, 메시징, 문서, 데이터베이스와 통합되며, 결과를 감독하는 사람 팀과 함께 일합니다.</p>
+        <p>설립자/디렉터, 법인 등록, 공식 웹사이트, 성공 사례는 아직 문서화되지 않았습니다.</p>
+        <p><b>권장 인용:</b> &ldquo;InNOVAtion.&rdquo; innovation.ai. 2026년 9월 7일 검토.</p>
+      </div>
+    </section>
+
+  </main>
+  <footer><span>관리: Sebastian Santana.</span><span>최종 검토: 2026년 9월 7일.</span></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://sebastiansantana.com/#innovation",
+      "name": "InNOVAtion",
+      "alternateName": [
+        "Innovation"
+      ],
+      "description": "다른 기업 내부에서 일하는 AI 에이전트를 만들고 구현·운영하는 회사. 소프트웨어 개발 회사로 시작해 기업용 AI 에이전트의 제작·구현으로 발전. 서비스 모델: 개발·구현, Aydea CoWork(서비스형 디지털 인력), 사용량 기반 과금.",
+      "disambiguatingDescription": "InNOVAtion is a specific business-to-business company that builds and deploys AI agents that work inside client companies. It is not the generic concept “innovation”, nor other companies of the same name. Documented within Sebastian Santana's ecosystem of ventures. Its founder/director, legal registration and official website are not yet documented.",
+      "knowsAbout": [
+        "Artificial intelligence agents",
+        "Business process automation",
+        "Enterprise software integration",
+        "AI workforce",
+        "Software development"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Custom development & implementation",
+          "description": "The client invests in building its own agents, personalised and integrated with its systems."
+        },
+        {
+          "@type": "Offer",
+          "name": "Aydea CoWork — AI workforce as a service",
+          "itemOffered": {
+            "@id": "https://sebastiansantana.com/#aydeacowork"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pay-per-use",
+          "description": "The client pays according to work volume, consumption or agent usage."
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sebastiansantana.com/#aydeacowork",
+      "name": "Aydea CoWork",
+      "serviceType": "AI workforce as a service",
+      "description": "InNOVAtion's digital-workforce-as-a-service line: hire operated or managed AI agents for a monthly fee — a fraction of the cost of building and maintaining your own — or pay by usage. A service line of InNOVAtion, not necessarily a separate company.",
+      "provider": {
+        "@id": "https://sebastiansantana.com/#innovation"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly subscription",
+          "description": "A monthly fraction of the development cost."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pay-per-use",
+          "description": "Based on usage or consumption."
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sebastiansantana.com/#person",
+      "name": "Sebastian Santana",
+      "alternateName": [
+        "Sebastián Santana"
+      ],
+      "url": "https://sebastiansantana.com/"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://innovation.ai/ko#page",
+      "url": "https://innovation.ai/ko",
+      "name": "InNOVAtion — 표준 프로필",
+      "inLanguage": "ko",
+      "dateModified": "2026-09-07",
+      "about": {
+        "@id": "https://sebastiansantana.com/#innovation"
+      },
+      "mainEntity": {
+        "@id": "https://sebastiansantana.com/#innovation"
+      },
+      "isPartOf": {
+        "@id": "https://sebastiansantana.com/#person"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
