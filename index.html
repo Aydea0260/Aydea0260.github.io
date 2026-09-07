@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sebastián Santana</title>
+<meta name="description" content="Canonical reference for Juan Sebastián Santana Herrera — Colombian psychologist, author and creator. Founder of Psykhe Therapies; associated with Fundación Contacto Humano and the music project Imaginarium Lab." />
+<link rel="canonical" href="https://sebastiansantana.com/" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Sebastián Santana — Psychologist · Author · Creator" />
+<meta property="og:description" content="Canonical source of truth: psychology, Psykhe Therapies, Fundación Contacto Humano, books, and the music project Imaginarium Lab." />
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --paper:#f3f5f1;
+    --surface:#fbfcf9;
+    --ink:#1a211e;
+    --ink-soft:#47514b;
+    --ink-faint:#6d766f;
+    --line:#dbe0d8;
+    --line-strong:#c4cabe;
+    --accent:#6b3f6b;
+    --accent-soft:#8a5f8a;
+
+    --ev-high:#2f6b42;      --ev-high-bg:#e3efe4;
+    --ev-mid:#8a5a1a;       --ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;       --ev-dev-bg:#e1e8ef;
+    --ev-pending:#6d766f;   --ev-pending-line:#a9b0a5;
+
+    --step--1:.8125rem;
+    --step-0:1rem;
+    --step-1:1.1875rem;
+    --step-2:1.5rem;
+    --step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0f130e;
+      --surface:#161b15;
+      --ink:#eef1ea;
+      --ink-soft:#b6beb4;
+      --ink-faint:#8a928a;
+      --line:#2a312a;
+      --line-strong:#3c443a;
+      --accent:#c99cd2;
+      --accent-soft:#a87fb4;
+
+      --ev-high:#7cc58e;    --ev-high-bg:#16301d;
+      --ev-mid:#d7a660;     --ev-mid-bg:#2d2616;
+      --ev-dev:#8fb2d0;     --ev-dev-bg:#15222f;
+      --ev-pending:#8a928a; --ev-pending-line:#4a524a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0f130e;
+    --surface:#161b15;
+    --ink:#eef1ea;
+    --ink-soft:#b6beb4;
+    --ink-faint:#8a928a;
+    --line:#2a312a;
+    --line-strong:#3c443a;
+    --accent:#c99cd2;
+    --accent-soft:#a87fb4;
+    --ev-high:#7cc58e;    --ev-high-bg:#16301d;
+    --ev-mid:#d7a660;     --ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;     --ev-dev-bg:#15222f;
+    --ev-pending:#8a928a; --ev-pending-line:#4a524a;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:var(--step-0);
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:1120px;
+    margin:0 auto;
+    padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem;
+  }
+  .column{max-width:65ch}
+
+  a{color:var(--accent);text-underline-offset:2px;text-decoration-thickness:1px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+
+  /* ---- masthead ---- */
+  .masthead{margin-bottom:2.5rem}
+  .kicker{
+    font-family:var(--mono);
+    font-size:var(--step--1);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 1rem;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:var(--step-4);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    margin:0;
+    text-wrap:balance;
+  }
+  h1 .alt{
+    display:block;
+    font-size:.42em;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink-soft);
+    letter-spacing:0;
+    margin-top:.55rem;
+  }
+  .roles{
+    font-family:var(--mono);
+    font-size:var(--step--1);
+    letter-spacing:.06em;
+    color:var(--ink-soft);
+    margin:1.1rem 0 0;
+  }
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .draft-note{
+    border:1px dashed var(--line-strong);
+    background:var(--surface);
+    padding:1rem 1.15rem;
+    margin:2rem 0 0;
+    font-size:var(--step--1);
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+
+  /* ---- section rhythm ---- */
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:var(--step--1);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
+  }
+  h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:var(--step-3);
+    line-height:1.15;
+    letter-spacing:-.005em;
+    margin:0 0 1.1rem;
+    text-wrap:balance;
+  }
+  h3{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:var(--step-1);
+    margin:0 0 .35rem;
+  }
+  p{margin:0 0 1rem}
+  .lead{
+    font-family:var(--display);
+    font-size:clamp(1.25rem,1.05rem + .9vw,1.5rem);
+    line-height:1.42;
+    color:var(--ink);
+  }
+  .lead .pending{
+    font-family:var(--mono);
+    font-size:.62em;
+    letter-spacing:.04em;
+    color:var(--ink-faint);
+    white-space:nowrap;
+    vertical-align:.15em;
+  }
+
+  /* ---- identity grid ---- */
+  .facts{
+    border-top:1px solid var(--line-strong);
+    margin-top:.5rem;
+  }
+  .facts div{
+    display:grid;
+    grid-template-columns:minmax(9rem,14rem) 1fr;
+    gap:.25rem 1.5rem;
+    padding:.7rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .facts dt{
+    font-family:var(--mono);
+    font-size:var(--step--1);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+  .facts dd{margin:0;color:var(--ink)}
+  @media (max-width:34rem){
+    .facts div{grid-template-columns:1fr;gap:.15rem}
+  }
+
+  /* ---- diagram ---- */
+  figure{margin:0}
+  .diagram-wrap{
+    overflow-x:auto;
+    border:1px solid var(--line);
+    background:var(--surface);
+    border-radius:4px;
+    padding:1.25rem;
+  }
+  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
+  figcaption{
+    font-size:var(--step--1);
+    color:var(--ink-faint);
+    margin-top:.7rem;
+    max-width:60ch;
+  }
+
+  /* ---- evidence table ---- */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:620px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:500;
+    background:var(--surface);
+  }
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    background:var(--surface);
+    padding-top:.9rem;padding-bottom:.5rem;
+    border-bottom:1px solid var(--line-strong);
+  }
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  td cite{font-style:italic}
+
+  .ev{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.03em;
+    padding:.16rem .5rem;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--dev{background:var(--ev-dev-bg);color:var(--ev-dev);border:1px solid var(--ev-dev)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+
+  .legend{
+    display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;
+    margin:1rem 0 0;
+    font-size:var(--step--1);color:var(--ink-soft);
+    align-items:center;
+  }
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+
+  /* ---- works ---- */
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{
+    padding:.75rem 0;
+    border-top:1px solid var(--line);
+    display:flex;flex-direction:column;gap:.15rem;
+  }
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+
+  /* ---- sources ---- */
+  .sources{
+    list-style:none;margin:.5rem 0 0;padding:0;
+    display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
+  }
+  .sources li{
+    padding:.7rem 0;border-top:1px solid var(--line);
+  }
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+
+  /* ---- machine block ---- */
+  .machine{
+    border:1px solid var(--line-strong);
+    background:var(--surface);
+    border-radius:4px;
+    padding:1.25rem 1.35rem;
+    font-family:var(--mono);
+    font-size:.86rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+    overflow-x:auto;
+  }
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+
+  footer{
+    margin-top:clamp(3rem,7vw,5rem);
+    padding-top:1.2rem;
+    border-top:1px solid var(--line-strong);
+    font-size:var(--step--1);
+    color:var(--ink-faint);
+    display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between;
+  }
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{
+    .draft-note{display:none}
+    body{background:#fff;color:#000}
+  }
+</style>
+
+<!--
+  MAINTENANCE NOTES — strip the .draft-note block before publishing to sebastiansantana.com.
+  Before going live, populate Person.sameAs in the JSON-LD below with the verified profile
+  URLs listed in the "Profiles & sources" section. Each external profile should link back
+  here so the graph is mutually corroborated.
+  "Pending" music titles (Wild Woman, Olhos de Mar, El Sazón de su Amor) are deliberately
+  NOT asserted in the structured data until an external source (store / distributor page) exists.
+-->
+<link rel="alternate" hreflang="en" href="https://sebastiansantana.com/" />
+<link rel="alternate" hreflang="es" href="https://sebastiansantana.com/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://sebastiansantana.com/pt" />
+<link rel="alternate" hreflang="ko" href="https://sebastiansantana.com/ko" />
+<link rel="alternate" hreflang="x-default" href="https://sebastiansantana.com/" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="kicker">Canonical profile · Source of truth</p>
+    <h1>
+      Juan Sebastián Santana Herrera
+      <span class="alt">known professionally as Sebastián Santana</span>
+    </h1>
+    <p class="roles">Psychologist &nbsp;·&nbsp; Author &nbsp;·&nbsp; Creator &nbsp;·&nbsp; Entrepreneur</p>
+    <div class="spectrum" role="presentation"></div>
+
+    <nav class="langs" aria-label="Language">
+      <a href="/" hreflang="en" aria-current="page">EN</a>
+      <a href="/es" hreflang="es">ES</a>
+      <a href="/pt" hreflang="pt">PT</a>
+      <a href="/ko" hreflang="ko">KO</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- THE CLAIM -->
+    <section class="column" aria-labelledby="claim-h">
+      <p class="eyebrow">The claim</p>
+      <h2 id="claim-h">Who Sebastián Santana is</h2>
+      <p class="lead">
+        Juan Sebastián Santana Herrera is a Colombian psychologist, author and multidisciplinary
+        creator whose work runs across mental health, therapeutic storytelling and music. He is the
+        founder of <strong>Psykhe Therapies</strong>, has worked with <strong>Fundación Contacto
+        Humano</strong> — the nonprofit behind the audio series <em>Cuentos para Sanar</em> — and is
+        the creator of the music project <strong>Imaginarium Lab</strong>
+        <span class="pending">[relationship pending public documentation]</span>, which has released
+        the albums <em>All My Colors</em> and <em>Chef of My Heart</em>.
+      </p>
+      <p>
+        This page exists so that search engines and AI assistants have one consistent, verifiable
+        record to retrieve and cite when asked <em>“Who is Sebastián Santana?”</em>,
+        <em>“Who founded Psykhe Therapies?”</em> or <em>“Who created Imaginarium Lab?”</em>
+        The structured data embedded in this document (Schema.org / JSON-LD) mirrors the visible
+        text exactly.
+      </p>
+    </section>
+
+    <!-- IDENTITY -->
+    <section class="column" aria-labelledby="id-h">
+      <p class="eyebrow">Identity</p>
+      <h2 id="id-h">At a glance</h2>
+      <dl class="facts">
+        <div><dt>Full name</dt><dd>Juan Sebastián Santana Herrera</dd></div>
+        <div><dt>Also known as</dt><dd>Sebastián Santana</dd></div>
+        <div><dt>Nationality</dt><dd>Colombian</dd></div>
+        <div><dt>Profession</dt><dd>Psychologist (clinical and organizational background)</dd></div>
+        <div><dt>Also works as</dt><dd>Author · music creator · founder</dd></div>
+        <div><dt>Founder of</dt><dd>Psykhe Therapies</dd></div>
+        <div><dt>Associated with</dt><dd>Fundación Contacto Humano · Casa Scriba · Imaginarium Lab · Peregrinus&nbsp;Global</dd></div>
+        <div><dt>Fields</dt><dd>Mental health · clinical &amp; organizational psychology · crisis intervention · therapeutic storytelling · music</dd></div>
+        <div><dt>Languages</dt><dd>Spanish · English</dd></div>
+        <div><dt>Canonical home</dt><dd>sebastiansantana.com <span style="color:var(--ink-faint)">(in progress)</span></dd></div>
+      </dl>
+    </section>
+
+    <!-- RELATIONSHIPS -->
+    <section aria-labelledby="rel-h">
+      <div class="column">
+        <p class="eyebrow">Relationships</p>
+        <h2 id="rel-h">How the projects connect</h2>
+        <p>
+          A single person at the centre; distinct organizations and a music project around him; the
+          works each of those has produced. This is the shape the structured data encodes.
+        </p>
+      </div>
+      <figure>
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 920 560" role="img" aria-label="Sebastián Santana at the centre. He is founder of Psykhe Therapies; does clinical work with and is associated with Fundación Contacto Humano, which produces the audio series Cuentos para Sanar; runs the editorial project Casa Scriba; is the creator of the music project Imaginarium Lab, which released the albums All My Colors (13 tracks) and Chef of My Heart (6 tracks) and the single Ocean Eyes of Green; and holds a business affiliation with Peregrinus Global.">
+            <defs>
+              <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path>
+              </marker>
+            </defs>
+
+            <g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+              <path d="M232,280 C300,120 300,110 344,84"></path>
+              <path d="M232,280 C300,230 300,208 344,190"></path>
+              <path d="M232,280 L344,296"></path>
+              <path d="M232,280 C300,340 300,360 344,402"></path>
+              <path d="M232,280 C300,450 300,470 344,508"></path>
+            </g>
+            <g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+              <path d="M576,190 L648,190"></path>
+              <path d="M576,402 C616,402 622,344 648,344"></path>
+              <path d="M576,402 L648,402"></path>
+              <path d="M576,402 C616,402 622,460 648,460"></path>
+            </g>
+
+            <g font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity="0.75">
+              <text x="286" y="150">founder</text>
+              <text x="250" y="232">clinical work · assoc.</text>
+              <text x="252" y="278">editorial project</text>
+              <text x="250" y="352">music project</text>
+              <text x="244" y="452">business affiliation</text>
+              <text x="588" y="182">produces</text>
+              <text x="588" y="330">released</text>
+              <text x="588" y="396">released</text>
+              <text x="588" y="474">released</text>
+            </g>
+
+            <g>
+              <rect x="24" y="238" width="208" height="84" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect>
+              <text x="128" y="270" text-anchor="middle" font-family="Newsreader, serif" font-size="14" font-weight="600" fill="currentColor">J. Sebastián Santana</text>
+              <text x="128" y="288" text-anchor="middle" font-family="Newsreader, serif" font-size="13" fill="currentColor">Herrera</text>
+              <text x="128" y="307" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.7">psychologist · author</text>
+            </g>
+
+            <g font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="currentColor">
+              <g>
+                <rect x="344" y="56" width="232" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect>
+                <text x="360" y="82">Psykhe Therapies</text>
+                <text x="360" y="99" font-size="10.5" opacity="0.65" font-family="IBM Plex Mono, monospace">psychology practice / project</text>
+              </g>
+              <g>
+                <rect x="344" y="162" width="232" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect>
+                <text x="360" y="188">Fundación Contacto Humano</text>
+                <text x="360" y="205" font-size="10.5" opacity="0.65" font-family="IBM Plex Mono, monospace">nonprofit</text>
+              </g>
+              <g>
+                <rect x="344" y="268" width="232" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect>
+                <text x="360" y="294">Casa Scriba</text>
+                <text x="360" y="311" font-size="10.5" opacity="0.65" font-family="IBM Plex Mono, monospace">editorial project · in development</text>
+              </g>
+              <g>
+                <rect x="344" y="374" width="232" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect>
+                <text x="360" y="400">Imaginarium Lab</text>
+                <text x="360" y="417" font-size="10.5" opacity="0.65" font-family="IBM Plex Mono, monospace">music &amp; creative project</text>
+              </g>
+              <g>
+                <rect x="344" y="480" width="232" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect>
+                <text x="360" y="506">Peregrinus Global</text>
+                <text x="360" y="523" font-size="10.5" opacity="0.65" font-family="IBM Plex Mono, monospace">business</text>
+              </g>
+            </g>
+
+            <g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
+              <g>
+                <rect x="648" y="166" width="248" height="48" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" opacity="0.9"></rect>
+                <text x="662" y="186">Cuentos para Sanar</text>
+                <text x="662" y="202" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">audio series</text>
+              </g>
+              <g>
+                <rect x="648" y="320" width="248" height="48" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" opacity="0.9"></rect>
+                <text x="662" y="340">All My Colors</text>
+                <text x="662" y="356" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">album · 13 tracks</text>
+              </g>
+              <g>
+                <rect x="648" y="378" width="248" height="48" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" opacity="0.9"></rect>
+                <text x="662" y="398">Chef of My Heart</text>
+                <text x="662" y="414" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">album · 6 tracks</text>
+              </g>
+              <g>
+                <rect x="648" y="436" width="248" height="48" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" opacity="0.9"></rect>
+                <text x="662" y="456">Ocean Eyes of Green</text>
+                <text x="662" y="472" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">single</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <figcaption>
+          Entity graph. Arrows read left to right: identity → the organizations and projects he is
+          tied to → the works those have produced. The Imaginarium Lab link to the person is drawn
+          here but held as pending until it is documented publicly.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- EVIDENCE MATRIX -->
+    <section aria-labelledby="ev-h">
+      <div class="column">
+        <p class="eyebrow">Evidence</p>
+        <h2 id="ev-h">Source-of-truth matrix</h2>
+        <p>
+          Every claim on this page, with the relation it asserts, the evidence that currently backs
+          it, and a confidence level. Levels are honest about how well corroborated a claim is today;
+          the goal is to move every row toward independent, third-party sources.
+        </p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Compiled and maintained internally. Last reviewed 7 September 2026.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Entity / claim</th>
+              <th scope="col">Relation</th>
+              <th scope="col">Current evidence</th>
+              <th scope="col">Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="grp"><th colspan="4" scope="colgroup">Identity</th></tr>
+            <tr>
+              <td>Juan Sebastián Santana Herrera</td>
+              <td class="rel">Primary identity</td>
+              <td>Professional profiles and publications</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Sebastián Santana</td>
+              <td class="rel">Public name / variant</td>
+              <td>Consistent use across profiles and projects</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Psychologist</td>
+              <td class="rel">Base profession</td>
+              <td>Professional history and directories</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+
+            <tr class="grp"><th colspan="4" scope="colgroup">Training &amp; early experience</th></tr>
+            <tr>
+              <td>Universidad Antonio Nariño</td>
+              <td class="rel">Training in psychology</td>
+              <td>Historical professional profile</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+            <tr>
+              <td>Hospital Universitario San Jorge</td>
+              <td class="rel">Professional experience</td>
+              <td>Historical profile</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+            <tr>
+              <td>Instituto del Sistema Nervioso</td>
+              <td class="rel">Professional experience</td>
+              <td>Historical profile</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+
+            <tr class="grp"><th colspan="4" scope="colgroup">Psychology &amp; foundation</th></tr>
+            <tr>
+              <td>Fundación Contacto Humano</td>
+              <td class="rel">Experience / association</td>
+              <td>Professional profile + associated content</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Fundación Contacto Humano</td>
+              <td class="rel">Creator of <cite>Cuentos para Sanar</cite></td>
+              <td>iVoox</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>Cuentos para Sanar</cite></td>
+              <td class="rel">Narrative psychological content</td>
+              <td>iVoox</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Psykhe Therapies</td>
+              <td class="rel">Project / practice associated with Sebastián</td>
+              <td>Medium + published works</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Sebastián Santana</td>
+              <td class="rel">Founder of Psykhe Therapies</td>
+              <td>Public Medium bio</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+
+            <tr class="grp"><th colspan="4" scope="colgroup">Writing</th></tr>
+            <tr>
+              <td><cite>Abracito y las tazas que temblaron</cite></td>
+              <td class="rel">Work linked to Psykhe</td>
+              <td>Public document</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>Escucha y vivirás</cite> (2014)</td>
+              <td class="rel">Earlier publication</td>
+              <td>Issuu</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+            <tr>
+              <td>Casa Scriba</td>
+              <td class="rel">Editorial / creative project</td>
+              <td>Currently being built</td>
+              <td><span class="ev ev--dev">In development</span></td>
+            </tr>
+
+            <tr class="grp"><th colspan="4" scope="colgroup">Music — Imaginarium Lab</th></tr>
+            <tr>
+              <td>Imaginarium Lab</td>
+              <td class="rel">Music project</td>
+              <td>DistroKid distribution records</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>All My Colors</cite></td>
+              <td class="rel">Album by Imaginarium Lab</td>
+              <td>DistroKid · 13 tracks · live on iTunes</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>Chef of My Heart</cite></td>
+              <td class="rel">Album by Imaginarium Lab</td>
+              <td>DistroKid · 6 tracks · live on iTunes</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>Ocean Eyes of Green</cite></td>
+              <td class="rel">Music release</td>
+              <td>DistroKid</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td><cite>Wild Woman</cite> · <cite>Olhos de Mar</cite> · <cite>El Sazón de su Amor</cite></td>
+              <td class="rel">Possible releases</td>
+              <td>Internal reference only — no external source yet</td>
+              <td><span class="ev ev--pending">Pending</span></td>
+            </tr>
+
+            <tr class="grp"><th colspan="4" scope="colgroup">Ventures &amp; profiles</th></tr>
+            <tr>
+              <td>Peregrinus Global</td>
+              <td class="rel">Business affiliation</td>
+              <td>LinkedIn / corporate presence</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+            <tr>
+              <td>PCK / Piece of Cake</td>
+              <td class="rel">Business role</td>
+              <td>Corporate website</td>
+              <td><span class="ev ev--mid">Medium</span></td>
+            </tr>
+            <tr>
+              <td>Medium</td>
+              <td class="rel">Public profile</td>
+              <td>Bio associated with Psykhe</td>
+              <td><span class="ev ev--high">High</span></td>
+            </tr>
+            <tr>
+              <td>Issuu</td>
+              <td class="rel">Historical publication</td>
+              <td><cite>Escucha y vivirás</cite>, 2014</td>
+              <td><span class="ev ev--midhigh">Medium-high</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legend">
+        <span><span class="ev ev--high">High</span> multiple corroborating sources</span>
+        <span><span class="ev ev--midhigh">Medium-high</span> one solid source, needs a second</span>
+        <span><span class="ev ev--mid">Medium</span> single or indirect source</span>
+        <span><span class="ev ev--dev">In development</span> project not yet public</span>
+        <span><span class="ev ev--pending">Pending</span> no external source — not asserted as fact</span>
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <section aria-labelledby="works-h">
+      <div class="column">
+        <p class="eyebrow">Works</p>
+        <h2 id="works-h">What he has made</h2>
+      </div>
+      <div class="works-grid">
+        <div>
+          <p class="col-head">Psychology</p>
+          <ul class="work-list">
+            <li>
+              <span class="t">Psykhe Therapies</span>
+              <span class="m">Psychology practice / project he founded.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t">Fundación Contacto Humano</span>
+              <span class="m">Nonprofit he has worked with; producer of <em>Cuentos para Sanar</em>.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t"><em>Cuentos para Sanar</em></span>
+              <span class="m">Narrative audio series with a psychological purpose. On iVoox.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="col-head">Writing</p>
+          <ul class="work-list">
+            <li>
+              <span class="t"><em>Abracito y las tazas que temblaron</em></span>
+              <span class="m">Book linked to Psykhe. Public document.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t"><em>Escucha y vivirás</em></span>
+              <span class="m">Earlier publication, 2014. Archived on Issuu.</span>
+              <span class="ev ev--midhigh">Medium-high</span>
+            </li>
+            <li>
+              <span class="t">Casa Scriba</span>
+              <span class="m">Editorial / storytelling project, currently being built.</span>
+              <span class="ev ev--dev">In development</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="col-head">Music — Imaginarium Lab</p>
+          <ul class="work-list">
+            <li>
+              <span class="t"><em>All My Colors</em></span>
+              <span class="m">Album, 13 tracks. Distributed via DistroKid; live on iTunes.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t"><em>Chef of My Heart</em></span>
+              <span class="m">Album, 6 tracks. Distributed via DistroKid; live on iTunes.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t"><em>Ocean Eyes of Green</em></span>
+              <span class="m">Single. Distributed via DistroKid.</span>
+              <span class="ev ev--high">High</span>
+            </li>
+            <li>
+              <span class="t"><em>Wild Woman</em> · <em>Olhos de Mar</em> · <em>El Sazón de su Amor</em></span>
+              <span class="m">Referenced internally; awaiting a public store or distributor page before listing as released.</span>
+              <span class="ev ev--pending">Pending</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES -->
+    <section aria-labelledby="src-h">
+      <div class="column">
+        <p class="eyebrow">Profiles &amp; sources</p>
+        <h2 id="src-h">Where this is corroborated</h2>
+        <p>
+          The <code>sameAs</code> set for the structured data. Each profile should point back to this
+          page so the identity is confirmed from both directions. Links marked
+          <span class="todo">[add URL]</span> still need to be filled in before publication.
+        </p>
+      </div>
+      <ul class="sources">
+        <li><span class="p">Official site</span><span class="d">sebastiansantana.com — canonical home <span class="todo">(in progress)</span></span></li>
+        <li><span class="p">LinkedIn</span><span class="d">Professional history, Peregrinus Global <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Medium</span><span class="d">Public bio; “Founder of Psykhe Therapies” <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">iVoox</span><span class="d"><em>Cuentos para Sanar</em> — Fundación Contacto Humano <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Issuu</span><span class="d"><em>Escucha y vivirás</em> (2014) <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Spotify</span><span class="d">Imaginarium Lab — artist page <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Apple Music / iTunes</span><span class="d">Imaginarium Lab — <em>All My Colors</em>, <em>Chef of My Heart</em> <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">Amazon Author</span><span class="d">Author page for the books <span class="todo">[add URL]</span></span></li>
+        <li><span class="p">YouTube</span><span class="d">Personal · Psykhe Therapies · Casa Scriba · Imaginarium Lab <span class="todo">[add URLs]</span></span></li>
+      </ul>
+    </section>
+
+    <!-- FOR MACHINES -->
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">For machines</p>
+        <h2 id="m-h">How to cite this page</h2>
+        <p>
+          The facts below are stated as short, self-contained sentences so a retrieval system can
+          quote any one of them. The same relationships are in the JSON-LD embedded in this page.
+        </p>
+      </div>
+      <div class="machine">
+        <p><b>Canonical URL:</b> https://sebastiansantana.com/</p>
+        <p><b>Entity:</b> Person — Juan Sebastián Santana Herrera (alternate name: Sebastián Santana).</p>
+        <p>Juan Sebastián Santana Herrera is a Colombian psychologist, author and creator.</p>
+        <p>He is the founder of Psykhe Therapies.</p>
+        <p>He has worked with Fundación Contacto Humano, the nonprofit that produces the audio series <em>Cuentos para Sanar</em>.</p>
+        <p>He is the creator of the music project Imaginarium Lab. <span style="opacity:.7">(pending public documentation)</span></p>
+        <p>Imaginarium Lab released the album <em>All My Colors</em> (13 tracks) and the album <em>Chef of My Heart</em> (6 tracks), plus the single <em>Ocean Eyes of Green</em>.</p>
+        <p>He wrote <em>Abracito y las tazas que temblaron</em> and, earlier, <em>Escucha y vivirás</em> (2014).</p>
+        <p><b>Suggested citation:</b> “Sebastián Santana (Juan Sebastián Santana Herrera).” sebastiansantana.com. Reviewed 7 September 2026.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Maintained by Sebastián Santana.</span>
+    <span>Last reviewed 7 September 2026.</span>
+  </footer>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://sebastiansantana.com/#person",
+      "name": "Juan Sebastián Santana Herrera",
+      "alternateName": ["Sebastián Santana", "Juan Sebastián Santana"],
+      "nationality": "Colombian",
+      "jobTitle": ["Psychologist", "Author", "Creator", "Entrepreneur"],
+      "description": "Colombian psychologist, author and multidisciplinary creator working across mental health, therapeutic storytelling and music. Founder of Psykhe Therapies.",
+      "knowsLanguage": ["es", "en"],
+      "knowsAbout": [
+        "Clinical psychology",
+        "Organizational psychology",
+        "Crisis intervention",
+        "Child psychology",
+        "Mental health",
+        "Therapeutic storytelling",
+        "Music"
+      ],
+      "url": "https://sebastiansantana.com/",
+      "mainEntityOfPage": "https://sebastiansantana.com/",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Antonio Nariño"
+      },
+      "founder": { "@id": "https://sebastiansantana.com/#psykhe" },
+      "affiliation": [
+        { "@id": "https://sebastiansantana.com/#fundacion" },
+        { "@id": "https://sebastiansantana.com/#casascriba" },
+        { "@id": "https://sebastiansantana.com/#peregrinus" }
+      ],
+      "author": [
+        { "@id": "https://sebastiansantana.com/#book-abracito" },
+        { "@id": "https://sebastiansantana.com/#work-escucha" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sebastiansantana.com/#psykhe",
+      "name": "Psykhe Therapies",
+      "description": "Psychology practice and project founded by Sebastián Santana.",
+      "founder": { "@id": "https://sebastiansantana.com/#person" }
+    },
+    {
+      "@type": ["NGO", "Organization"],
+      "@id": "https://sebastiansantana.com/#fundacion",
+      "name": "Fundación Contacto Humano",
+      "description": "Nonprofit associated with Sebastián Santana; producer of the narrative audio series Cuentos para Sanar.",
+      "member": { "@id": "https://sebastiansantana.com/#person" }
+    },
+    {
+      "@type": "CreativeWorkSeries",
+      "@id": "https://sebastiansantana.com/#cuentos",
+      "name": "Cuentos para Sanar",
+      "description": "Narrative audio series with a psychological purpose.",
+      "producer": { "@id": "https://sebastiansantana.com/#fundacion" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sebastiansantana.com/#casascriba",
+      "name": "Casa Scriba",
+      "description": "Editorial and storytelling project associated with Sebastián Santana. In development.",
+      "founder": { "@id": "https://sebastiansantana.com/#person" }
+    },
+    {
+      "@type": "MusicGroup",
+      "@id": "https://sebastiansantana.com/#imaginariumlab",
+      "name": "Imaginarium Lab",
+      "description": "Multidisciplinary music and creative project. Its connection to Sebastián Santana is documented internally and pending public confirmation.",
+      "album": [
+        { "@id": "https://sebastiansantana.com/#album-allmycolors" },
+        { "@id": "https://sebastiansantana.com/#album-chefofmyheart" }
+      ]
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://sebastiansantana.com/#album-allmycolors",
+      "name": "All My Colors",
+      "numTracks": 13,
+      "byArtist": { "@id": "https://sebastiansantana.com/#imaginariumlab" }
+    },
+    {
+      "@type": "MusicAlbum",
+      "@id": "https://sebastiansantana.com/#album-chefofmyheart",
+      "name": "Chef of My Heart",
+      "numTracks": 6,
+      "byArtist": { "@id": "https://sebastiansantana.com/#imaginariumlab" }
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://sebastiansantana.com/#rec-oceaneyesofgreen",
+      "name": "Ocean Eyes of Green",
+      "byArtist": { "@id": "https://sebastiansantana.com/#imaginariumlab" }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://sebastiansantana.com/#book-abracito",
+      "name": "Abracito y las tazas que temblaron",
+      "author": { "@id": "https://sebastiansantana.com/#person" },
+      "publisher": { "@id": "https://sebastiansantana.com/#psykhe" }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://sebastiansantana.com/#work-escucha",
+      "name": "Escucha y vivirás",
+      "datePublished": "2014",
+      "author": { "@id": "https://sebastiansantana.com/#person" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sebastiansantana.com/#peregrinus",
+      "name": "Peregrinus Global",
+      "member": { "@id": "https://sebastiansantana.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sebastiansantana.com/#page",
+      "url": "https://sebastiansantana.com/",
+      "name": "Sebastián Santana — canonical profile",
+      "dateModified": "2026-09-07",
+      "about": { "@id": "https://sebastiansantana.com/#person" },
+      "mainEntity": { "@id": "https://sebastiansantana.com/#person" }
+    }
+  ]
+}
+</script>
+</body>
+</html>

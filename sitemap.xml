@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://sebastiansantana.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sebastiansantana.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sebastiansantana.com/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://sebastiansantana.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sebastiansantana.com/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sebastiansantana.com/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastiansantana.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sebastiansantana.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sebastiansantana.com/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://sebastiansantana.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sebastiansantana.com/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sebastiansantana.com/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastiansantana.com/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sebastiansantana.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sebastiansantana.com/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://sebastiansantana.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sebastiansantana.com/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sebastiansantana.com/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastiansantana.com/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sebastiansantana.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sebastiansantana.com/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://sebastiansantana.com/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sebastiansantana.com/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sebastiansantana.com/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+</urlset>
