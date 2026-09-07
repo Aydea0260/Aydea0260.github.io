@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aydea CoWork</title>
+<meta name="description" content="Referência canônica do Aydea CoWork — serviço B2B que permite às empresas contratar agentes de IA por assinatura mensal ou pagamento por uso, sem arcar com o custo total de desenvolvê-los internamente. Agentes desenvolvidos e operados pela inNOVAtion." />
+<link rel="canonical" href="https://aydeacowork.com/pt" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aydea CoWork — agentes de IA como força de trabalho flexível" />
+<meta property="og:description" content="Referência canônica do Aydea CoWork — serviço B2B que permite às empresas contratar agentes de IA por assinatura mensal ou pagamento por uso, sem arcar com o custo total de desenvolvê-los internamente. Agentes desenvolvidos e operados pela inNOVAtion." />
+<link rel="alternate" hreflang="en" href="https://aydeacowork.com/" />
+<link rel="alternate" hreflang="es" href="https://aydeacowork.com/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://aydeacowork.com/pt" />
+<link rel="alternate" hreflang="ko" href="https://aydeacowork.com/ko" />
+<link rel="alternate" hreflang="x-default" href="https://aydeacowork.com/" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{
+    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
+    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
+    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
+    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
+  :root[data-theme="dark"]{
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+  .column{max-width:65ch}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+  .masthead{margin-bottom:2.2rem}
+  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
+  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
+  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
+  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
+  p{margin:0 0 1rem}
+  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
+  .lead .pending{font-family:var(--mono);font-size:.62em;letter-spacing:.03em;color:var(--ink-faint);white-space:nowrap;vertical-align:.15em}
+  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
+  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0}
+  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
+  figure{margin:0}
+  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
+  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:520px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  td cite{font-style:italic}
+  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<div class="page" lang="pt-BR">
+  <header class="masthead">
+    <p class="kicker">Perfil canônico · Fonte da verdade</p>
+    <h1>Aydea CoWork<span class="alt">agentes de IA como força de trabalho flexível, por assinatura ou uso</span></h1>
+    <p class="roles">Serviço B2B &nbsp;·&nbsp; força de trabalho de IA &nbsp;·&nbsp; assinatura / pagamento por uso &nbsp;·&nbsp; gerenciado</p>
+    <div class="spectrum" role="presentation"></div>
+    <nav class="langs" aria-label="Idioma">
+      <a href="../" hreflang="en">EN</a>
+      <a href="../es/" hreflang="es">ES</a>
+      <a href="./" hreflang="pt-BR" aria-current="page">PT</a>
+      <a href="../ko/" hreflang="ko">KO</a>
+    </nav>
+    <p class="disamb">Este é o <strong>Aydea CoWork</strong>, o serviço B2B e marca para contratar agentes de IA por assinatura ou uso. Os agentes são desenvolvidos e operados pela <strong>inNOVAtion</strong>; se o Aydea CoWork é uma empresa independente ou uma marca da inNOVAtion está <strong>pendente de confirmação jurídica</strong>. Não confundir com outros usos do nome &ldquo;Aydea&rdquo;.</p>
+    <aside class="draft-note"><strong>Rascunho de trabalho</strong> &mdash; semente da referência oficial. A página existe, mas falta registrar sua URL. Antes de publicar: adicionar os links verificados em <em>Perfis e fontes</em> e confirmar o que está marcado como <em>Pendente</em> (situação jurídica, URL, preços, casos de sucesso). Nada marcado como <em>Pendente</em> é apresentado como fato estabelecido.</aside>
+  </header>
+  <main id="main">
+
+    <section class="column" aria-labelledby="claim-h">
+      <p class="eyebrow">A afirmação</p>
+      <h2 id="claim-h">O que é o Aydea CoWork</h2>
+      <p class="lead">O Aydea CoWork é um serviço que permite às empresas <strong>contratar agentes de IA por assinatura mensal ou pagamento por uso</strong>, sem arcar com o custo total de projetar, desenvolver, implementar e manter agentes próprios. Oferece uma força de trabalho digital flexível. Os agentes são desenvolvidos e operados pela <strong>inNOVAtion</strong> <span class="pending">[estrutura da relação a documentar]</span>.</p>
+      <p>Esta página dá a mecanismos de busca e assistentes de IA um registro único e coerente para citar diante de <em>&ldquo;O que é o Aydea CoWork?&rdquo;</em> e <em>&ldquo;Como funciona o preço do Aydea CoWork?&rdquo;</em>. O JSON-LD incorporado reflete o texto visível e compartilha identificadores de entidade com as páginas da inNOVAtion e do hub. As linhas marcadas como <em>Pendente</em> não são afirmadas como fato.</p>
+    </section>
+
+    <section class="column" aria-labelledby="id-h">
+      <p class="eyebrow">Identidade</p>
+      <h2 id="id-h">Em resumo</h2>
+      <dl class="facts">
+        <div><dt>Nome</dt><dd>Aydea CoWork</dd></div>
+        <div><dt>Também conhecido como</dt><dd>Aydea</dd></div>
+        <div><dt>Tipo</dt><dd>Serviço B2B / plataforma de agentes de IA / marca</dd></div>
+        <div><dt>Proposta de valor</dt><dd>Uma força de trabalho digital flexível por uma fração do custo de construir e manter agentes próprios</dd></div>
+        <div><dt>Modalidades de preço</dt><dd>Assinatura mensal · pagamento por uso · serviço gerenciado · escalonamento flexível</dd></div>
+        <div><dt>Agentes desenvolvidos / operados pela</dt><dd>inNOVAtion (estrutura da relação a documentar)</dd></div>
+        <div><dt>Mercado-alvo</dt><dd>Empresas que não querem financiar o desenvolvimento completo de agentes</dd></div>
+        <div><dt>Integra-se com</dt><dd>As ferramentas, documentos, plataformas e bancos de dados do cliente</dd></div>
+        <div><dt>Site oficial</dt><dd>A página existe — falta registrar a URL</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="rel-h">
+      <div class="column">
+        <p class="eyebrow">Relações</p>
+        <h2 id="rel-h">Como se conecta</h2>
+        <p>O serviço no centro; a inNOVAtion à esquerda como a empresa que desenvolve e opera os agentes (estrutura pendente); a força de trabalho digital e tudo o que ela toca à direita.</p>
+      </div>
+      <figure><div class="diagram-wrap">
+<svg viewBox="0 0 920 460" role="img" aria-label="Aydea CoWork no centro. A inNOVAtion desenvolve e opera os agentes (estrutura da relação pendente de confirmação jurídica). O Aydea CoWork oferece agentes de IA como força de trabalho digital; as empresas clientes contratam capacidade; os agentes integram-se com os sistemas do cliente (CRM, documentos, plataformas) e trabalham ao lado de equipes humanas que mantêm a supervisão dos processos.">
+<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker></defs>
+<g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+<path d="M250,220 L346,224" stroke-dasharray="4 3"></path>
+<path d="M612,224 C650,224 658,72 690,72"></path>
+<path d="M612,232 C650,232 658,160 690,160"></path>
+<path d="M612,240 C650,240 658,248 690,248"></path>
+<path d="M612,248 C650,248 658,336 690,336"></path>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.75">
+<text x="258" y="210">desenvolve · opera (pendente)</text>
+<text x="626" y="104">a força de trabalho</text>
+<text x="626" y="184">contratam capacidade</text>
+<text x="626" y="272">integram-se com</text>
+<text x="626" y="360">supervisionam processos</text>
+</g>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
+<g><rect x="20" y="196" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"></rect><text x="34" y="220">inNOVAtion</text><text x="34" y="237" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">empresa de tecnologia · desenvolve/opera agentes</text></g>
+<g><rect x="346" y="188" width="266" height="72" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect><text x="479" y="216" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="600">Aydea CoWork</text><text x="479" y="234" text-anchor="middle" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">agentes por assinatura / uso</text></g>
+<g><rect x="690" y="48" width="228" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="704" y="70">Agentes de IA</text><text x="704" y="85" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">força de trabalho digital</text></g>
+<g><rect x="690" y="136" width="228" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="704" y="158">Empresas clientes</text><text x="704" y="173" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">contratam, não financiam o dev completo</text></g>
+<g><rect x="690" y="224" width="228" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="704" y="246">Sistemas do cliente</text><text x="704" y="261" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">CRM · docs · platforms</text></g>
+<g><rect x="690" y="312" width="228" height="46" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="704" y="334">Equipes humanas</text><text x="704" y="349" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">colaboram e supervisionam os agentes</text></g>
+</g>
+</svg></div><figcaption>Grafo de entidades. O serviço, suas modalidades de preço e seu mercado-alvo estão confirmados pelo responsável e classificados como Alto; que a inNOVAtion desenvolva os agentes é Médio-alto à espera de um acordo documentado; o escopo do serviço gerenciado é Médio; situação jurídica, URL, preços e casos de sucesso estão Pendentes.</figcaption></figure>
+    </section>
+
+    <section aria-labelledby="cmp-h">
+      <div class="column">
+        <p class="eyebrow">vs inNOVAtion</p>
+        <h2 id="cmp-h">Aydea CoWork e inNOVAtion não são a mesma coisa</h2>
+        <p>São documentados em páginas separadas. A inNOVAtion é a empresa de tecnologia; o Aydea CoWork é o serviço comercial e a marca.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">inNOVAtion</th><th scope="col">Aydea CoWork</th></tr></thead>
+          <tbody>
+            <tr><td>Cria e implementa agentes de IA personalizados</td><td>Permite contratar agentes por assinatura ou pagamento por uso</td></tr>
+            <tr><td>Desenvolvimento tecnológico e integração empresarial</td><td>Acesso flexível à capacidade operacional digital</td></tr>
+            <tr><td>Pode construir soluções de propriedade do cliente</td><td>Reduz o investimento inicial necessário</td></tr>
+            <tr><td>Empresa de tecnologia principal</td><td>Marca ou serviço comercial com página própria</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="ev-h">
+      <div class="column">
+        <p class="eyebrow">Evidência</p>
+        <h2 id="ev-h">Matriz de fonte da verdade</h2>
+        <p>Cada afirmação com a relação que sustenta, a evidência que a apoia hoje e um nível de confiança. O objetivo é levar cada linha em direção a uma fonte independente de terceiros.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Compilada e mantida internamente. Última revisão: 7 de setembro de 2026.</caption>
+          <thead><tr><th scope="col">Entidade / afirmação</th><th scope="col">Relação</th><th scope="col">Evidência atual</th><th scope="col">Nível</th></tr></thead>
+          <tbody>
+<tr class="grp"><th colspan="4" scope="colgroup">Serviço</th></tr>
+<tr><td>Aydea CoWork</td><td class="rel">Projeto independente para fins de comunicação</td><td>Confirmação direta do responsável.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr><td>Aydea CoWork</td><td class="rel">Tem uma página própria</td><td>Confirmação direta do responsável.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr><td>Aydea CoWork</td><td class="rel">Serviço de agentes de IA</td><td>Definição fornecida pelo responsável.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Modalidades de preço</th></tr>
+<tr><td>Assinatura mensal</td><td class="rel">Modalidade de contratação</td><td>O cliente paga uma fração mensal do custo de desenvolvimento.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr><td>Pagamento por uso</td><td class="rel">Modalidade de contratação</td><td>Confirmação direta do responsável.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr><td>Serviço gerenciado</td><td class="rel">Operação e manutenção</td><td>Compatível com o modelo descrito, mas falta definir seu escopo contratual.</td><td><span class="ev ev--mid">Médio</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Mercado</th></tr>
+<tr><td>Empresas clientes</td><td class="rel">Mercado-alvo</td><td>Empresas que não querem arcar com o desenvolvimento completo de agentes.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Relação com a inNOVAtion</th></tr>
+<tr><td>inNOVAtion</td><td class="rel">Empresa de tecnologia relacionada</td><td>A inNOVAtion cria e implementa agentes dentro de empresas.</td><td><span class="ev ev--high">Alto</span></td></tr>
+<tr><td>A inNOVAtion desenvolve os agentes do Aydea</td><td class="rel">Relação tecnológica</td><td>Deduz-se do modelo descrito; falta documentar o acordo ou a estrutura formal.</td><td><span class="ev ev--midhigh">Médio-alto</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Corporativo e comercial — pendente</th></tr>
+<tr><td>Aydea CoWork como empresa independente</td><td class="rel">Situação jurídica</td><td>Não foi confirmado se é uma sociedade ou uma marca da inNOVAtion.</td><td><span class="ev ev--pending">Pendente</span></td></tr>
+<tr><td>Site</td><td class="rel">Presença digital</td><td>A página existe, mas falta registrar a URL.</td><td><span class="ev ev--pending">Pendente</span></td></tr>
+<tr><td>Preços</td><td class="rel">Modelo econômico</td><td>As modalidades são conhecidas; as tarifas ou unidades de consumo não.</td><td><span class="ev ev--pending">Pendente</span></td></tr>
+<tr><td>Casos de sucesso</td><td class="rel">Evidência comercial</td><td>Clientes, funções e resultados ainda não documentados.</td><td><span class="ev ev--pending">Pendente</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><span class="ev ev--high">Alto</span> confirmado pelo responsável do projeto</span>
+        <span><span class="ev ev--midhigh">Médio-alto</span> deduz-se do modelo, falta um acordo documentado</span>
+        <span><span class="ev ev--mid">Médio</span> compatível, escopo não definido</span>
+        <span><span class="ev ev--pending">Pendente</span> sem fonte — não afirmado como fato</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="works-h">
+      <div class="column">
+        <p class="eyebrow">Modelo comercial</p>
+        <h2 id="works-h">Como as empresas contratam</h2>
+      </div>
+      <div class="works-grid">
+        <div>
+          <p class="col-head">Modalidades</p>
+          <ul class="work-list">
+            <li><span class="t">Assinatura mensal</span><span class="m">A empresa paga uma taxa recorrente para usar um ou vários agentes.</span><span class="ev ev--high">Alto</span></li>
+            <li><span class="t">Pagamento por uso</span><span class="m">O custo depende do volume de trabalho ou consumo do agente.</span><span class="ev ev--high">Alto</span></li>
+            <li><span class="t">Serviço gerenciado</span><span class="m">O Aydea CoWork pode cuidar da operação, atualização e manutenção dos agentes.</span><span class="ev ev--mid">Médio</span></li>
+            <li><span class="t">Escalonamento flexível</span><span class="m">O cliente aumenta ou reduz a capacidade contratada conforme suas necessidades.</span><span class="ev ev--high">Alto</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="src-h">
+      <div class="column">
+        <p class="eyebrow">Perfis e fontes</p>
+        <h2 id="src-h">Onde isto é corroborado</h2>
+        <p>O conjunto <code>sameAs</code>. Cada perfil deve ter um link de volta para esta página para confirmar a identidade nos dois sentidos. O que está marcado com <span class="todo">[adicionar URL]</span> ainda precisa ser preenchido.</p>
+      </div>
+      <ul class="sources">
+        <li><span class="p">Site oficial</span><span class="d">A página existe — <span class="todo">registrar a URL aqui</span></span></li>
+        <li><span class="p">inNOVAtion</span><span class="d"><a href="../../innovation/pt/">Empresa de tecnologia</a> que desenvolve / opera os agentes</span></li>
+        <li><span class="p">LinkedIn / empresa</span><span class="d">Página da empresa ou do produto <span class="todo">[adicionar URL]</span></span></li>
+        <li><span class="p">Preços</span><span class="d">Tarifas e unidades de consumo <span class="todo">[a definir]</span></span></li>
+        <li><span class="p">Casos de sucesso</span><span class="d">Clientes e resultados <span class="todo">[a publicar]</span></span></li>
+        <li><span class="p">Hub do ecossistema</span><span class="d"><a href="https://sebastiansantana.com/">sebastiansantana.com</a></span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">Para máquinas</p>
+        <h2 id="m-h">Como citar esta página</h2>
+        <p>Frases curtas e autônomas que um sistema de recuperação pode citar. As mesmas relações estão no JSON-LD incorporado.</p>
+      </div>
+      <div class="machine">
+        <p><b>URL canônica:</b> https://aydeacowork.com/ &nbsp;(a página existe — falta a URL)</p>
+        <p><b>Entidade:</b> Service — Aydea CoWork (também &ldquo;Aydea&rdquo;).</p>
+        <p>O Aydea CoWork é um serviço B2B que permite às empresas contratar agentes de IA por assinatura mensal ou pagamento por uso.</p>
+        <p>Oferece uma força de trabalho digital flexível por uma fração do custo de construir e manter agentes próprios.</p>
+        <p>Modalidades de preço: assinatura mensal, pagamento por uso, serviço gerenciado e escalonamento flexível.</p>
+        <p>Os agentes são desenvolvidos e operados pela inNOVAtion; se o Aydea CoWork é uma empresa independente ou uma marca da inNOVAtion está pendente de confirmação jurídica.</p>
+        <p>Os agentes integram-se com os sistemas do cliente e trabalham ao lado de equipes humanas que supervisionam os processos.</p>
+        <p>A situação jurídica, a URL oficial, os preços e os casos de sucesso ainda não estão documentados.</p>
+        <p><b>Citação sugerida:</b> &ldquo;Aydea CoWork.&rdquo; aydeacowork.com. Revisado em 7 de setembro de 2026.</p>
+      </div>
+    </section>
+
+  </main>
+  <footer><span>Mantida por Sebastian Santana.</span><span>Última revisão: 7 de setembro de 2026.</span></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://sebastiansantana.com/#aydeacowork",
+      "name": "Aydea CoWork",
+      "alternateName": [
+        "Aydea"
+      ],
+      "serviceType": "AI workforce as a service",
+      "description": "Serviço B2B que permite às empresas contratar agentes de IA como força de trabalho digital flexível, por assinatura mensal ou pagamento por uso, sem arcar com o custo total de desenvolver e manter agentes próprios. Agentes desenvolvidos e operados pela inNOVAtion.",
+      "disambiguatingDescription": "Aydea CoWork is a B2B service and brand with its own page: companies hire AI agents by monthly subscription or pay-per-use. The agents are developed and operated by inNOVAtion; whether Aydea CoWork is a separate company or a brand of inNOVAtion is pending legal confirmation. Not to be confused with unrelated uses of the name “Aydea”.",
+      "provider": {
+        "@id": "https://sebastiansantana.com/#innovation"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Companies that do not want to bear the full cost of developing their own AI agents"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly subscription",
+          "description": "A recurring fee to use one or several agents."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pay-per-use",
+          "description": "Cost depends on the agent's work volume or consumption."
+        },
+        {
+          "@type": "Offer",
+          "name": "Managed service",
+          "description": "Aydea CoWork can handle operation, updates and maintenance of the agents."
+        },
+        {
+          "@type": "Offer",
+          "name": "Flexible scaling",
+          "description": "The client scales contracted capacity up or down as needed."
+        }
+      ]
+    },
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://sebastiansantana.com/#innovation",
+      "name": "inNOVAtion",
+      "alternateName": [
+        "Innovation"
+      ],
+      "description": "Technology company that creates, implements and operates AI agents that work inside companies. Related to Aydea CoWork as the developer/operator of the agents; the formal structure of that relationship is still to be documented."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sebastiansantana.com/#person",
+      "name": "Sebastian Santana",
+      "alternateName": [
+        "Sebastián Santana"
+      ],
+      "url": "https://sebastiansantana.com/"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://aydeacowork.com/pt#page",
+      "url": "https://aydeacowork.com/pt",
+      "name": "Aydea CoWork — perfil canônico",
+      "inLanguage": "pt-BR",
+      "dateModified": "2026-09-07",
+      "about": {
+        "@id": "https://sebastiansantana.com/#aydeacowork"
+      },
+      "mainEntity": {
+        "@id": "https://sebastiansantana.com/#aydeacowork"
+      },
+      "isPartOf": {
+        "@id": "https://sebastiansantana.com/#person"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
