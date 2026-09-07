@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://rituelle.co/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rituelle.co/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rituelle.co/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rituelle.co/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://rituelle.co/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rituelle.co/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://rituelle.co/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rituelle.co/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rituelle.co/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rituelle.co/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://rituelle.co/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rituelle.co/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://rituelle.co/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rituelle.co/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rituelle.co/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rituelle.co/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://rituelle.co/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rituelle.co/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+  <url>
+    <loc>https://rituelle.co/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rituelle.co/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://rituelle.co/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rituelle.co/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://rituelle.co/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rituelle.co/"/>
+    <lastmod>2026-09-07</lastmod>
+  </url>
+</urlset>
