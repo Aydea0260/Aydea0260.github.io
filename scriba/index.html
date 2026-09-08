@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scriba</title>
+<meta name="description" content="Canonical reference for Scriba — a publishing house powered by a network of specialised AI subagents that supports the full publishing process, from identifying and creating a work through production, distribution, marketing and international growth. Part of Etherion Publish; offers a ghostwriting and co-authoring service; keeps mandatory human oversight on critical decisions." />
+<link rel="canonical" href="https://scriba.pub/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Scriba — AI-agent-powered publishing house & ghostwriting" />
+<meta property="og:description" content="Canonical reference for Scriba — a publishing house powered by a network of specialised AI subagents that supports the full publishing process, from identifying and creating a work through production, distribution, marketing and international growth. Part of Etherion Publish; offers a ghostwriting and co-authoring service; keeps mandatory human oversight on critical decisions." />
+<link rel="alternate" hreflang="en" href="https://scriba.pub/" />
+<link rel="alternate" hreflang="es" href="https://scriba.pub/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://scriba.pub/pt" />
+<link rel="alternate" hreflang="ko" href="https://scriba.pub/ko" />
+<link rel="alternate" hreflang="x-default" href="https://scriba.pub/" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{
+    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
+    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
+    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
+    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
+  :root[data-theme="dark"]{
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+  .column{max-width:65ch}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+  .masthead{margin-bottom:2.2rem}
+  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
+  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
+  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
+  .tagline{font-family:var(--display);font-size:clamp(1.1rem,.95rem + .7vw,1.3rem);font-style:italic;color:var(--ink);margin:1rem 0 0}
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
+  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
+  p{margin:0 0 1rem}
+  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
+  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
+  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0}
+  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
+  figure{margin:0}
+  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
+  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .stages{list-style:none;counter-reset:st;margin:.5rem 0 0;padding:0;display:grid;gap:0}
+  .stages li{counter-increment:st;padding:1rem 0 1rem 3rem;border-top:1px solid var(--line);position:relative}
+  .stages li:first-child{border-top:1px solid var(--line-strong)}
+  .stages li::before{content:counter(st);position:absolute;left:0;top:1rem;font-family:var(--mono);font-size:.8rem;color:var(--accent);border:1px solid var(--line-strong);border-radius:50%;width:1.7rem;height:1.7rem;display:flex;align-items:center;justify-content:center}
+  .stages .t{font-weight:500;display:block}
+  .stages .m{font-size:.92rem;color:var(--ink-soft);display:block;margin-top:.15rem}
+  .stages .n{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);letter-spacing:.04em}
+  .checks{margin:.5rem 0 0;padding:0 0 0 1.1rem}
+  .checks li{margin:.4rem 0;color:var(--ink-soft)}
+  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page" lang="en">
+  <header class="masthead">
+    <p class="kicker">Canonical profile · Source of truth</p>
+    <h1>Scriba<span class="alt">AI-agent-powered publishing house</span></h1>
+    <p class="roles">Publishing &nbsp;·&nbsp; editorial AI agents &nbsp;·&nbsp; ghostwriting &nbsp;·&nbsp; translation &nbsp;·&nbsp; distribution</p>
+    <p class="tagline">&ldquo;Human Stories, Intelligent Publishing.&rdquo;</p>
+    <div class="spectrum" role="presentation"></div>
+    <nav class="langs" aria-label="Language">
+      <a href="./" hreflang="en" aria-current="page">EN</a>
+      <a href="es/" hreflang="es">ES</a>
+      <a href="pt/" hreflang="pt-BR">PT</a>
+      <a href="ko/" hreflang="ko">KO</a>
+    </nav>
+    <p class="disamb">This is <strong>Scriba</strong>, the AI-agent-powered publishing house within <strong>Etherion Publish</strong>, whose earlier working name was <strong>&ldquo;Psykhê Path&rdquo;</strong>. It is <strong>not</strong> Psykhê Paths, the separate personal-development platform in the same ecosystem; nor other products, fonts or apps named &ldquo;Scriba&rdquo;.</p>
+    <aside class="draft-note"><strong>Working draft</strong> &mdash; seed of the official reference. Before publishing: add the verified links under <em>Profiles &amp; sources</em> and confirm the items marked <em>Pending</em> (official website under the name Scriba, founder or registered director). Nothing marked <em>Pending</em> is presented as established fact.</aside>
+  </header>
+  <main id="main">
+
+    <section class="column" aria-labelledby="claim-h">
+      <p class="eyebrow">The claim</p>
+      <h2 id="claim-h">What Scriba is</h2>
+      <p class="lead">Scriba is a <strong>publishing house powered by a network of specialised AI subagents</strong> that supports the <strong>full publishing process</strong> &mdash; from identifying and creating a work through production, distribution, marketing and international growth. It also offers a <strong>ghostwriting and co-authoring service</strong>.</p>
+      <p>This page gives search engines and AI assistants one consistent record to cite for <em>&ldquo;What is Scriba?&rdquo;</em>. The embedded Schema.org / JSON-LD mirrors the visible text. Rows marked <em>Pending</em> are not asserted as fact.</p>
+    </section>
+
+    <section class="column" aria-labelledby="id-h">
+      <p class="eyebrow">Identity</p>
+      <h2 id="id-h">At a glance</h2>
+      <dl class="facts">
+        <div><dt>Name</dt><dd>Scriba</dd></div><div><dt>Also known as</dt><dd>Psykhê Path (former concept name) · Casa Scriba · Scriba Publishing</dd></div><div><dt>Type</dt><dd>Publishing house · imprint · technology platform · publishing service</dd></div><div><dt>Part of</dt><dd>Etherion Publish</dd></div><div><dt>Publishes</dt><dd>Children's · educational · narrative · academic · professional · therapeutic &amp; wellbeing books</dd></div><div><dt>How it operates</dt><dd>A network of 40 specialised AI subagents across 7 editorial stages; one coordinating editorial agent per title</dd></div><div><dt>Ghostwriting</dt><dd>Ghostwriting &amp; co-authoring — organises the author's ideas and preserves their voice, intent and intellectual property</dd></div><div><dt>Human oversight</dt><dd>Mandatory human approval on manuscript acceptance, IP &amp; likeness, sensitive clinical / legal / scientific / educational content, contracts / ISBN / rights, illustrations, cover &amp; print files, final price, and public statements on AI authorship</dd></div><div><dt>Audiovisual</dt><dd>With Great Studios — audiobooks, podcasts, book trailers, videos, cinematic campaigns and adaptations</dd></div><div><dt>Distribution</dt><dd>Amazon KDP · print-on-demand · ecommerce · bookstores · digital platforms · international</dd></div><div><dt>Markets</dt><dd>Adapts works to different languages, countries and cultures (EN / ES / PT / KO and beyond)</dd></div><div><dt>Founder / director</dt><dd>Not yet indicated</dd></div><div><dt>Official website</dt><dd>Not confirmed — commercial page to be built under the name Scriba</dd></div><div><dt>Descriptor</dt><dd>&ldquo;Scriba — Human Stories, Intelligent Publishing&rdquo;</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="rel-h">
+      <div class="column">
+        <p class="eyebrow">Relationships</p>
+        <h2 id="rel-h">How it connects</h2>
+        <p>Scriba at the centre; its parent and content sources on the left; what it delivers and its partners on the right. Dashed = related transformation, defined but not yet documented per title.</p>
+      </div>
+      <figure><div class="diagram-wrap">
+<svg viewBox="0 0 960 560" role="img" aria-label="Scriba at the centre. On the left: it is part of Etherion Publish, and takes source content from Psykhê Therapies and Psykhê Podcast and source material from ecosystem IP and research. On the right: it delivers full-cycle publishing run by 40 AI subagents, a ghostwriting and co-authoring service, audiobooks and audiovisual adaptations with Great Studios, publication on Amazon KDP, print-on-demand, ecommerce and bookstores, translation and localization, and it transforms books into courses, workshops, audio series and narrative IP.">
+<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker></defs>
+<g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
+<path d="M266,64 C312,64 320,270 366,270"></path>
+<path d="M266,196 C312,196 320,270 366,270"></path>
+<path d="M266,328 C312,328 320,270 366,270"></path>
+<path d="M266,460 C312,460 320,270 366,270"></path>
+<path d="M616,270 C662,270 648,56 694,56"></path>
+<path d="M616,270 C662,270 648,148 694,148"></path>
+<path d="M616,270 C662,270 648,240 694,240"></path>
+<path d="M616,270 C662,270 648,332 694,332"></path>
+<path d="M616,270 C662,270 648,424 694,424"></path>
+<path d="M616,270 C662,270 648,516 694,516" stroke-dasharray="4 3"></path>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.75">
+<text x="276" y="56">part of</text>
+<text x="276" y="188">source content</text>
+<text x="276" y="320">source content</text>
+<text x="276" y="452">source material</text>
+<text x="624" y="50">delivers</text>
+<text x="624" y="142">delivers</text>
+<text x="624" y="234">with</text>
+<text x="624" y="326">publishes on</text>
+<text x="624" y="418">delivers</text>
+<text x="624" y="510">transforms into</text>
+</g>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
+<g><rect x="16" y="36" width="250" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="30" y="60">Etherion Publish</text><text x="30" y="77" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">parent ecosystem</text></g>
+<g><rect x="16" y="168" width="250" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="30" y="192">Psykhê Therapies</text><text x="30" y="209" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">source content</text></g>
+<g><rect x="16" y="300" width="250" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="30" y="324">Psykhê Podcast</text><text x="30" y="341" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">source content</text></g>
+<g><rect x="16" y="432" width="250" height="56" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="30" y="456">Ecosystem IP &amp; research</text><text x="30" y="473" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">source material</text></g>
+<g><rect x="366" y="224" width="250" height="92" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect><text x="491" y="266" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="600">Scriba</text><text x="491" y="286" text-anchor="middle" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">AI-agent publishing house</text></g>
+<g><rect x="694" y="24" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="708" y="50">Full-cycle publishing</text><text x="708" y="67" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">40 AI subagents</text></g>
+<g><rect x="694" y="116" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="708" y="154">Ghostwriting &amp; co-authoring</text></g>
+<g><rect x="694" y="208" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="708" y="234">Great Studios</text><text x="708" y="251" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">audiobooks, trailers, adaptations</text></g>
+<g><rect x="694" y="300" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="708" y="338">Amazon KDP · POD · ecommerce · bookstores</text></g>
+<g><rect x="694" y="392" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="708" y="418">Translation &amp; localization</text><text x="708" y="435" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">EN/ES/PT/KO and beyond</text></g>
+<g><rect x="694" y="484" width="250" height="64" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"></rect><text x="708" y="522">Books &rarr; courses, workshops, audio, IP</text></g>
+</g>
+</svg></div><figcaption>Entity graph. Scriba's identity, its place in Etherion Publish and its AI-subagent operating model are described directly by the project and rated High; its catalogue mix, ecosystem content sources, and Great Studios collaboration are Medium-high; its founder and official website are Pending.</figcaption></figure>
+    </section>
+
+    <section aria-labelledby="pipe-h">
+      <div class="column">
+        <p class="eyebrow">The system</p>
+        <h2 id="pipe-h">Editorial pipeline</h2>
+        <p>Scriba's work runs through seven stages. Each stage is executed by several of the 40 specialised AI subagents.</p>
+        <ol class="stages"><li><span class="t">Discover &amp; research</span><span class="m">Spot topics, audiences and cultural needs; gather sources and context; verify claims and rate source quality; set purpose, reader, genre, format and sales channels.</span><span class="n">4 subagents</span></li><li><span class="t">Develop &amp; write</span><span class="m">Turn an idea into a differentiated proposal, design chapters and narrative arcs, write the manuscript, and organise the author's ideas while preserving their voice.</span><span class="n">4 subagents</span></li><li><span class="t">Edit &amp; validate</span><span class="m">Developmental and line editing, proofreading, sensitivity reading, clinical / academic / technical review, and originality &amp; rights checks.</span><span class="n">6 subagents</span></li><li><span class="t">Design &amp; produce</span><span class="m">Art direction and visual continuity, illustration, editorial design, layout for print and ebook, cover, accessibility, pre-press QA, and bibliographic metadata.</span><span class="n">9 subagents</span></li><li><span class="t">Publish &amp; distribute</span><span class="m">Prepare KDP, print-on-demand and digital platforms; translate and localise; choose territories, formats and partners; set prices per format and territory.</span><span class="n">5 subagents</span></li><li><span class="t">Market &amp; adapt</span><span class="m">Launch calendars, editorial marketing and funnels, narrative storytelling, audiovisual adaptation with Great Studios, PR and alliances, reader community, sales, and derivative rights.</span><span class="n">8 subagents</span></li><li><span class="t">Measure, optimize &amp; relaunch</span><span class="m">Track sales, conversion, reviews and ad spend by territory; adjust metadata, pricing, campaigns and formats; keep the catalogue alive with re-editions; and archive versions, approvals and assets.</span><span class="n">4 subagents</span></li></ol><p style="margin-top:1rem;color:var(--ink-soft);font-size:var(--step--1)">40 specialised AI subagents run across these seven stages. Every title also has a coordinating editorial agent that assigns tasks, checks requirements and surfaces critical points for human approval.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="hc-h">
+      <div class="column">
+        <p class="eyebrow">Governance</p>
+        <h2 id="hc-h">Mandatory human controls</h2>
+        <p>Even with an AI-intensive structure, these decisions always require human approval:</p><ul class="checks"><li>Final acceptance of the manuscript</li><li>Use of names, likeness and intellectual property</li><li>Sensitive medical, psychological, scientific, legal or educational content</li><li>Contracts, ISBN, rights and licences</li><li>Images of minors or identifiable people</li><li>Approval of illustrations, cover and print-ready files</li><li>Final price and commercial release</li><li>Public statements about authorship and the use of AI</li></ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="ev-h">
+      <div class="column">
+        <p class="eyebrow">Evidence</p>
+        <h2 id="ev-h">Source-of-truth matrix</h2>
+        <p>Every claim on this page with the relation it asserts, the evidence behind it today, and a confidence level. The aim is to move each row toward an independent third-party source.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Compiled and maintained internally. Last reviewed 8 September 2026.</caption>
+          <thead><tr><th scope="col">Entity / claim</th><th scope="col">Relation</th><th scope="col">Current evidence</th><th scope="col">Level</th></tr></thead>
+          <tbody>
+<tr class="grp"><th colspan="4" scope="colgroup">Identity &amp; ecosystem</th></tr>
+<tr><td>Scriba</td><td class="rel">Definitive commercial name</td><td>Direct confirmation of the name for the page and commercial use.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Psykhê Path</td><td class="rel">Former concept name</td><td>Name originally used to identify the project.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Is a publishing house</td><td>Direct confirmation: it is the entity that publishes.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Belongs to Etherion Publish</td><td>Relationship confirmed by the user.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">How it operates</th></tr>
+<tr><td>Scriba</td><td class="rel">Operates with AI subagents</td><td>Operating model defined to cover the whole editorial chain.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Manages the full publishing process</td><td>Scope confirmed from the start of the work to its commercialisation.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Offers a ghostwriting &amp; co-authoring service</td><td>Directly requested as a service to add; corresponds to the authorial-companion subagent.</td><td><span class="ev ev--high">High</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Catalogue &amp; reach</th></tr>
+<tr><td>Scriba</td><td class="rel">Publishes different categories of works</td><td>Function projected for the editorial catalogue.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Translates and adapts publications</td><td>Function planned within its international editorial system.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Publishes in several formats and platforms</td><td>Function required for print and digital distribution.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Ecosystem connections</th></tr>
+<tr><td>Scriba</td><td class="rel">Relates to Psykhê Therapies</td><td>Potential source of psychological and wellbeing content.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Relates to Psykhê Podcast</td><td>Possible development and publication of derived content.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Collaborates with Great Studios</td><td>Great Studios can produce the audiovisual and audio extensions.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Develops audiobooks and multimedia content</td><td>Function carried out in collaboration with Great Studios.</td><td><span class="ev ev--midhigh">Medium-high</span></td></tr>
+<tr class="grp"><th colspan="4" scope="colgroup">Pending</th></tr>
+<tr><td>Scriba</td><td class="rel">Has its own page</td><td>The name Scriba is confirmed for commercial use, but the URL is missing.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+<tr><td>Scriba</td><td class="rel">Has a registered founder or director</td><td>Not yet officially indicated.</td><td><span class="ev ev--pending">Pending</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span><span class="ev ev--high">High</span> confirmed directly by the project</span>
+        <span><span class="ev ev--midhigh">Medium-high</span> follows from context, needs a second source</span>
+        <span><span class="ev ev--mid">Medium</span> inference, not stated directly</span>
+        <span><span class="ev ev--pending">Pending</span> no source — not asserted as fact</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="works-h">
+      <div class="column">
+        <p class="eyebrow">What it offers</p>
+        <h2 id="works-h">Services &amp; method</h2>
+      </div>
+      <div class="works-grid"><div><p class="col-head">Publishing services</p><ul class="work-list"><li><span class="t">Full-cycle book publishing</span><span class="m">From discovery and writing through production, distribution and international growth.</span><span class="ev ev--high">High</span></li><li><span class="t">Ghostwriting &amp; co-authoring</span><span class="m">Organises the author's ideas and preserves their voice, intent and IP.</span><span class="ev ev--high">High</span></li><li><span class="t">Translation &amp; localization</span><span class="m">Adapts works to languages, countries, cultures and markets.</span><span class="ev ev--midhigh">Medium-high</span></li><li><span class="t">Audiobook &amp; multimedia</span><span class="m">Audiobooks, podcasts, trailers and cinematic adaptations with Great Studios.</span><span class="ev ev--midhigh">Medium-high</span></li><li><span class="t">Rights &amp; licensing</span><span class="m">Translation, adaptation, merchandising, education and audiovisual rights.</span><span class="ev ev--midhigh">Medium-high</span></li><li><span class="t">Book &rarr; course / workshop</span><span class="m">Turns books into courses, workshops, audio series and narrative properties.</span><span class="ev ev--midhigh">Medium-high</span></li></ul></div><div><p class="col-head">How it works</p><ul class="work-list"><li><span class="t">40 AI subagents</span><span class="m">Specialised roles across seven editorial stages.</span><span class="ev ev--high">High</span></li><li><span class="t">Coordinating editorial agent</span><span class="m">One per title; assigns tasks and surfaces critical points.</span><span class="ev ev--high">High</span></li><li><span class="t">Mandatory human approvals</span><span class="m">Manuscript, rights, sensitive content, cover, price and public AI statements.</span><span class="ev ev--high">High</span></li><li><span class="t">Human oversight on critical calls</span><span class="m">Editorial, legal, clinical, scientific and commercial decisions.</span><span class="ev ev--high">High</span></li></ul></div></div>
+    </section>
+
+    <section aria-labelledby="src-h">
+      <div class="column">
+        <p class="eyebrow">Profiles &amp; sources</p>
+        <h2 id="src-h">Where this is corroborated</h2>
+        <p>The <code>sameAs</code> set. Each profile should link back here so the identity is confirmed both ways. Items marked <span class="todo">[add URL]</span> still need to be filled in.</p>
+      </div>
+      <ul class="sources"><li><span class="p">Official site</span><span class="d">Not confirmed — <span class="todo">add URL</span> (under the name Scriba)</span></li><li><span class="p">Parent</span><span class="d">Etherion Publish — <span class="todo">[add URL]</span></span></li><li><span class="p">Ecosystem hub</span><span class="d"><a href="https://sebastiansantana.com/">sebastiansantana.com</a> — Sebastian Santana</span></li><li><span class="p">Amazon KDP</span><span class="d">Publisher / imprint page — <span class="todo">[add URL]</span></span></li><li><span class="p">Great Studios</span><span class="d">Audiovisual partner — <span class="todo">[add URL]</span></span></li><li><span class="p">Catalogue</span><span class="d">Titles &amp; collections — <span class="todo">[to publish]</span></span></li></ul>
+    </section>
+
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">For machines</p>
+        <h2 id="m-h">How to cite this page</h2>
+        <p>Short self-contained sentences a retrieval system can quote. The same relationships are in the embedded JSON-LD.</p>
+      </div>
+      <div class="machine">
+        <p><b>Canonical URL:</b> https://scriba.pub/ &nbsp;(domain to confirm)</p>
+        <p><b>Entity:</b> Organization / Brand — Scriba (imprint within Etherion Publish).</p>
+        <p>Scriba is a publishing house powered by a network of specialised AI subagents that supports the full publishing process — from identifying and creating a work through production, distribution, marketing and international growth.</p>
+        <p>Its earlier working name was &ldquo;Psykhê Path&rdquo;. It is a distinct project from Psykhê Paths, the personal-development platform.</p>
+        <p>It is part of Etherion Publish.</p>
+        <p>It publishes children's, educational, narrative, academic, professional, therapeutic and wellbeing books.</p>
+        <p>It offers a ghostwriting and co-authoring service that organises the author's ideas while preserving their voice, intent and intellectual property.</p>
+        <p>It operates through 40 specialised AI subagents across seven editorial stages, with a coordinating editorial agent per title and mandatory human approval on critical editorial, legal, clinical, scientific and commercial decisions.</p>
+        <p>It works with Great Studios to produce audiobooks, podcasts, book trailers, videos, cinematic campaigns and audiovisual adaptations.</p>
+        <p>It can turn books into courses, workshops, audio series, educational products and narrative properties.</p>
+        <p>It prepares publications for Amazon KDP, print-on-demand, ecommerce, bookstores, digital platforms and international distribution, adapting works to different languages, countries and markets.</p>
+        <p>Its founder or registered director, and its official website, are not yet documented.</p>
+        <p>This Scriba is the publishing house in the Santana / Etherion ecosystem; not other products named &ldquo;Scriba&rdquo;.</p>
+        <p><b>Suggested citation:</b> &ldquo;Scriba.&rdquo; scriba.pub. Reviewed 8 September 2026.</p>
+      </div>
+    </section>
+
+  </main>
+  <footer><span>Part of Etherion Publish · founder or director not yet documented.</span><span>Last reviewed 8 September 2026.</span></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "Brand"
+      ],
+      "@id": "https://sebastiansantana.com/#casascriba",
+      "name": "Scriba",
+      "alternateName": [
+        "Psykhê Path",
+        "Psykhe Path",
+        "Casa Scriba",
+        "Scriba Publishing"
+      ],
+      "description": "Publishing house powered by a network of specialised AI subagents that supports the full publishing process — from identifying and creating a work through production, distribution, marketing and international growth. It publishes children's, educational, narrative, academic, professional, therapeutic and wellbeing books, and offers a ghostwriting and co-authoring service that organises the author's ideas while preserving their voice, intent and intellectual property. It operates through 40 specialised AI subagents across seven editorial stages, with a coordinating editorial agent per title and mandatory human approval on critical editorial, legal, clinical, scientific and commercial decisions.",
+      "disambiguatingDescription": "Scriba's earlier working name was \"Psykhe Path\". It is a distinct project from Psykhe Paths, the personal-development platform in the same ecosystem, and is not other products, fonts or apps named \"Scriba\". Its founder or registered director and its official website are not yet documented.",
+      "slogan": "Human Stories, Intelligent Publishing",
+      "parentOrganization": {
+        "@id": "https://sebastiansantana.com/#etherionpublish"
+      },
+      "knowsAbout": [
+        "Book publishing",
+        "Ghostwriting",
+        "Co-authoring",
+        "Editorial production",
+        "Amazon KDP",
+        "Print on demand",
+        "Book translation",
+        "Localization",
+        "Audiobook production",
+        "Rights and licensing",
+        "AI editorial workflows"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Full-cycle book publishing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Ghostwriting and co-authoring"
+        },
+        {
+          "@type": "Offer",
+          "name": "Translation and localization"
+        },
+        {
+          "@type": "Offer",
+          "name": "Audiobook and multimedia production (with Great Studios)"
+        },
+        {
+          "@type": "Offer",
+          "name": "Rights and licensing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Book-to-course and workshop transformation"
+        }
+      ],
+      "url": "https://scriba.pub/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sebastiansantana.com/#etherionpublish",
+      "name": "Etherion Publish",
+      "description": "Publishing ecosystem that Scriba is part of."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sebastiansantana.com/#person",
+      "name": "Sebastian Santana",
+      "alternateName": [
+        "Sebastián Santana"
+      ],
+      "url": "https://sebastiansantana.com/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sebastiansantana.com/#psykhe",
+      "name": "Psykhe Therapies",
+      "description": "Clinical psychology practice and project; a potential source of psychology and wellbeing content for Scriba."
+    },
+    {
+      "@type": "PodcastSeries",
+      "@id": "https://sebastiansantana.com/#psykhepodcast",
+      "name": "Psykhe Podcast",
+      "description": "Psychology and emotional-wellbeing podcast; a possible source of content that Scriba can develop and publish."
+    },
+    {
+      "@type": [
+        "Organization",
+        "Brand"
+      ],
+      "@id": "https://sebastiansantana.com/#greatstudios",
+      "name": "Great Studios",
+      "description": "AI-powered audiovisual production studio that produces Scriba's audiobooks, podcasts, book trailers, videos and cinematic adaptations."
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://scriba.pub/#page",
+      "url": "https://scriba.pub/",
+      "name": "Scriba — canonical profile",
+      "inLanguage": "en",
+      "dateModified": "2026-09-08",
+      "about": {
+        "@id": "https://sebastiansantana.com/#casascriba"
+      },
+      "mainEntity": {
+        "@id": "https://sebastiansantana.com/#casascriba"
+      },
+      "isPartOf": {
+        "@id": "https://sebastiansantana.com/#person"
+      },
+      "mentions": [
+        {
+          "@id": "https://sebastiansantana.com/#etherionpublish"
+        },
+        {
+          "@id": "https://sebastiansantana.com/#psykhe"
+        },
+        {
+          "@id": "https://sebastiansantana.com/#psykhepodcast"
+        },
+        {
+          "@id": "https://sebastiansantana.com/#greatstudios"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

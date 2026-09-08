@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://scriba.pub/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scriba.pub/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://scriba.pub/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://scriba.pub/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://scriba.pub/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scriba.pub/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://scriba.pub/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scriba.pub/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://scriba.pub/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://scriba.pub/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://scriba.pub/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scriba.pub/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://scriba.pub/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scriba.pub/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://scriba.pub/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://scriba.pub/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://scriba.pub/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scriba.pub/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://scriba.pub/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scriba.pub/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://scriba.pub/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://scriba.pub/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://scriba.pub/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scriba.pub/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+</urlset>
