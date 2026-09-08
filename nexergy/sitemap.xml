@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nexergy.us/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexergy.us/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nexergy.us/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nexergy.us/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nexergy.us/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexergy.us/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://nexergy.us/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexergy.us/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nexergy.us/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nexergy.us/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nexergy.us/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexergy.us/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://nexergy.us/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexergy.us/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nexergy.us/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nexergy.us/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nexergy.us/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexergy.us/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://nexergy.us/ko</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexergy.us/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nexergy.us/es"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nexergy.us/pt"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://nexergy.us/ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nexergy.us/"/>
+    <lastmod>2026-09-08</lastmod>
+  </url>
+</urlset>
