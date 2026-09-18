@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://psykhepodcast.com/sitemap.xml
+Sitemap: https://aydea0260.github.io/sitemap.xml

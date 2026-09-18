@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://seretei.pub/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seretei.pub/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://seretei.pub/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://seretei.pub/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://seretei.pub/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seretei.pub/"/>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aydea0260.github.io/seretei/es</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://seretei.pub/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seretei.pub/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://seretei.pub/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://seretei.pub/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://seretei.pub/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seretei.pub/"/>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aydea0260.github.io/seretei</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://seretei.pub/pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seretei.pub/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://seretei.pub/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://seretei.pub/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://seretei.pub/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seretei.pub/"/>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aydea0260.github.io/seretei/ko</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://seretei.pub/ko</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://seretei.pub/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://seretei.pub/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://seretei.pub/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://seretei.pub/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://seretei.pub/"/>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aydea0260.github.io/seretei/pt</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
 </urlset>

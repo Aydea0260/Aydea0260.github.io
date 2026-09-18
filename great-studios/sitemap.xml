@@ -1,39 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://greatstudios.ai/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://greatstudios.ai/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://greatstudios.ai/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://greatstudios.ai/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://greatstudios.ai/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://greatstudios.ai/"/>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://aydea0260.github.io/great-studios/es</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://greatstudios.ai/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://greatstudios.ai/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://greatstudios.ai/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://greatstudios.ai/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://greatstudios.ai/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://greatstudios.ai/"/>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://aydea0260.github.io/great-studios</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://greatstudios.ai/pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://greatstudios.ai/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://greatstudios.ai/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://greatstudios.ai/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://greatstudios.ai/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://greatstudios.ai/"/>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://aydea0260.github.io/great-studios/ko</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
   <url>
-    <loc>https://greatstudios.ai/ko</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://greatstudios.ai/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://greatstudios.ai/es"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://greatstudios.ai/pt"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://greatstudios.ai/ko"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://greatstudios.ai/"/>
-    <lastmod>2026-09-07</lastmod>
+    <loc>https://aydea0260.github.io/great-studios/pt</loc>
+    <lastmod>2026-09-13</lastmod>
   </url>
 </urlset>
