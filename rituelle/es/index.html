@@ -3,302 +3,422 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rituelle</title>
-<meta name="description" content="Referencia canónica de Rituelle — una experiencia integral de bienestar y belleza que combina servicios de manicure, pedicure y cuidado personal, gestión inteligente de turnos y un personal shopper impulsado por inteligencia artificial." />
+<title>Rituelle — El cuidado personal, hecho ritual</title>
+<meta name="description" content="Rituelle es una experiencia de bienestar y belleza: manicure, pedicure y tratamientos de belleza y bienestar, gestión inteligente de turnos y un personal shopper con IA con recomendaciones hechas para ti." />
+<meta name="theme-color" content="#f7f1ec" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1117" media="(prefers-color-scheme: dark)" />
 <link rel="canonical" href="https://aydea0260.github.io/rituelle/es" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Rituelle — bienestar y belleza conectados, con personal shopper de IA" />
-<meta property="og:description" content="Referencia canónica de Rituelle — una experiencia integral de bienestar y belleza que combina servicios de manicure, pedicure y cuidado personal, gestión inteligente de turnos y un personal shopper impulsado por inteligencia artificial." />
+<meta property="og:site_name" content="Rituelle" />
+<meta property="og:url" content="https://aydea0260.github.io/rituelle/es" />
+<meta property="og:title" content="Rituelle — El cuidado personal, hecho ritual" />
+<meta property="og:description" content="Rituelle es una experiencia de bienestar y belleza: manicure, pedicure y tratamientos de belleza y bienestar, gestión inteligente de turnos y un personal shopper con IA con recomendaciones hechas para ti." />
+<meta name="twitter:card" content="summary" />
 <link rel="alternate" hreflang="en" href="https://aydea0260.github.io/rituelle" />
 <link rel="alternate" hreflang="es" href="https://aydea0260.github.io/rituelle/es" />
 <link rel="alternate" hreflang="pt-BR" href="https://aydea0260.github.io/rituelle/pt" />
 <link rel="alternate" hreflang="ko" href="https://aydea0260.github.io/rituelle/ko" />
 <link rel="alternate" hreflang="x-default" href="https://aydea0260.github.io/rituelle" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%234a2340'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23ecd2c9' font-style='italic'%3ER%3C/text%3E%3C/svg%3E" />
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-  :root{
-    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
-    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
-    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
-    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
-    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
-    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
-    --display:'Newsreader',Georgia,'Times New Roman',serif;
-    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
-  }
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
-    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
-    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
-    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
-  :root[data-theme="dark"]{
-    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
-    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
-    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
-    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
-  *,*::before,*::after{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased}
-  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
-  .column{max-width:65ch}
-  a{color:var(--accent);text-underline-offset:2px}
-  a:hover{color:var(--accent-soft)}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  .skip{position:absolute;left:-999px;top:0}
-  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
-  .masthead{margin-bottom:2.2rem}
-  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
-  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
-  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
-  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
-  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
-  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
-  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
-  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
-  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
-  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
-  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
-  section{margin-top:clamp(3rem,7vw,5rem)}
-  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
-  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
-  p{margin:0 0 1rem}
-  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
-  .lead .pending{font-family:var(--mono);font-size:.62em;letter-spacing:.03em;color:var(--ink-faint);white-space:nowrap;vertical-align:.15em}
-  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
-  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
-  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
-  .facts dd{margin:0}
-  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
-  figure{margin:0}
-  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
-  .diagram-wrap svg{display:block;min-width:640px;width:100%;height:auto;color:var(--ink)}
-  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
-  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
-  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
-  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
-  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
-  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
-  tbody tr:last-child td{border-bottom:0}
-  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
-  td .rel{color:var(--ink-soft);font-size:.9rem}
-  td cite{font-style:italic}
-  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
-  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
-  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
-  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
-  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
-  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
-  .legend span{display:inline-flex;align-items:center;gap:.45rem}
-  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
-  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
-  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
-  .work-list li:first-child{border-top:1px solid var(--line-strong)}
-  .work-list .t{font-weight:500}
-  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
-  .work-list .ev{align-self:flex-start;margin-top:.3rem}
-  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
-  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
-  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
-  .sources .p{font-weight:500}
-  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
-  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
-  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
-  .machine b{color:var(--ink);font-weight:500}
-  .machine p{margin:0 0 .55rem}
-  .machine p:last-child{margin:0}
-  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+:root{
+  --bg:#f7f1ec;--bg-2:#efe4dc;--surface:#fcf9f6;--ink:#2b1a26;--ink-soft:#6c5663;--ink-faint:#8f7b86;
+  --plum:#4a2340;--plum-2:#6b3f6b;--rose:#c4877f;--blush:#ecd2c9;--gold:#b8925f;
+  --line:rgba(74,35,64,.14);--line-strong:rgba(74,35,64,.28);--on-plum:#f7ece9;
+  --arch-top:#f1d9d0;--arch-bot:#dcb3aa;--sun-a:#fbeee6;--sun-b:#efcfc4;
+  --n1:#e9c6b8;--n2:#c98b86;--n3:#6e2239;--n4:#d9b98a;--n5:#4a2340;
+  --display:'Cormorant Garamond','Noto Serif KR',Georgia,serif;
+  --body:'Jost','Noto Sans KR',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --shadow:0 30px 60px -30px rgba(74,35,64,.35);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1a1117;--bg-2:#22161e;--surface:#281b24;--ink:#f5e9ee;--ink-soft:#c9b3bf;--ink-faint:#9d8793;
+  --plum:#e4bcd6;--plum-2:#c99cd2;--rose:#e0a39a;--blush:#3b2530;--gold:#d4b07c;
+  --line:rgba(244,220,232,.12);--line-strong:rgba(244,220,232,.24);--on-plum:#2b1a26;
+  --arch-top:#4a2a3a;--arch-bot:#2d1a25;--sun-a:#6b3f55;--sun-b:#3f2533;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#1a1117;--bg-2:#22161e;--surface:#281b24;--ink:#f5e9ee;--ink-soft:#c9b3bf;--ink-faint:#9d8793;
+  --plum:#e4bcd6;--plum-2:#c99cd2;--rose:#e0a39a;--blush:#3b2530;--gold:#d4b07c;
+  --line:rgba(244,220,232,.12);--line-strong:rgba(244,220,232,.24);--on-plum:#2b1a26;
+  --arch-top:#4a2a3a;--arch-bot:#2d1a25;--sun-a:#6b3f55;--sun-b:#3f2533;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.7);color-scheme:dark;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:12px;top:12px;background:var(--surface);padding:.6rem .9rem;z-index:50;border:1px solid var(--line-strong)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+.eyebrow{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:500;margin:0 0 1rem}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.01em;margin:0;text-wrap:balance;color:var(--ink)}
+h1 em,h2 em{font-style:italic;color:var(--plum-2)}
+h2{font-size:clamp(2.2rem,1.5rem + 3vw,3.6rem);line-height:1.05}
+p{margin:0 0 1rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:999px;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:transform .25s ease,background .25s ease,color .25s ease}
+.btn--solid{background:var(--plum);color:var(--on-plum)}
+.btn--solid:hover{transform:translateY(-2px);background:var(--plum-2)}
+.btn--ghost{border:1px solid var(--line-strong);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--ink)}
+.btn svg{width:16px;height:16px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.logo{font-family:var(--display);font-size:1.7rem;letter-spacing:.32em;text-decoration:none;font-weight:500;padding-left:.32em}
+.nav ul{list-style:none;display:flex;gap:2rem;margin:0;padding:0;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.nav ul a{text-decoration:none;color:var(--ink-soft)}
+.nav ul a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.langs{display:flex;gap:.15rem;font-size:.72rem;letter-spacing:.1em}
+.langs a{padding:.3rem .45rem;text-decoration:none;color:var(--ink-faint);border-radius:4px}
+.langs a[aria-current="page"]{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:4px}
+.nav .btn{padding:.6rem 1.1rem;font-size:.7rem}
+@media (max-width:900px){.nav ul{display:none}}
+@media (max-width:520px){.nav .btn{display:none}.logo{font-size:1.35rem;letter-spacing:.24em}}
+
+/* hero */
+.hero{position:relative;padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(3rem,1.6rem + 6vw,6.2rem);line-height:.95;margin-bottom:1.6rem}
+.hero .lede{font-size:clamp(1.05rem,1rem + .3vw,1.2rem);color:var(--ink-soft);max-width:34rem;margin-bottom:2.2rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-meta{margin-top:2.6rem;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint)}
+.hero-visual{position:relative}
+.hero-art{width:100%;height:auto;max-height:78vh}
+.nail{transform-box:fill-box;transform-origin:50% 100%;animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.seal{position:absolute;left:-1rem;bottom:8%;width:132px;height:132px;animation:spin 28s linear infinite}
+.seal text{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;fill:var(--ink-soft);font-family:var(--body)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-visual{max-width:420px;margin:0 auto;width:100%}.seal{width:100px;height:100px;left:0}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:1.1rem 0}
+.marquee-track{display:flex;width:max-content;animation:scroll 38s linear infinite}
+.marquee span{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,1rem + 1.2vw,1.9rem);padding:0 1.6rem;white-space:nowrap;color:var(--ink)}
+.marquee span::after{content:"\2726";font-style:normal;font-size:.7em;color:var(--gold);margin-left:3.2rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section.block{padding:clamp(4.5rem,9vw,8rem) 0}
+
+/* philosophy */
+.phil .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:end}
+.phil .txt p{font-size:1.15rem;color:var(--ink-soft);max-width:32rem}
+.phil .txt p:first-child{font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1vw,2rem);line-height:1.3;color:var(--ink)}
+.pillars{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-strong);margin-top:1rem}
+.pillars div{padding:1.8rem 1.5rem 0 0}
+.pillars div+div{padding-left:1.5rem;border-left:1px solid var(--line)}
+.pillars b{display:block;font-family:var(--display);font-weight:500;font-size:1.6rem;font-style:italic;color:var(--plum-2);margin-bottom:.3rem}
+.pillars span{color:var(--ink-soft);font-size:.95rem}
+@media (max-width:760px){.phil .wrap{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.pillars div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}.pillars div{padding:1.3rem 0}}
+
+/* services */
+.services{background:var(--bg-2)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.sec-head p{max-width:24rem;color:var(--ink-soft);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{position:relative;background:var(--surface);border-radius:220px 220px 18px 18px;padding:3.2rem 2rem 2.2rem;text-align:center;border:1px solid var(--line);transition:transform .4s ease,box-shadow .4s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card .num{font-family:var(--display);font-style:italic;color:var(--gold);font-size:1.1rem}
+.card .ico{width:64px;height:64px;margin:1.2rem auto 1.4rem;color:var(--plum-2);background:var(--blush);border-radius:50%;padding:12px}
+.card .sub{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .4rem}
+.card h3{font-size:2.1rem;line-height:1.1;margin-bottom:.9rem}
+.card p{color:var(--ink-soft);font-size:.98rem;margin:0}
+.svc-note{margin-top:2.2rem;text-align:center;color:var(--ink-soft);font-size:.95rem}
+.svc-note a{color:var(--plum-2)}
+@media (max-width:860px){.cards{grid-template-columns:1fr;max-width:28rem;margin:0 auto}}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid var(--line-strong)}
+.steps li{padding:2rem 1.5rem 0 0;counter-increment:s;position:relative}
+.steps li+li{padding-left:1.5rem;border-left:1px solid var(--line)}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--display);font-size:3.4rem;line-height:1;color:var(--rose);font-style:italic;margin-bottom:1rem}
+.steps h3{font-size:1.6rem;margin-bottom:.5rem}
+.steps p{color:var(--ink-soft);font-size:.96rem;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.steps li:nth-child(3){padding-left:0;border-left:0}.steps li{padding-bottom:2rem}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.steps li,.steps li+li{padding-left:0;border-left:0;border-top:1px solid var(--line)}.steps li:first-child{border-top:0}}
+
+/* ai */
+.ai{background:var(--plum);color:var(--on-plum);position:relative;overflow:hidden}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ai{background:#2e1d29;color:var(--ink)}}
+:root[data-theme="dark"] .ai{background:#2e1d29;color:var(--ink)}
+.ai h2{color:inherit}
+.ai h2 em{color:var(--blush-on,#e9b9ae)}
+.ai .eyebrow{color:#e0a39a}
+.ai .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.ai .intro{opacity:.85;font-size:1.08rem;max-width:32rem;margin:1.4rem 0 2rem}
+.feats{list-style:none;padding:0;margin:0}
+.feats li{padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:2rem 1fr;gap:.2rem .8rem}
+.feats li::before{content:"\2726";color:var(--gold);grid-row:span 2}
+.feats b{font-weight:500;letter-spacing:.02em}
+.feats span{opacity:.75;font-size:.95rem}
+.mocks{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.phone{background:#fbf6f2;color:#2b1a26;border-radius:32px;padding:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.55);border:6px solid #1c1218}
+.phone .bar{display:flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.06em;padding:.4rem .4rem .8rem;border-bottom:1px solid rgba(74,35,64,.12);margin-bottom:.8rem;font-weight:500}
+.phone .bar i{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#e9c6b8,#6b3f6b);flex:none}
+.bub{font-size:.78rem;line-height:1.45;padding:.6rem .8rem;border-radius:14px;margin-bottom:.6rem;max-width:88%}
+.bub.me{background:#4a2340;color:#f7ece9;margin-left:auto;border-bottom-right-radius:4px}
+.bub.ai-b{background:#efe4dc;border-bottom-left-radius:4px}
+.sw{display:flex;gap:.4rem;margin:.2rem 0 .7rem}
+.sw div{flex:1;text-align:center;font-size:.6rem;color:#6c5663}
+.sw div i{display:block;height:34px;border-radius:14px 14px 6px 6px;margin-bottom:.3rem;border:1px solid rgba(0,0,0,.06)}
+.prod{display:flex;gap:.6rem;align-items:center;background:#fff;border:1px solid rgba(74,35,64,.12);border-radius:12px;padding:.55rem}
+.prod i{width:38px;height:46px;border-radius:8px;background:linear-gradient(180deg,#d9b98a,#b8925f);flex:none;position:relative}
+.prod i::after{content:"";position:absolute;left:12px;top:-6px;width:14px;height:8px;background:#2b1a26;border-radius:2px}
+.prod small{display:block;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:#8f7b86}
+.prod b{font-size:.76rem;font-weight:500;display:block}
+.prod u{text-decoration:none;font-size:.62rem;color:#6b3f6b;font-weight:500}
+.phone.two{margin-top:3.5rem}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:.3rem;margin:.6rem 0}
+.days span{text-align:center;font-size:.64rem;padding:.45rem 0;border-radius:10px;border:1px solid rgba(74,35,64,.12);color:#6c5663}
+.days span.on{background:#4a2340;color:#f7ece9;border-color:#4a2340}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;margin-bottom:.8rem}
+.slots span{font-size:.7rem;text-align:center;padding:.45rem 0;border-radius:8px;background:#efe4dc}
+.slots span.on{background:#c4877f;color:#fff}
+.slots span.off{opacity:.35;text-decoration:line-through}
+.bk-svc{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500}
+.bk-btn{display:block;text-align:center;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;background:#4a2340;color:#f7ece9;border-radius:999px;padding:.6rem}
+.illus{position:absolute;right:0;top:-2.2rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+@media (max-width:900px){.ai .wrap{grid-template-columns:1fr}.mocks{max-width:34rem;margin:2rem auto 0;width:100%}}
+@media (max-width:460px){.mocks{grid-template-columns:1fr}.phone.two{margin-top:0}}
+
+/* partners */
+.partners .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.partners .lead{color:var(--ink-soft);font-size:1.1rem;margin:1.2rem 0 2rem;max-width:26rem}
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-strong)}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;padding:1.25rem 0;border-bottom:1px solid var(--line);font-family:var(--display);font-size:clamp(1.4rem,1.1rem + 1vw,2rem)}
+.plist li small{font-family:var(--body);font-size:.72rem;letter-spacing:.2em;color:var(--ink-faint)}
+@media (max-width:800px){.partners .wrap{grid-template-columns:1fr}}
+
+/* instagram band */
+.ig{text-align:center;background:radial-gradient(120% 140% at 50% 0%,var(--blush),var(--bg) 70%)}
+.ig h2{margin-bottom:.6rem}
+.ig .handle{font-family:var(--display);font-style:italic;font-size:clamp(1.4rem,1.1rem + 1.2vw,2.2rem);color:var(--plum-2);text-decoration:none;display:inline-block;margin-bottom:2rem}
+.ig .handle:hover{text-decoration:underline;text-underline-offset:6px}
+
+/* record */
+.record{padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--line)}
+.record .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.record h2{font-size:clamp(1.8rem,1.4rem + 1.6vw,2.6rem)}
+.facts{margin:0;border-top:1px solid var(--line-strong)}
+.facts div{display:grid;grid-template-columns:minmax(8rem,13rem) 1fr;gap:.2rem 1.5rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts dt{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);padding-top:.2rem}
+.facts dd{margin:0}
+.facts a{color:var(--plum-2)}
+.disamb{margin-top:1.4rem;font-size:.86rem;color:var(--ink-soft);padding-left:1rem;border-left:2px solid var(--rose)}
+@media (max-width:800px){.record .wrap{grid-template-columns:1fr}}
+@media (max-width:520px){.facts div{grid-template-columns:1fr}}
+
+footer{background:var(--bg-2);padding:3rem 0 2.2rem;font-size:.84rem;color:var(--ink-soft)}
+footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem;padding-bottom:2rem;border-bottom:1px solid var(--line)}
+footer .logo{font-size:2rem}
+footer .tag{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--ink);margin:.3rem 0 0}
+footer nav{display:flex;flex-wrap:wrap;gap:1.4rem;letter-spacing:.14em;text-transform:uppercase;font-size:.72rem}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--ink)}
+footer .bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 2rem;padding-top:1.4rem;font-size:.76rem;color:var(--ink-faint)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media print{.nav,.marquee,.seal{display:none}body{background:#fff;color:#000}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<a class="skip" href="#main">Saltar al contenido</a>
-<div class="page" lang="es">
-  <header class="masthead">
-    <p class="kicker">Perfil canónico · Fuente de verdad</p>
-    <h1>Rituelle<span class="alt">experiencia de bienestar y belleza con un personal shopper de IA</span></h1>
-    <p class="roles">Bienestar y belleza &nbsp;·&nbsp; manicure / pedicure &nbsp;·&nbsp; gestión de turnos &nbsp;·&nbsp; personal shopper con IA</p>
-    <div class="spectrum" role="presentation"></div>
-    <nav class="langs" aria-label="Idioma">
-      <a href="../" hreflang="en">EN</a>
-      <a href="./" hreflang="es" aria-current="page">ES</a>
-      <a href="../pt/" hreflang="pt-BR">PT</a>
-      <a href="../ko/" hreflang="ko">KO</a>
-    </nav>
-    <p class="disamb">Esta es <strong>Rituelle</strong>, la experiencia de bienestar y belleza asistida por IA documentada dentro del ecosistema de Sebastian Santana. <strong>No</strong> es otras marcas o productos que usan el nombre &ldquo;Rituelle&rdquo;. Su fundador/a, una ubicación física y su relación exacta con el ecosistema Aydea están <strong>por confirmar</strong>.</p>
-    <aside class="draft-note"><strong>Borrador de trabajo</strong> &mdash; semilla de la referencia oficial. Antes de publicar: añadir los enlaces verificados en <em>Perfiles y fuentes</em> y confirmar lo marcado como <em>Pendiente</em> (fundador/a, ubicación física, relación con Aydea, sitio web). Nada marcado como <em>Pendiente</em> se presenta como hecho establecido.</aside>
-  </header>
-  <main id="main">
+<a class="skip" href="#main">Ir al contenido</a>
 
-    <section class="column" aria-labelledby="claim-h">
-      <p class="eyebrow">Declaración de identidad</p>
-      <h2 id="claim-h">Qué es Rituelle</h2>
-      <p class="lead">Rituelle es una experiencia integral de bienestar y belleza que combina <strong>servicios de manicure, pedicure y cuidado personal</strong>, <strong>gestión inteligente de turnos</strong> y un <strong>personal shopper impulsado por inteligencia artificial</strong>. Convierte el cuidado personal en una experiencia conectada, con recomendaciones y experiencias adaptadas a cada persona. <span class="pending">[fundador/a, ubicación y el vínculo exacto con el ecosistema Aydea por confirmar]</span></p>
-      <p>Esta página ofrece a buscadores y asistentes de IA un registro único y coherente para citar ante <em>&laquo;Qué es Rituelle?&raquo;</em>. El JSON-LD incrustado refleja el texto visible. Las filas marcadas como <em>Pendiente</em> no se afirman como hecho.</p>
-    </section>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Rituelle">RITUELLE</a>
+    <ul>
+      <li><a href="#ritual">El ritual</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#ai">Shopper IA</a></li>
+    </ul>
+    <div class="nav-right">
+      <nav class="langs" aria-label="Idioma"><a href="../" hreflang="en">EN</a><a href="./" hreflang="es" aria-current="page">ES</a><a href="../pt/" hreflang="pt-BR">PT</a><a href="../ko/" hreflang="ko">KO</a></nav>
+      <a class="btn btn--solid" href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">Reservar</a>
+    </div>
+  </div>
+</header>
 
-    <section class="column" aria-labelledby="id-h">
-      <p class="eyebrow">Identidad</p>
-      <h2 id="id-h">De un vistazo</h2>
-      <dl class="facts">
-        <div><dt>Nombre</dt><dd>Rituelle</dd></div>
-        <div><dt>También conocido como</dt><dd>Rituelle Wellness · Rituelle Beauty &amp; Lifestyle Experience (provisional)</dd></div>
-        <div><dt>Tipo</dt><dd>Marca / servicio / experiencia de wellness y belleza asistida por IA</dd></div>
-        <div><dt>Ofrece</dt><dd>Manicure · pedicure · tratamientos de belleza y bienestar · reserva de turnos · personal shopper con IA · recomendaciones personalizadas</dd></div>
-        <div><dt>Clientes</dt><dd>Personas que buscan centralizar belleza, autocuidado, compras y organización de citas en una experiencia personalizada</dd></div>
-        <div><dt>Se conecta con</dt><dd>El ecosistema Aydea y sus soluciones de IA (relación exacta por confirmar)</dd></div>
-        <div><dt>Posibles aliados</dt><dd>Salones de belleza · especialistas en bienestar · marcas cosméticas · comercios de moda · proveedores de productos</dd></div>
-        <div><dt>Ubicación física</dt><dd>No confirmada</dd></div>
-        <div><dt>Sitio web oficial</dt><dd>No confirmado</dd></div>
-      </dl>
-    </section>
-
-    <section aria-labelledby="rel-h">
-      <div class="column">
-        <p class="eyebrow">Relaciones</p>
-        <h2 id="rel-h">Cómo se conecta</h2>
-        <p>La experiencia en el centro; a la izquierda el ecosistema de IA del que podría apoyarse y sus clientes; a la derecha los servicios que ofrece y sus posibles aliados. Discontinuo = aún sin confirmar.</p>
-      </div>
-      <figure><div class="diagram-wrap">
-<svg viewBox="0 0 920 470" role="img" aria-label="Rituelle en el centro. Podría apoyarse en el ecosistema Aydea para la infraestructura de IA (pendiente). Sus clientes usan la experiencia para centralizar cuidado y compras. Rituelle ofrece manicure y pedicure, tratamientos de belleza y bienestar, gestión inteligente de turnos y un personal shopper con IA, y podría formar alianzas con salones y marcas cosméticas y de moda (pendiente).">
-<defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"></path></marker></defs>
-<g stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.55" marker-end="url(#arw)">
-<path d="M250,96 C300,96 300,220 344,232" stroke-dasharray="4 3"></path>
-<path d="M250,346 C300,346 300,252 344,244"></path>
-<path d="M604,236 C644,236 652,56 682,56"></path>
-<path d="M604,240 C644,240 652,132 682,132"></path>
-<path d="M604,244 C644,244 652,208 682,208"></path>
-<path d="M604,248 C644,248 652,284 682,284"></path>
-<path d="M604,252 C644,252 652,368 682,368" stroke-dasharray="4 3"></path>
-</g>
-<g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="currentColor" opacity="0.75">
-<text x="258" y="150">¿infraestructura de IA? (pendiente)</text>
-<text x="258" y="330">usan la experiencia</text>
-<text x="620" y="90">ofrece</text>
-<text x="620" y="164">ofrece</text>
-<text x="620" y="240">ofrece</text>
-<text x="620" y="316">ofrece</text>
-<text x="620" y="400">posibles alianzas</text>
-</g>
-<g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="currentColor">
-<g><rect x="20" y="70" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"></rect><text x="34" y="94">Ecosistema Aydea</text><text x="34" y="111" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">soluciones de IA · relación por confirmar</text></g>
-<g><rect x="20" y="322" width="230" height="52" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.2"></rect><text x="34" y="346">Clientes</text><text x="34" y="363" font-size="10" opacity="0.65" font-family="IBM Plex Mono, monospace">centralizan cuidado + compras</text></g>
-<g><rect x="344" y="200" width="260" height="72" rx="4" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.6"></rect><text x="474" y="230" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="600">Rituelle</text><text x="474" y="248" text-anchor="middle" font-size="9.5" opacity="0.65" font-family="IBM Plex Mono, monospace">bienestar + belleza + IA</text></g>
-<g><rect x="682" y="34" width="234" height="44" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="696" y="55">Manicure y pedicure</text></g>
-<g><rect x="682" y="110" width="234" height="44" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="696" y="131">Belleza y bienestar</text></g>
-<g><rect x="682" y="186" width="234" height="44" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="696" y="207">Gestión de turnos</text></g>
-<g><rect x="682" y="262" width="234" height="44" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1.1"></rect><text x="696" y="283">Personal shopper con IA</text></g>
-<g><rect x="682" y="346" width="234" height="44" rx="4" fill="var(--surface)" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3"></rect><text x="696" y="367">salones · marcas cosméticas y de moda</text></g>
-</g>
-</svg></div><figcaption>Grafo de entidades. Los servicios, la gestión de turnos y el personal shopper con IA están descritos directamente por el equipo y, por ello, se limitan a Medio-alto hasta contar con corroboración independiente; combinar presencial y digital es Medio; el vínculo de infraestructura con Aydea, el modelo de aliados, una ubicación física y un sitio web están Pendientes.</figcaption></figure>
-    </section>
-
-    <section aria-labelledby="ev-h">
-      <div class="column">
-        <p class="eyebrow">Evidencia</p>
-        <h2 id="ev-h">Matriz de fuente de verdad</h2>
-        <p>Cada afirmación con la relación que sostiene, la evidencia que la respalda hoy y un nivel de confianza. El objetivo es llevar cada fila hacia una fuente independiente de terceros.</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <caption>Recopilada y mantenida internamente. Última revisión: 13 de septiembre de 2026.</caption>
-          <thead><tr><th scope="col">Entidad / afirmación</th><th scope="col">Relación</th><th scope="col">Evidencia actual</th><th scope="col">Nivel</th></tr></thead>
-          <tbody>
-<tr class="grp"><th colspan="4" scope="colgroup">La experiencia</th></tr>
-<tr><td>Rituelle</td><td class="rel">Es una experiencia integral de wellness</td><td>Descripción directa proporcionada por el fundador/equipo. <small>Fuente única: descripción del proyecto — requiere corroboración independiente.</small></td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Ofrece manicure y pedicure</td><td>Descripción directa del proyecto. <small>Fuente única: descripción del proyecto — requiere corroboración independiente.</small></td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Integra servicios de belleza y bienestar</td><td>Descripción directa del proyecto. <small>Fuente única: descripción del proyecto — requiere corroboración independiente.</small></td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Permite gestionar o reservar turnos</td><td>Descripción directa del proyecto. <small>Fuente única: descripción del proyecto — requiere corroboración independiente.</small></td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr class="grp"><th colspan="4" scope="colgroup">IA y personalización</th></tr>
-<tr><td>Rituelle</td><td class="rel">Incluye un personal shopper con IA</td><td>Descripción directa del proyecto. <small>Fuente única: descripción del proyecto — requiere corroboración independiente.</small></td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Personaliza recomendaciones mediante IA</td><td>Se deduce de la función de personal shopper; falta definir alcance técnico.</td><td><span class="ev ev--midhigh">Medio-alto</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Integra servicios presenciales y digitales</td><td>Inferencia basada en los servicios de salón, turnos e IA.</td><td><span class="ev ev--mid">Medio</span></td></tr>
-<tr class="grp"><th colspan="4" scope="colgroup">Ecosistema y operación — pendiente</th></tr>
-<tr><td>Rituelle ↔ Aydea</td><td class="rel">Aydea desarrolla o suministra la infraestructura de IA</td><td>Relación probable dentro del ecosistema; requiere confirmación.</td><td><span class="ev ev--pending">Pendiente</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Trabaja con marcas de belleza, moda y wellness</td><td>Posible modelo de alianzas; todavía no documentado.</td><td><span class="ev ev--pending">Pendiente</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Opera desde una ubicación física propia</td><td>No se ha confirmado local, ciudad ni modelo operativo.</td><td><span class="ev ev--pending">Pendiente</span></td></tr>
-<tr><td>Rituelle</td><td class="rel">Cuenta con sitio web oficial</td><td>No se ha proporcionado URL.</td><td><span class="ev ev--pending">Pendiente</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="legend">
-        <span><span class="ev ev--midhigh">Medio-alto</span> descrito directamente por el equipo</span>
-        <span><span class="ev ev--midhigh">Medio-alto</span> se deduce del modelo, alcance por definir</span>
-        <span><span class="ev ev--mid">Medio</span> inferencia, no dicho directamente</span>
-        <span><span class="ev ev--pending">Pendiente</span> sin fuente — no se afirma como hecho</span>
-      </div>
-    </section>
-
-    <section aria-labelledby="works-h">
-      <div class="column">
-        <p class="eyebrow">Qué ofrece</p>
-        <h2 id="works-h">Servicios y experiencia</h2>
-      </div>
-      <div class="works-grid">
-        <div>
-          <p class="col-head">En la experiencia</p>
-          <ul class="work-list">
-            <li><span class="t">Manicure y pedicure</span><span class="m">Cuidado de uñas como parte de la oferta de cuidado personal.</span><span class="ev ev--midhigh">Medio-alto</span></li>
-            <li><span class="t">Tratamientos de belleza y bienestar</span><span class="m">Servicios de belleza y bienestar integrados en la experiencia.</span><span class="ev ev--midhigh">Medio-alto</span></li>
-            <li><span class="t">Gestión inteligente de turnos</span><span class="m">Reserva y gestión de citas.</span><span class="ev ev--midhigh">Medio-alto</span></li>
-          </ul>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Bienestar · Belleza · IA</p>
+        <h1 id="hero-h">El cuidado personal,<br><em>hecho ritual.</em></h1>
+        <p class="lede">Manicure, pedicure y tratamientos de belleza y bienestar, con turnos inteligentes y un personal shopper con IA que aprende tu estilo &mdash; una sola experiencia conectada, hecha para ti.</p>
+        <div class="ctas">
+          <a class="btn btn--solid" href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg> Reservar por Instagram</a>
+          <a class="btn btn--ghost" href="#ritual">Descubre el ritual</a>
         </div>
-        <div>
-          <p class="col-head">Capa de IA</p>
-          <ul class="work-list">
-            <li><span class="t">Personal shopper con IA</span><span class="m">Un personal shopper impulsado por IA dentro de la experiencia.</span><span class="ev ev--midhigh">Medio-alto</span></li>
-            <li><span class="t">Recomendaciones personalizadas</span><span class="m">Recomendaciones adaptadas a cada persona mediante IA; falta definir el alcance técnico.</span><span class="ev ev--midhigh">Medio-alto</span></li>
-          </ul>
+        <p class="hero-meta">Manos &nbsp;·&nbsp; Pies &nbsp;·&nbsp; Bienestar &nbsp;·&nbsp; IA</p>
+      </div>
+      <div class="hero-visual">
+        <svg class="hero-art" viewBox="0 0 520 600" role="img" aria-label="Cinco uñas almendradas en la paleta de Rituelle, en abanico dentro de un arco rosado">
+<defs>
+<linearGradient id="archG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--arch-top)"/><stop offset="1" stop-color="var(--arch-bot)"/></linearGradient>
+<radialGradient id="sunG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="var(--sun-a)"/><stop offset="1" stop-color="var(--sun-b)"/></radialGradient>
+<linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<path d="M60 600V250a200 200 0 0 1 400 0v350z" fill="url(#archG)"/>
+<path d="M36 600V250a224 224 0 0 1 448 0v350" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".7"/>
+<circle cx="260" cy="232" r="92" fill="url(#sunG)"/>
+<g transform="translate(260 540)">
+<g transform="rotate(-30) translate(0 -250)"><g class="nail" style="--d:0.00s"><path d="M0,-78 C30,-78 36,-30 36,20 L36,78 L-36,78 L-36,20 C-36,-30 -30,-78 0,-78Z" fill="var(--n1)" stroke="rgba(0,0,0,.08)"/><path d="M-20,-40 C-18,-58 -10,-64 -4,-66 C-10,-50 -12,-20 -12,10 L-20,10Z" fill="url(#shine)"/></g></g>
+<g transform="rotate(-15) translate(0 -250)"><g class="nail" style="--d:0.12s"><path d="M0,-78 C30,-78 36,-30 36,20 L36,78 L-36,78 L-36,20 C-36,-30 -30,-78 0,-78Z" fill="var(--n2)" stroke="rgba(0,0,0,.08)"/><path d="M-20,-40 C-18,-58 -10,-64 -4,-66 C-10,-50 -12,-20 -12,10 L-20,10Z" fill="url(#shine)"/></g></g>
+<g transform="rotate(0) translate(0 -250)"><g class="nail" style="--d:0.24s"><path d="M0,-78 C30,-78 36,-30 36,20 L36,78 L-36,78 L-36,20 C-36,-30 -30,-78 0,-78Z" fill="var(--n3)" stroke="rgba(0,0,0,.08)"/><path d="M-20,-40 C-18,-58 -10,-64 -4,-66 C-10,-50 -12,-20 -12,10 L-20,10Z" fill="url(#shine)"/></g></g>
+<g transform="rotate(15) translate(0 -250)"><g class="nail" style="--d:0.36s"><path d="M0,-78 C30,-78 36,-30 36,20 L36,78 L-36,78 L-36,20 C-36,-30 -30,-78 0,-78Z" fill="var(--n4)" stroke="rgba(0,0,0,.08)"/><path d="M-20,-40 C-18,-58 -10,-64 -4,-66 C-10,-50 -12,-20 -12,10 L-20,10Z" fill="url(#shine)"/></g></g>
+<g transform="rotate(30) translate(0 -250)"><g class="nail" style="--d:0.48s"><path d="M0,-78 C30,-78 36,-30 36,20 L36,78 L-36,78 L-36,20 C-36,-30 -30,-78 0,-78Z" fill="var(--n5)" stroke="rgba(0,0,0,.08)"/><path d="M-20,-40 C-18,-58 -10,-64 -4,-66 C-10,-50 -12,-20 -12,10 L-20,10Z" fill="url(#shine)"/></g></g>
+</g>
+<g fill="var(--gold)">
+<path d="M92 118l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/>
+<path d="M436 176l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+<path d="M452 70l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+</g>
+</svg>
+        <svg class="seal" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><circle cx="60" cy="60" r="58" fill="var(--surface)" stroke="var(--line-strong)"/><text><textPath href="#circ">Rituelle · Wellness · Beauty · AI ·</textPath></text><text x="60" y="68" text-anchor="middle" style="font-family:var(--display);font-size:24px;letter-spacing:0;font-style:italic;fill:var(--plum-2);text-transform:none">R</text></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Manicure</span><span>Pedicure</span><span>Tratamientos de belleza</span><span>Bienestar</span><span>Turnos inteligentes</span><span>Personal shopper IA</span><span>Hecho para ti</span><span>Manicure</span><span>Pedicure</span><span>Tratamientos de belleza</span><span>Bienestar</span><span>Turnos inteligentes</span><span>Personal shopper IA</span><span>Hecho para ti</span></div></div>
+
+  <section class="block phil" id="ritual" aria-labelledby="phil-h">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">La filosofía</p>
+        <h2 id="phil-h">Belleza que <em>te recuerda.</em></h2>
+      </div>
+      <div class="txt rv">
+        <p>Rituelle reúne lo que normalmente vive por separado: el sillón del salón, tu agenda y tu lista de compras.</p>
+        <p>Cada servicio, cada turno y cada recomendación están conectados, para que cada visita sepa un poco más sobre cómo te gusta cuidarte.</p>
+      </div>
+      <div class="pillars rv"><div><b>Cuidado</b><span>Manicure, pedicure y tratamientos</span></div><div><b>Tiempo</b><span>Turnos que se adaptan a tu vida</span></div><div><b>Inteligencia</b><span>Recomendaciones adaptadas a ti</span></div></div>
+    </div>
+  </section>
+
+  <section class="block services" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><p class="eyebrow">Servicios</p><h2 id="svc-h">Los rituales</h2></div>
+        <p>Tres formas de regalarte tiempo &mdash; todas en una sola experiencia.</p>
+      </div>
+      <div class="cards"><article class="card rv"><span class="num">01</span><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c6 0 8 8 8 16v18H16V22c0-8 2-16 8-16z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M20 14c1-3 2-4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg></div><p class="sub">Manos</p><h3>Manicure</h3><p>Cuidado, forma y color de uñas &mdash; el gesto clásico del autocuidado, atento a cada detalle.</p></article><article class="card rv"><span class="num">02</span><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c5 8 10 13 10 20a10 10 0 0 1-20 0c0-7 5-12 10-20z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 42c4-3 8-3 12 0s8 3 12 0 8-3 8 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><p class="sub">Pies</p><h3>Pedicure</h3><p>Cuidado para los pies que te llevan: confort, prolijidad y un acabado impecable.</p></article><article class="card rv"><span class="num">03</span><div class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 10c5 5 5 17 0 24-5-7-5-19 0-24z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M24 34c-6-1-13-6-15-14 7 0 12 4 15 14zM24 34c6-1 13-6 15-14-7 0-12 4-15 14z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M10 40h28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><p class="sub">Cuerpo y mente</p><h3>Belleza y bienestar</h3><p>Tratamientos de belleza y bienestar integrados en la misma experiencia, para que tu autocuidado viva en un solo lugar.</p></article></div>
+      <p class="svc-note"><a href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">Carta, precios y disponibilidad &mdash; consúltanos por Instagram.</a></p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">Cómo funciona</p><h2 id="how-h">Tu ritual, en cuatro momentos</h2></div></div>
+      <ol class="steps rv"><li><h3>Reserva</h3><p>Elige tu servicio y horario en pocos toques, y gestiona o cambia tus turnos fácilmente.</p></li><li><h3>Desconecta</h3><p>Tu manicure, pedicure o tratamiento &mdash; un tiempo solo tuyo.</p></li><li><h3>Personaliza</h3><p>Recomendaciones adaptadas a ti: colores, cuidados y rutinas.</p></li><li><h3>Compra con criterio</h3><p>Tu personal shopper con IA sugiere productos acordes a tu estilo y a tu ritual.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="block ai" id="ai" aria-labelledby="ai-h">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Rituelle, digital</p>
+        <h2 id="ai-h">Un personal shopper con IA <em>a tu lado</em></h2>
+        <p class="intro">Rituelle convierte el cuidado personal en una experiencia conectada. Su personal shopper con IA y la gestión inteligente de turnos trabajan juntos, para que las recomendaciones te acompañen de un ritual al siguiente.</p>
+        <ul class="feats">
+          <li><b>Personal shopper con IA</b><span>Sugerencias personalizadas de productos y looks, adaptadas a cada persona.</span></li>
+          <li><b>Turnos inteligentes</b><span>Reserva, gestiona y reprograma tus rituales desde un solo lugar.</span></li>
+          <li><b>Un perfil, todos tus rituales</b><span>Cuidado, compras y turnos centralizados en una sola experiencia personal.</span></li>
+        </ul>
+      </div>
+      <div class="mocks rv" role="img" aria-label="Vista ilustrativa">
+        <span class="illus">Vista ilustrativa</span>
+        <div class="phone" aria-hidden="true">
+          <div class="bar"><i></i>Rituelle · Personal shopper</div>
+          <div class="bub me">Quiero un color elegante para mi manicure de esta semana.</div>
+          <div class="bub ai-b">Según tu estilo, te propongo tres tonos:</div>
+          <div class="sw">
+            <div><i style="background:#e3bfb2"></i>Nude rosado</div>
+            <div><i style="background:#6e2239"></i>Borgoña satinado</div>
+            <div><i style="background:#dcc19a"></i>Champagne</div>
+          </div>
+          <div class="prod"><i></i><div><small>Sugerido para ti</small><b>Top coat de larga duración</b><u>+ Sumar a mi ritual</u></div></div>
+        </div>
+        <div class="phone two" aria-hidden="true">
+          <div class="bar"><i></i>Tu próximo ritual</div>
+          <div class="bk-svc">Manicure + pedicure</div>
+          <div class="days"><span>Lun<br>11</span><span>Mar<br>12</span><span>Mié<br>13</span><span class="on">Jue<br>14</span><span>Vie<br>15</span></div>
+          <div class="slots"><span>10:00</span><span class="off">11:30</span><span class="on">14:00</span><span>16:30</span></div>
+          <span class="bk-btn">Confirmar turno</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section aria-labelledby="src-h">
-      <div class="column">
-        <p class="eyebrow">Perfiles y fuentes</p>
-        <h2 id="src-h">Dónde se corrobora esto</h2>
-        <p>El conjunto <code>sameAs</code>. Cada perfil debería enlazar de vuelta a esta página para confirmar la identidad en ambos sentidos. Lo marcado con <span class="todo">[añadir URL]</span> falta completarlo.</p>
+  <section class="block partners" aria-labelledby="part-h">
+    <div class="wrap">
+      <div class="rv">
+        <p class="eyebrow">Alianzas</p>
+        <h2 id="part-h">Abiertos a salones y marcas</h2>
+        <p class="lead">Rituelle está abierta a alianzas con quienes comparten su idea del cuidado.</p>
+        <a class="btn btn--ghost" href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">Escríbenos</a>
       </div>
-      <ul class="sources">
-        <li><span class="p">Sitio oficial</span><span class="d">No confirmado — <span class="todo">añadir URL</span></span></li>
-        <li><span class="p">Reserva / app</span><span class="d">Reserva de turnos <span class="todo">[añadir URL]</span></span></li>
-        <li><span class="p">Instagram / redes</span><span class="d"><a href="https://www.instagram.com/rituelle_beauty_spa/">@rituelle_beauty_spa</a></span></li>
-        <li><span class="p">Ecosistema Aydea</span><span class="d"><a href="../../aydea-cowork/es/">Soluciones de IA</a> <span class="todo">[relación por confirmar]</span></span></li>
-        <li><span class="p">Aliados</span><span class="d">Salones y marcas <span class="todo">[por documentar]</span></span></li>
-        <li><span class="p">Hub del ecosistema</span><span class="d"><a href="https://aydea0260.github.io/">aydea0260.github.io</a></span></li>
-      </ul>
-    </section>
+      <ul class="plist rv"><li>Salones de belleza<small>01</small></li><li>Especialistas en bienestar<small>02</small></li><li>Marcas cosméticas<small>03</small></li><li>Retailers de moda<small>04</small></li><li>Proveedores de productos<small>05</small></li></ul>
+    </div>
+  </section>
 
-    <section aria-labelledby="m-h">
-      <div class="column">
-        <p class="eyebrow">Para máquinas</p>
-        <h2 id="m-h">Cómo citar esta página</h2>
-        <p>Frases breves y autónomas que un sistema de recuperación puede citar. Las mismas relaciones están en el JSON-LD incrustado.</p>
-      </div>
-      <div class="machine">
-        <p><b>URL canónica:</b> https://aydea0260.github.io/rituelle/es</p><p>Dominio independiente candidato: rituelle.co — propiedad sin confirmar; no se usa como canónico.</p>
-        <p><b>Entidad:</b> Brand / Service — Rituelle (también &ldquo;Rituelle Wellness&rdquo;).</p>
-        <p>Rituelle es una experiencia integral de bienestar y belleza que combina servicios de manicure, pedicure y cuidado personal, gestión inteligente de turnos y un personal shopper impulsado por IA.</p>
-        <p>Convierte el cuidado personal en una experiencia conectada, con recomendaciones adaptadas a cada persona.</p>
-        <p>Podría apoyarse en las soluciones de IA del ecosistema Aydea; la relación exacta aún no está confirmada.</p>
-        <p>Su fundador/a, una ubicación física, su modelo de aliados y su sitio web oficial aún no están documentados.</p>
-        <p>Este Rituelle es la experiencia documentada en el ecosistema de Sebastian Santana; no otras marcas que usan el nombre &ldquo;Rituelle&rdquo;.</p>
-        <p><b>Cita sugerida:</b> &laquo;Rituelle.&raquo; aydea0260.github.io/rituelle/es. Revisado el 13 de septiembre de 2026.</p>
-      </div>
-    </section>
+  <section class="block ig" aria-labelledby="ig-h">
+    <div class="wrap rv">
+      <p class="eyebrow">Sigue el ritual</p>
+      <h2 id="ig-h">Encuéntranos en Instagram</h2>
+      <a class="handle" href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">@rituelle_beauty_spa</a><br>
+      <a class="btn btn--solid" href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8" fill="currentColor"/></svg> Abrir Instagram</a>
+    </div>
+  </section>
 
-  
-    <section data-fix="namesake-2026-09-13" aria-label="Aviso de homónimo">
-      <div class="column"><p class="eyebrow">Aviso de homónimo</p><p>Este ecosistema no está afiliado con sebastiansantana.com, un sitio de portafolio que pertenece a otro Sebastian Santana, artista visual. Esta página utiliza aydea0260.github.io como su centro canónico de identidad.</p></div>
-    </section>
-    <section data-fix="changelog-2026-09-13" aria-label="Registro de cambios">
-      <div class="column"><p class="eyebrow">Registro de cambios</p><p>13 de septiembre de 2026 — Se corrigieron las URL canónicas, se retiró el dominio del homónimo de los enlaces de identidad, se alinearon los datos estructurados y se aplicaron límites de confianza basados en evidencia.</p></div>
-    </section>
-  </main>
-  <footer><span>Mantenida por Sebastian Santana.</span><span>Última revisión: 13 de septiembre de 2026.</span></footer>
-</div>
+  <section class="record" aria-labelledby="rec-h">
+    <div class="wrap">
+      <div><p class="eyebrow">Ficha de marca</p><h2 id="rec-h">Rituelle de un vistazo</h2></div>
+      <div>
+        <dl class="facts"><div><dt>Nombre</dt><dd>Rituelle</dd></div><div><dt>También conocida como</dt><dd>Rituelle Wellness · Rituelle Beauty &amp; Lifestyle Experience</dd></div><div><dt>Tipo</dt><dd>Marca de bienestar y belleza con una capa de IA</dd></div><div><dt>Ofrece</dt><dd>Manicure · pedicure · tratamientos de belleza y bienestar · reserva de turnos · personal shopper con IA · recomendaciones personalizadas</dd></div><div><dt>Instagram</dt><dd><a href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">@rituelle_beauty_spa</a></dd></div><div><dt>Ecosistema</dt><dd><a href="https://aydea0260.github.io/">aydea0260.github.io</a> &mdash; Ecosistema de Sebastian Santana · relación con Aydea por confirmar</dd></div><div><dt>Ubicación · web · precios</dt><dd>Aún no confirmados &mdash; no se indican en esta página</dd></div></dl>
+        <p class="disamb">Esta es <strong>Rituelle</strong>, la experiencia de bienestar y belleza asistida por IA documentada dentro del ecosistema de Sebastian Santana &mdash; no otras marcas o productos que usen el nombre &ldquo;Rituelle&rdquo;. Su fundador/a, ubicación física, modelo de alianzas y relación exacta con el ecosistema Aydea aún no están confirmados.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div><a class="logo" href="./">RITUELLE</a><p class="tag">El cuidado personal, hecho ritual.</p></div>
+      <nav aria-label="Rituelle">
+        <a href="https://www.instagram.com/rituelle_beauty_spa/" rel="noopener">Instagram</a>
+        <a href="https://aydea0260.github.io/">Hub del ecosistema</a>
+        <a href="https://aydea0260.github.io/aydea-cowork/">Aydea</a>
+      </nav>
+    </div>
+    <div class="bot">
+      <span>&copy; 2026 Rituelle · https://aydea0260.github.io/rituelle</span>
+      <span>Sin relación con sebastiansantana.com, portafolio de otro Sebastian Santana (artista visual).</span>
+      <span>Última revisión: 25 de septiembre de 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -367,7 +487,7 @@
       ],
       "name": "Rituelle — perfil canónico",
       "inLanguage": "es",
-      "dateModified": "2026-09-13",
+      "dateModified": "2026-09-25",
       "about": {
         "@id": "https://aydea0260.github.io/#rituelle"
       },
