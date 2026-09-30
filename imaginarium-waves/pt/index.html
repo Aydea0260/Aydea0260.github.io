@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Imaginarium Waves — central musical</title>
+<meta name="description" content="Imaginarium Waves — a marca musical pública do Imaginarium Lab. Singles, links verificados de streaming e próximos lançamentos." />
+<link rel="canonical" href="https://aydea0260.github.io/imaginarium-waves/pt" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Imaginarium Waves — central musical" />
+<meta property="og:description" content="Imaginarium Waves — a marca musical pública do Imaginarium Lab. Singles, links verificados de streaming e próximos lançamentos." />
+<link rel="alternate" hreflang="en" href="https://aydea0260.github.io/imaginarium-waves" />
+<link rel="alternate" hreflang="es" href="https://aydea0260.github.io/imaginarium-waves/es" />
+<link rel="alternate" hreflang="pt-BR" href="https://aydea0260.github.io/imaginarium-waves/pt" />
+<link rel="alternate" hreflang="ko" href="https://aydea0260.github.io/imaginarium-waves/ko" />
+<link rel="alternate" hreflang="x-default" href="https://aydea0260.github.io/imaginarium-waves" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root{
+    --paper:#f3f5f1;--surface:#fbfcf9;--ink:#1a211e;--ink-soft:#47514b;--ink-faint:#6d766f;
+    --line:#dbe0d8;--line-strong:#c4cabe;--accent:#6b3f6b;--accent-soft:#8a5f8a;
+    --ev-high:#2f6b42;--ev-high-bg:#e3efe4;--ev-mid:#8a5a1a;--ev-mid-bg:#f1e8d9;
+    --ev-dev:#3a5570;--ev-dev-bg:#e1e8ef;--ev-pending:#6d766f;--ev-pending-line:#a9b0a5;
+    --step--1:.8125rem;--step-0:1rem;--step-1:1.1875rem;--step-3:2rem;
+    --step-4:clamp(2.2rem,1.4rem + 3.6vw,3rem);
+    --display:'Newsreader',Georgia,'Times New Roman',serif;
+    --body:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --spectrum:linear-gradient(90deg,#b0506a,#c2823f,#c3b247,#4f9d6b,#3f80a6,#5a5aa4,#8a4f8c);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}}
+  :root[data-theme="dark"]{
+    --paper:#0f130e;--surface:#161b15;--ink:#eef1ea;--ink-soft:#b6beb4;--ink-faint:#8a928a;
+    --line:#2a312a;--line-strong:#3c443a;--accent:#c99cd2;--accent-soft:#a87fb4;
+    --ev-high:#7cc58e;--ev-high-bg:#16301d;--ev-mid:#d7a660;--ev-mid-bg:#2d2616;
+    --ev-dev:#8fb2d0;--ev-dev-bg:#15222f;--ev-pending:#8a928a;--ev-pending-line:#4a524a;}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.62;-webkit-font-smoothing:antialiased}
+  .page{max-width:1120px;margin:0 auto;padding:clamp(1.25rem,4vw,3.5rem) clamp(1.25rem,5vw,4rem) 4rem}
+  .column{max-width:65ch}
+  a{color:var(--accent);text-underline-offset:2px}
+  a:hover{color:var(--accent-soft)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:0}
+  .skip:focus{left:8px;top:8px;background:var(--surface);border:1px solid var(--line-strong);padding:.5rem .75rem;z-index:10}
+  .masthead{margin-bottom:2.2rem}
+  .kicker{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 1rem}
+  h1{font-family:var(--display);font-weight:500;font-size:var(--step-4);line-height:1.05;letter-spacing:-.01em;margin:0;text-wrap:balance}
+  h1 .alt{display:block;font-size:.38em;font-style:italic;font-weight:400;color:var(--ink-soft);margin-top:.55rem}
+  .roles{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.05em;color:var(--ink-soft);margin:1.1rem 0 0}
+  .spectrum{height:3px;background:var(--spectrum);margin:1.6rem 0 0;border-radius:2px}
+  .langs{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.4rem 0 0;font-family:var(--mono);font-size:.78rem}
+  .langs a{padding:.22rem .62rem;border:1px solid var(--line-strong);border-radius:3px;text-decoration:none;color:var(--ink-soft)}
+  .langs a:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .disamb{margin:1.4rem 0 0;padding:.7rem 1rem;border-left:3px solid var(--accent);background:var(--surface);font-size:var(--step--1);color:var(--ink-soft)}
+  .draft-note{border:1px dashed var(--line-strong);background:var(--surface);padding:1rem 1.15rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);line-height:1.55}
+  .draft-note strong{color:var(--ink);font-family:var(--mono);letter-spacing:.04em;text-transform:uppercase;font-size:.82rem}
+  section{margin-top:clamp(3rem,7vw,5rem)}
+  .eyebrow{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 .6rem}
+  h2{font-family:var(--display);font-weight:500;font-size:var(--step-3);line-height:1.15;margin:0 0 1.1rem;text-wrap:balance}
+  p{margin:0 0 1rem}
+  .lead{font-family:var(--display);font-size:clamp(1.2rem,1rem + .9vw,1.45rem);line-height:1.42}
+  .lead .pending{font-family:var(--mono);font-size:.62em;letter-spacing:.03em;color:var(--ink-faint);white-space:nowrap;vertical-align:.15em}
+  .facts{border-top:1px solid var(--line-strong);margin-top:.5rem}
+  .facts div{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;gap:.25rem 1.5rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-family:var(--mono);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint)}
+  .facts dd{margin:0}
+  @media (max-width:34rem){.facts div{grid-template-columns:1fr;gap:.15rem}}
+  figure{margin:0}
+  .diagram-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:1.25rem}
+  .diagram-wrap svg{display:block;min-width:620px;width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:var(--step--1);color:var(--ink-faint);margin-top:.7rem;max-width:60ch}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:.94rem}
+  caption{text-align:left;padding:.9rem 1rem;color:var(--ink-faint);font-size:var(--step--1);border-bottom:1px solid var(--line)}
+  th,td{text-align:left;padding:.7rem 1rem;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  .grp th{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--surface);padding:.9rem 1rem .5rem;border-bottom:1px solid var(--line-strong)}
+  td .rel{color:var(--ink-soft);font-size:.9rem}
+  td cite{font-style:italic}
+  .ev{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.16rem .5rem;border-radius:3px;white-space:nowrap}
+  .ev--high{background:var(--ev-high-bg);color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--midhigh{background:transparent;color:var(--ev-high);border:1px solid var(--ev-high)}
+  .ev--mid{background:var(--ev-mid-bg);color:var(--ev-mid);border:1px solid var(--ev-mid)}
+  .ev--pending{background:transparent;color:var(--ev-pending);border:1px dashed var(--ev-pending-line)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.1rem;margin:1rem 0 0;font-size:var(--step--1);color:var(--ink-soft);align-items:center}
+  .legend span{display:inline-flex;align-items:center;gap:.45rem}
+  .works-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .work-list{list-style:none;margin:.4rem 0 0;padding:0}
+  .work-list li{padding:.75rem 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.15rem}
+  .work-list li:first-child{border-top:1px solid var(--line-strong)}
+  .work-list .t{font-weight:500}
+  .work-list .m{font-size:.88rem;color:var(--ink-soft)}
+  .work-list .ev{align-self:flex-start;margin-top:.3rem}
+  .col-head{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0}
+  .sources{list-style:none;margin:.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+  .sources li{padding:.7rem 0;border-top:1px solid var(--line)}
+  .sources .p{font-weight:500}
+  .sources .d{font-size:.88rem;color:var(--ink-soft);display:block}
+  .sources .todo{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+  .machine{border:1px solid var(--line-strong);background:var(--surface);border-radius:4px;padding:1.25rem 1.35rem;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:var(--ink-soft);overflow-x:auto}
+  .machine b{color:var(--ink);font-weight:500}
+  .machine p{margin:0 0 .55rem}
+  .machine p:last-child{margin:0}
+  footer{margin-top:clamp(3rem,7vw,5rem);padding-top:1.2rem;border-top:1px solid var(--line-strong);font-size:var(--step--1);color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media print{.draft-note,.langs{display:none}body{background:#fff;color:#000}}
+
+  .hub-grid{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:.5rem}
+  .hub-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column}
+  .hub-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--paper)}
+  .hub-card .body{padding:1rem 1.15rem 1.15rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+  .hub-card .t{font-family:var(--display);font-size:1.18rem;font-weight:600;line-height:1.25}
+  .hub-card .m{font-size:.9rem;color:var(--ink-soft)}
+  .hub-card .links{margin-top:auto;padding-top:.5rem;display:flex;flex-wrap:wrap;gap:.4rem}
+  .btn{display:inline-block;padding:.34rem .8rem;border:1px solid var(--line-strong);border-radius:3px;font-size:.85rem;text-decoration:none;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .link-list{list-style:none;margin:.5rem 0 0;padding:0}
+  .link-list li{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:.85rem 0;border-top:1px solid var(--line)}
+  .link-list li:first-child{border-top:1px solid var(--line-strong)}
+  .link-list .p{font-weight:500;min-width:9rem}
+  .link-list .d{font-size:.9rem;color:var(--ink-soft);flex:1;min-width:12rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page" lang="pt-BR">
+  <header class="masthead">
+    <p class="kicker">Central musical · Imaginarium Lab</p>
+    <h1>Imaginarium Waves<span class="alt">a marca pública do Imaginarium Lab — canções, ondas, histórias</span></h1>
+    <p class="roles">Música · singles multilíngues</p>
+    <div class="spectrum" role="presentation"></div>
+    <nav class="langs" aria-label="Language">
+      <a href="../" hreflang="en">EN</a>
+      <a href="../es/" hreflang="es">ES</a>
+      <a href="./" hreflang="pt" aria-current="page">PT</a>
+      <a href="../ko/" hreflang="ko">KO</a>
+    </nav>
+    <p class="disamb">Imaginarium Waves é a marca pública (Facebook, YouTube, rádio online) do projeto musical <strong>Imaginarium Lab</strong>. <strong>Não</strong> é afiliada à SCU Imaginarium Lab nem a nenhuma outra empresa com o mesmo nome.</p>
+  </header>
+  <main id="main">
+
+    <section aria-labelledby="col-h">
+      <div class="column">
+        <p class="eyebrow">Coleções</p>
+        <h2 id="col-h">Singles e coleções</h2>
+        <p>Cada single com seus links verificados quando disponíveis. As datas marcadas <em>Em breve</em> são lançamentos planejados — ainda não publicados.</p>
+      </div>
+      <div class="hub-grid">
+        <article class="hub-card">
+          <img src="../assets/cover-nao-sou-mais-o-mesmo.jpg" alt="Cover art — Não Sou Mais o Mesmo" loading="lazy" />
+          <div class="body">
+            <div class="t">Não Sou Mais o Mesmo</div>
+            <div class="m">Portuguese · Lançado 30 set 2026</div>
+            <div><span class="ev ev--high">No ar</span></div>
+            <div class="links">
+          <a class="btn" href="https://open.spotify.com/track/0HDSZiUeMpJzy6V2AU5SU3">Spotify</a>
+          <a class="btn" href="https://distrokid.com/hyperfollow/imaginariumlab/no-sou-mais-o-mesmo">All platforms</a>
+            </div>
+          </div>
+        </article>
+        <article class="hub-card">
+          <img src="../assets/cover-new-me-ko.jpg" alt="Cover art — New Me" loading="lazy" />
+          <div class="body">
+            <div class="t">New Me</div>
+            <div class="m">Korean · Lançamento planejado 8 out 2026</div>
+            <div><span class="ev ev--pending">Em breve</span></div>
+            <div class="links">
+            </div>
+          </div>
+        </article>
+        <article class="hub-card">
+          <img src="../assets/cover-la-bella.jpg" alt="Cover art — La Bella Que Subió al Cielo" loading="lazy" />
+          <div class="body">
+            <div class="t">La Bella Que Subió al Cielo</div>
+            <div class="m">Spanish · Lançamento planejado 22 out 2026</div>
+            <div><span class="ev ev--pending">Em breve</span></div>
+            <div class="links">
+            </div>
+          </div>
+        </article>
+        <article class="hub-card">
+          <img src="../assets/cover-mariposas.jpg" alt="Cover art — Mariposas Amarillas" loading="lazy" />
+          <div class="body">
+            <div class="t">Mariposas Amarillas</div>
+            <div class="m">Spanish · Lançamento planejado 4 nov 2026</div>
+            <div><span class="ev ev--pending">Em breve</span></div>
+            <div class="links">
+            </div>
+          </div>
+        </article>
+        <article class="hub-card">
+          <img src="../assets/cover-no-longer-zh.jpg" alt="Cover art — No Longer the Old Me" loading="lazy" />
+          <div class="body">
+            <div class="t">No Longer the Old Me</div>
+            <div class="m">Chinese · Lançamento planejado 13 nov 2026</div>
+            <div><span class="ev ev--pending">Em breve</span></div>
+            <div class="links">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="lnk-h">
+      <div class="column">
+        <p class="eyebrow">Links</p>
+        <h2 id="lnk-h">Ouça e siga</h2>
+      </div>
+      <ul class="link-list">
+        <li><span class="p"><a href="https://open.spotify.com/track/0HDSZiUeMpJzy6V2AU5SU3">Spotify</a></span><span class="d">O single no ar “Não Sou Mais o Mesmo”</span><span class="ev ev--high">No ar</span></li>
+        <li><span class="p"><a href="https://distrokid.com/hyperfollow/imaginariumlab/no-sou-mais-o-mesmo">Todas as plataformas</a></span><span class="d">HyperFollow — todas as lojas e serviços de streaming</span><span class="ev ev--high">No ar</span></li>
+        <li><span class="p"><a href="https://facebook.com/61594458105216/posts/pfbid02VpYMBXEcNQZjvq6J8j47yWfgmazWYhaw9qzT4JfPuQQyXQ51jWKcdxM4UJHP1cx4l/">Facebook</a></span><span class="d">Publicação de lançamento do single</span><span class="ev ev--high">No ar</span></li>
+        <li><span class="p">YouTube</span><span class="d">Canal em criação — URL pendente</span><span class="ev ev--pending">Pendente</span></li>
+        <li><span class="p">Podcast</span><span class="d">Ainda não lançado — em breve</span><span class="ev ev--pending">Pendente</span></li>
+        <li><span class="p">Rádio online</span><span class="d">Planejada — ainda não ativa</span><span class="ev ev--pending">Pendente</span></li>
+      </ul>
+    </section>
+
+    <section class="column" aria-labelledby="abt-h">
+      <p class="eyebrow">Sobre</p>
+      <h2 id="abt-h">O que é a Imaginarium Waves</h2>
+      <p class="lead">Imaginarium Waves é a marca pública com a qual o projeto musical <strong>Imaginarium Lab</strong> chega ao público: a página do Facebook, o canal do YouTube e a rádio online planejada. As gravações são creditadas ao Imaginarium Lab; música de <strong>Sebastian Santana</strong>; distribuição pela <strong>DistroKid</strong>.</p>
+      <p>O perfil de identidade canônico do projeto está em <a href="https://aydea0260.github.io/imaginarium-lab">aydea0260.github.io/imaginarium-lab</a>.</p>
+      <h2 id="abt-facts" style="margin-top:2rem">Em resumo</h2>
+      <dl class="facts">
+        <div><dt>Marca pública</dt><dd>Imaginarium Waves</dd></div>
+        <div><dt>Artista de gravação</dt><dd>Imaginarium Lab</dd></div>
+        <div><dt>Música</dt><dd>Sebastian Santana</dd></div>
+        <div><dt>Distribuição</dt><dd>DistroKid</dd></div>
+        <div><dt>Facebook</dt><dd>Publicação de lançamento (verificada)</dd></div>
+        <div><dt>Canal do YouTube</dt><dd>Em criação — pendente</dd></div>
+        <div><dt>Podcast</dt><dd>Não lançado — em breve</dd></div>
+        <div><dt>Rádio online</dt><dd>Planejada — não ativa</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="m-h">
+      <div class="column">
+        <p class="eyebrow">Para máquinas</p>
+        <h2 id="m-h">Como citar esta página</h2>
+      </div>
+      <div class="machine">
+        <p><b>Canonical URL:</b> https://aydea0260.github.io/imaginarium-waves</p><p>Imaginarium Waves é a marca musical pública do projeto Imaginarium Lab.</p><p>O single “Não Sou Mais o Mesmo” (português) foi lançado em 30 de setembro de 2026: Spotify https://open.spotify.com/track/0HDSZiUeMpJzy6V2AU5SU3 ; HyperFollow https://distrokid.com/hyperfollow/imaginariumlab/no-sou-mais-o-mesmo .</p><p>Planejados (ainda não publicados): “New Me” (coreano, 8 out 2026), “La Bella Que Subió al Cielo” (espanhol, 22 out 2026), “Mariposas Amarillas” (espanhol, 4 nov 2026), “No Longer the Old Me” (chinês, 13 nov 2026).</p><p>O canal do YouTube, o podcast e a rádio online estão pendentes — ainda não lançados.</p><p>As gravações são creditadas ao Imaginarium Lab; música de Sebastian Santana; distribuição pela DistroKid.</p>
+        <p><b>Suggested citation:</b> “Imaginarium Waves.” aydea0260.github.io/imaginarium-waves. Revisado em 30 de setembro de 2026.</p>
+      </div>
+    </section>
+
+    <section data-fix="namesake-2026-09-30" aria-label="Aviso de homônimos">
+      <div class="column"><p class="eyebrow">Aviso de homônimos</p><p>Este ecossistema não é afiliado ao sebastiansantana.com, portfólio de outro Sebastian Santana, artista visual. Esta página usa aydea0260.github.io como seu centro de identidade canônico.</p></div>
+    </section>
+    <section data-fix="changelog-2026-09-30" aria-label="Registro de alterações">
+      <div class="column"><p class="eyebrow">Registro de alterações</p><p>30 de setembro de 2026 — Página criada: single no ar “Não Sou Mais o Mesmo” com links verificados do Spotify / HyperFollow; quatro singles planejados marcados Em breve; canal do YouTube, podcast e rádio marcados Pendente.</p></div>
+    </section>
+  </main>
+  <footer><span>Maintained by Sebastian Santana.</span><span>Última revisão: 30 de setembro de 2026.</span></footer>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Brand",
+        "MusicGroup"
+      ],
+      "@id": "https://aydea0260.github.io/#imaginariumwaves",
+      "name": "Imaginarium Waves",
+      "disambiguatingDescription": "The public-facing music brand (Facebook, YouTube, online radio) of the Imaginarium Lab project. Not affiliated with SCU Imaginarium Lab or sebastiansantana.com.",
+      "url": "https://aydea0260.github.io/imaginarium-waves/",
+      "sameAs": [
+        "https://open.spotify.com/track/0HDSZiUeMpJzy6V2AU5SU3",
+        "https://distrokid.com/hyperfollow/imaginariumlab/no-sou-mais-o-mesmo",
+        "https://facebook.com/61594458105216/posts/pfbid02VpYMBXEcNQZjvq6J8j47yWfgmazWYhaw9qzT4JfPuQQyXQ51jWKcdxM4UJHP1cx4l/",
+        "https://aydea0260.github.io/imaginarium-lab/"
+      ],
+      "track": [
+        {
+          "@id": "https://aydea0260.github.io/#rec-nao-sou-mais-o-mesmo"
+        },
+        {
+          "@id": "https://aydea0260.github.io/#rec-new-me-ko"
+        },
+        {
+          "@id": "https://aydea0260.github.io/#rec-la-bella"
+        },
+        {
+          "@id": "https://aydea0260.github.io/#rec-mariposas"
+        },
+        {
+          "@id": "https://aydea0260.github.io/#rec-no-longer-zh"
+        }
+      ]
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://aydea0260.github.io/#rec-nao-sou-mais-o-mesmo",
+      "name": "Não Sou Mais o Mesmo",
+      "byArtist": {
+        "@id": "https://aydea0260.github.io/#imaginariumlab"
+      },
+      "datePublished": "2026-09-30",
+      "url": "https://open.spotify.com/track/0HDSZiUeMpJzy6V2AU5SU3"
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://aydea0260.github.io/#rec-new-me-ko",
+      "name": "New Me",
+      "byArtist": {
+        "@id": "https://aydea0260.github.io/#imaginariumlab"
+      }
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://aydea0260.github.io/#rec-la-bella",
+      "name": "La Bella Que Subió al Cielo",
+      "byArtist": {
+        "@id": "https://aydea0260.github.io/#imaginariumlab"
+      }
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://aydea0260.github.io/#rec-mariposas",
+      "name": "Mariposas Amarillas",
+      "byArtist": {
+        "@id": "https://aydea0260.github.io/#imaginariumlab"
+      }
+    },
+    {
+      "@type": "MusicRecording",
+      "@id": "https://aydea0260.github.io/#rec-no-longer-zh",
+      "name": "No Longer the Old Me",
+      "byArtist": {
+        "@id": "https://aydea0260.github.io/#imaginariumlab"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://aydea0260.github.io/imaginarium-waves/pt#page",
+      "url": "https://aydea0260.github.io/imaginarium-waves/pt",
+      "name": "Imaginarium Waves — central musical",
+      "inLanguage": "pt-BR",
+      "dateModified": "2026-09-30",
+      "about": {
+        "@id": "https://aydea0260.github.io/#imaginariumwaves"
+      },
+      "mainEntity": {
+        "@id": "https://aydea0260.github.io/#imaginariumwaves"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
