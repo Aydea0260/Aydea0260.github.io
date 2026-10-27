@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imaginarium Waves Opera — Chamber Operas in the Indigenous Languages of the Americas</title>
+<meta name="description" content="Imaginarium Waves Opera is the opera house of Imaginarium Waves and Great Studios: original chamber operas sung in the Indigenous languages of the Americas. First production: QUINTO SOL, the Mexica myth of the Fifth Sun, sung entirely in Nahuatl.">
+<style>
+  /* ============================================================
+     ART DIRECTION — theatre poster / printed programme
+     Palette sampled from the Quinto Sol cover art:
+     obsidian olive-black #222315 · bone #f2edd9 · gold · frieze clay
+     Type: high-contrast display serif (poster) + small-caps sans (credits)
+     No cards, no rounded corners, no shadows — hairlines and space.
+     ============================================================ */
+  :root{
+    --bg:#201f14;
+    --bg-deep:#191810;
+    --ink:#f2edd9;
+    --ink-soft:#ddd3b4;
+    --muted:#a2977c;
+    --gold:#d9a63f;
+    --gold-hi:#eec25e;
+    --clay:#a0683a;
+    --line:rgba(242,237,217,.16);
+    --line-soft:rgba(242,237,217,.09);
+    --line-gold:rgba(217,166,63,.5);
+    --serif:"Cormorant Garamond","Playfair Display",Didot,"Bodoni MT","Bodoni 72",Georgia,"Times New Roman",serif;
+    --sans:"Helvetica Neue","Segoe UI",Helvetica,Arial,"Liberation Sans",sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--serif);
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold); color:var(--bg-deep)}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px}
+  .prose{max-width:700px; margin:0 auto}
+  p{font-size:1.14rem; font-weight:500; line-height:1.75; color:var(--ink-soft); margin-bottom:1.1em}
+  .smallcaps{
+    font-family:var(--sans); text-transform:uppercase; letter-spacing:.32em;
+    font-size:.7rem; font-weight:600;
+  }
+  a{color:var(--gold-hi)}
+
+  /* ---------- programme section label ---------- */
+  section{padding:96px 0 8px}
+  .sec-head{display:flex; align-items:center; gap:22px; margin-bottom:46px}
+  .sec-head::before,.sec-head::after{content:""; flex:1; height:1px; background:var(--line)}
+  h2.sec{
+    font-family:var(--sans); font-size:.78rem; font-weight:600;
+    letter-spacing:.42em; text-transform:uppercase; color:var(--gold);
+    white-space:nowrap; text-align:center;
+  }
+
+  /* ================= HERO — the season poster ================= */
+  header.hero{
+    text-align:center; padding:58px 24px 0;
+    background:radial-gradient(1100px 480px at 50% -80px, rgba(217,166,63,.08), rgba(32,31,20,0) 62%);
+  }
+  .hero .eyebrow{
+    display:flex; align-items:center; gap:20px; max-width:760px; margin:0 auto;
+    font-family:var(--sans); font-size:.7rem; font-weight:600;
+    letter-spacing:.38em; text-transform:uppercase; color:var(--muted);
+  }
+  .hero .eyebrow::before,.hero .eyebrow::after{content:""; flex:1; height:1px; background:var(--line)}
+  .hero h1{margin-top:40px; font-weight:500}
+  .hero h1 .h1-top{
+    display:block; font-size:clamp(1.15rem,3.2vw,1.9rem);
+    letter-spacing:.52em; text-transform:uppercase; color:var(--ink);
+    margin-right:-.52em;
+  }
+  .hero h1 .h1-big{
+    display:block; font-size:clamp(6.2rem,21vw,13.5rem); line-height:.94;
+    letter-spacing:.06em; margin-right:-.06em; color:var(--gold-hi); font-weight:600;
+  }
+  .hero .tagline{
+    margin-top:30px; font-size:clamp(1.35rem,3vw,1.75rem); font-style:italic;
+    font-weight:500; color:var(--ink); line-height:1.35;
+  }
+  .hero .sub{
+    margin-top:16px; font-family:var(--sans); font-size:.7rem; font-weight:600;
+    letter-spacing:.34em; text-transform:uppercase; color:var(--muted);
+  }
+  /* the poster plate */
+  .poster{max-width:780px; margin:58px auto 0; padding:12px; border:1px solid var(--line-gold); background:var(--bg-deep)}
+  .poster img{display:block; width:100%; height:auto}
+  /* season ledger strip */
+  .stats{
+    max-width:960px; margin:54px auto 0;
+    display:grid; grid-template-columns:repeat(2,1fr);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  @media(min-width:760px){ .stats{grid-template-columns:repeat(4,1fr)} }
+  .stat{padding:20px 14px 18px; text-align:center}
+  .stat + .stat{border-left:1px solid var(--line-soft)}
+  @media(max-width:759px){ .stat:nth-child(3){border-left:none} .stat:nth-child(n+3){border-top:1px solid var(--line-soft)} }
+  .stat .v{display:block; font-size:1.65rem; font-weight:600; color:var(--ink); line-height:1.1}
+  .stat .k{display:block; margin-top:7px; font-family:var(--sans); font-size:.62rem; font-weight:600; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); line-height:1.7}
+  /* poster CTAs */
+  .cta{display:flex; gap:34px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:44px}
+  .btn-poster{
+    display:inline-block; border:1px solid var(--gold); color:var(--gold-hi);
+    padding:15px 30px; font-family:var(--sans); font-size:.74rem; font-weight:700;
+    letter-spacing:.3em; text-transform:uppercase; text-decoration:none;
+    transition:background .18s ease,color .18s ease;
+  }
+  .btn-poster:hover{background:var(--gold); color:var(--bg-deep)}
+  .link-poster{
+    font-family:var(--sans); font-size:.74rem; font-weight:600; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--ink); text-decoration:none;
+    border-bottom:1px solid var(--line-gold); padding-bottom:6px;
+  }
+  .link-poster:hover{color:var(--gold-hi)}
+  /* contents line */
+  nav.anchors{
+    max-width:1120px; margin:58px auto 0; padding:20px 24px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; gap:14px; justify-content:center; flex-wrap:wrap; align-items:center;
+    font-family:var(--sans); font-size:.68rem; font-weight:600;
+    letter-spacing:.28em; text-transform:uppercase;
+  }
+  nav.anchors a{color:var(--ink-soft); text-decoration:none}
+  nav.anchors a:hover{color:var(--gold-hi)}
+  nav.anchors .dot{color:var(--gold); letter-spacing:0}
+
+  /* ================= THE HOUSE ================= */
+  #about .lead{font-size:1.32rem; line-height:1.65; color:var(--ink)}
+  #about .lead::first-letter{
+    font-size:3.6em; line-height:.82; float:left; padding:6px 12px 0 0;
+    color:var(--gold-hi); font-weight:600;
+  }
+  .pull{
+    max-width:820px; margin:52px auto 8px; text-align:center;
+    font-size:clamp(1.7rem,4.4vw,2.5rem); font-style:italic; font-weight:500;
+    line-height:1.3; color:var(--ink);
+  }
+  .pull::before,.pull::after{
+    content:""; display:block; width:64px; height:1px; background:var(--gold); margin:0 auto 30px;
+  }
+  .pull::after{margin:30px auto 0}
+  .closing-line{text-align:center; font-size:1.25rem; margin-top:38px}
+
+  /* ================= QUINTO SOL — the dossier ================= */
+  .status-line{
+    text-align:center; font-family:var(--sans); font-size:.72rem; font-weight:700;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--gold);
+  }
+  .credstack{max-width:680px; margin:34px auto 0}
+  .credstack .row{
+    display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+    padding:11px 2px; border-bottom:1px solid var(--line-soft);
+    font-size:1.05rem; font-weight:500; color:var(--ink);
+  }
+  .credstack .row:first-child{border-top:1px solid var(--line-soft)}
+  .credstack .role{
+    font-family:var(--sans); font-size:.64rem; font-weight:600; letter-spacing:.28em;
+    text-transform:uppercase; color:var(--muted); padding-top:6px;
+  }
+  .prod-title{
+    text-align:center; margin-top:52px;
+    font-size:clamp(4.2rem,13vw,8.6rem); line-height:.95; font-weight:600;
+    letter-spacing:.045em; color:var(--gold-hi);
+  }
+  .hookline{
+    text-align:center; margin-top:20px;
+    font-size:clamp(1.4rem,3.4vw,1.9rem); font-style:italic; font-weight:500; color:var(--ink);
+  }
+  .prod-body{margin-top:44px}
+  .facts{
+    max-width:960px; margin:40px auto 0; padding:18px 8px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    display:flex; justify-content:center; flex-wrap:wrap; gap:12px 0;
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.26em; text-transform:uppercase; color:var(--ink-soft); text-align:center;
+  }
+  .facts span{padding:0 20px}
+  .facts span + span{border-left:1px solid var(--line)}
+  .note{
+    max-width:700px; margin:38px auto 0; padding:4px 0 4px 22px;
+    border-left:1px solid var(--gold);
+    font-size:1rem; font-style:italic; line-height:1.7; color:var(--muted);
+  }
+  .embed-wrap{max-width:920px; margin:56px auto 0; border:1px solid var(--line); background:#000}
+  .embed-wrap .frame{position:relative; padding-top:56.25%}
+  .embed-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .embed-cap{
+    max-width:920px; margin:16px auto 0; text-align:center;
+    font-family:var(--sans); font-size:.68rem; font-weight:600;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--muted); line-height:2;
+  }
+  .embed-cap strong{color:var(--ink); font-weight:700}
+
+  /* ================= THE EIGHT SCENES — printed programme ================= */
+  .scenes-intro{text-align:center; max-width:700px; margin:0 auto 14px}
+  .scene{
+    display:grid; grid-template-columns:1fr; gap:6px;
+    padding:28px 4px; border-top:1px solid var(--line);
+  }
+  .scene:last-child{border-bottom:1px solid var(--line)}
+  @media(min-width:760px){
+    .scene{grid-template-columns:170px 1fr auto; gap:28px; align-items:baseline}
+  }
+  .scene .num{font-weight:600; color:var(--gold-hi); font-size:1.5rem; line-height:1.15}
+  .scene .num .lbl{
+    display:block; font-family:var(--sans); font-size:.62rem; font-weight:600;
+    letter-spacing:.32em; text-transform:uppercase; color:var(--muted); margin-bottom:5px;
+  }
+  .scene h3{font-size:1.42rem; font-weight:600; line-height:1.3; color:var(--ink)}
+  .scene .dur{font-size:1.02rem; font-style:italic; color:var(--muted); margin-top:5px}
+  .scene .watch{
+    font-family:var(--sans); font-size:.68rem; font-weight:700; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--gold-hi); text-decoration:none; white-space:nowrap;
+  }
+  .scene .watch:hover{text-decoration:underline; text-underline-offset:5px}
+
+  /* ================= THE SOUND — programme columns ================= */
+  .sound-grid{display:grid; grid-template-columns:1fr; gap:0}
+  @media(min-width:760px){ .sound-grid{grid-template-columns:1fr 1fr 1fr; gap:44px} }
+  .sound-item{border-top:1px solid var(--line-gold); padding:22px 0 6px; margin-bottom:26px}
+  .sound-item h3{
+    font-family:var(--sans); font-size:.72rem; font-weight:700; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:14px;
+  }
+  .sound-item p{font-size:1.06rem; margin:0}
+
+  /* ================= CREDITS — the ledger ================= */
+  .credits-intro{text-align:center; max-width:700px; margin:0 auto 8px}
+  .ledger{max-width:920px; margin:34px auto 0}
+  .ledger .row{
+    display:grid; grid-template-columns:1fr; gap:2px;
+    padding:17px 2px; border-bottom:1px solid var(--line-soft);
+  }
+  .ledger .row:first-child{border-top:1px solid var(--line)}
+  @media(min-width:760px){ .ledger .row{grid-template-columns:250px 1fr; gap:26px} }
+  .ledger .role{
+    font-family:var(--sans); font-size:.64rem; font-weight:600; letter-spacing:.28em;
+    text-transform:uppercase; color:var(--gold); padding-top:7px;
+  }
+  .ledger .val{font-size:1.12rem; font-weight:500; color:var(--ink); line-height:1.55}
+  .artefacts-head{
+    max-width:920px; margin:44px auto 0; text-align:left;
+    font-size:1.14rem; font-weight:500; color:var(--ink-soft);
+  }
+  .artefacts{max-width:920px; margin:14px auto 0}
+  .artefacts .row{
+    display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+    padding:14px 2px; border-bottom:1px solid var(--line-soft);
+  }
+  .artefacts .row:first-child{border-top:1px solid var(--line-soft)}
+  .artefacts .name{font-size:1.18rem; font-weight:600; color:var(--ink)}
+  .artefacts .st{
+    font-family:var(--sans); font-size:.64rem; font-weight:600; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--muted); padding-top:7px;
+  }
+
+  /* ================= CLOSER / COMING SOON ================= */
+  .closer{
+    max-width:820px; margin:0 auto; text-align:center;
+    border-top:1px solid var(--line-gold); border-bottom:1px solid var(--line-gold);
+    padding:52px 30px 56px;
+  }
+  .closer h3{font-size:clamp(2rem,5vw,2.9rem); font-weight:600; color:var(--ink); line-height:1.15}
+  .closer p{max-width:580px; margin:18px auto 32px}
+  .soon{max-width:760px; margin:0 auto; text-align:center; padding:10px 0 4px}
+  .soon .badge{
+    display:block; font-family:var(--sans); font-size:.72rem; font-weight:700;
+    letter-spacing:.42em; text-transform:uppercase; color:var(--gold); margin-bottom:20px;
+  }
+  .soon p{font-style:italic; font-size:1.18rem; color:var(--ink-soft); margin:0}
+
+  /* ================= ESPAÑOL ================= */
+  #espanol .prose p:first-of-type{font-size:1.28rem; line-height:1.65; color:var(--ink)}
+  #espanol a{color:var(--gold-hi); text-underline-offset:4px}
+
+  /* ================= FOOTER ================= */
+  footer{
+    margin-top:110px; border-top:1px solid var(--line);
+    text-align:center; padding:44px 24px 52px;
+  }
+  .foot-links{
+    display:flex; gap:36px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.28em; text-transform:uppercase;
+  }
+  .foot-links a{color:var(--ink-soft); text-decoration:none}
+  .foot-links a:hover{color:var(--gold-hi)}
+  footer p{font-size:.92rem; color:var(--muted); margin:0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">Imaginarium Waves · Great Studios</p>
+  <h1><span class="h1-top">Imaginarium Waves</span><span class="h1-big">Opera</span></h1>
+  <p class="tagline">Chamber operas sung in the Indigenous languages of the Americas.</p>
+  <p class="sub">Original works · Ancestral languages as living voices</p>
+  <figure class="poster">
+    <img src="assets/quinto-sol-cover.jpg" alt="Quinto Sol — official album artwork">
+  </figure>
+  <div class="stats">
+    <div class="stat"><span class="v">Season One</span><span class="k">One opera, one language, one sun</span></div>
+    <div class="stat"><span class="v">1</span><span class="k">World-premiere production</span></div>
+    <div class="stat"><span class="v">8</span><span class="k">Scenes · ≈ 26:49</span></div>
+    <div class="stat"><span class="v">1</span><span class="k">Ancestral language — Nahuatl</span></div>
+  </div>
+  <div class="cta">
+    <a class="btn-poster" href="https://www.youtube.com/@ImaginariumWavesOpera" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    <a class="link-poster" href="#quinto-sol">Discover Quinto Sol</a>
+  </div>
+</header>
+
+<nav class="anchors" aria-label="Sections">
+  <a href="#about">The House</a><span class="dot">·</span>
+  <a href="#quinto-sol">Quinto Sol</a><span class="dot">·</span>
+  <a href="#scenes">The Eight Scenes</a><span class="dot">·</span>
+  <a href="#sound">The Sound</a><span class="dot">·</span>
+  <a href="#credits">Credits</a><span class="dot">·</span>
+  <a href="#espanol">En español</a>
+</nav>
+
+<main class="wrap">
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="sec-head"><h2 class="sec">The House</h2></div>
+    <div class="prose">
+      <p class="lead">Imaginarium Waves Opera is the opera house of Imaginarium Waves and Great Studios — a home for original chamber operas sung in the Indigenous languages of the Americas.</p>
+      <p>Here you will find complete operas, scenes, arias, and behind-the-scenes glimpses of productions in the making — new works that treat ancestral languages as living voices.</p>
+      <p>Each production is staged as cinematic film: the intimacy of chamber opera, documented and photographed with the care of a feature production. One work, one culture, one language at a time — told with reverence for the living cultures that keep these languages alive.</p>
+    </div>
+    <p class="pull">“We do not revive dead languages. We give living voices a stage.”</p>
+    <p class="closing-line"><em>Subscribe, and witness the birth of a sun.</em></p>
+  </section>
+
+  <!-- ================= QUINTO SOL ================= -->
+  <section id="quinto-sol">
+    <div class="sec-head"><h2 class="sec">First Production</h2></div>
+    <p class="status-line">World Premiere · First Production</p>
+    <div class="credstack">
+      <div class="row"><span class="role">Music &amp; libretto</span><span>Sebastian Santana</span></div>
+      <div class="row"><span class="role">Performed by</span><span>Imaginarium Lab</span></div>
+      <div class="row"><span class="role">Sung in</span><span>Nahuatl · Spanish subtitles (English &amp; Portuguese editions prepared)</span></div>
+      <div class="row"><span class="role">A production of</span><span>Imaginarium Waves Opera · Great Studios</span></div>
+    </div>
+    <h3 class="prod-title">QUINTO SOL</h3>
+    <p class="hookline">The proud hesitate. The humble become the sun.</p>
+    <div class="prose prod-body">
+      <p>Our first production retells the Mexica myth of the Fifth Sun at Teotihuacan: the gods gather in darkness, and the humble Nanahuatzin leaps into the fire so that a new sun may be born — while proud Tecuciztecatl hesitates at the edge of the flames.</p>
+      <p>An original chamber opera in eight scenes, sung entirely in Nahuatl, presented as a cinematic film with Spanish subtitles. Solo voices and a small chorus carry the drama over a chamber ensemble joined by documented Mesoamerican percussion.</p>
+    </div>
+    <div class="facts">
+      <span>Chamber opera</span><span>Sung in Nahuatl</span><span>Spanish subtitles</span><span>8 scenes · ≈ 26:49</span><span>Cinematic film</span>
+    </div>
+    <p class="note">A note on the language: the Nahuatl text is drawn from colonial-era sources (including the Cantares Mexicanos tradition). Its philological validation is ongoing and a review by native Nahua speakers is still pending — we publish this note openly, in the same spirit of respect with which the work was made.</p>
+    <div class="embed-wrap">
+      <div class="frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/XCkmwxdWXTs" title="Quinto Sol — Scene I: Nican in Teotihuacan omocenquixque in" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <p class="embed-cap">Begin the film here — <strong>Scene I · Nican in Teotihuacan omocenquixque in</strong> (3:48). The complete opera plays scene by scene below, and on the house channel.</p>
+  </section>
+
+  <!-- ================= SCENES ================= -->
+  <section id="scenes">
+    <div class="sec-head"><h2 class="sec">The Eight Scenes</h2></div>
+    <p class="scenes-intro">The complete opera, scene by scene — now playing on YouTube. Nahuatl titles are the incipits of each scene.</p>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>I</p>
+      <div>
+        <h3>Quinto Sol I · Nican in Teotihuacan omocenquixque in</h3>
+        <p class="dur">3:48 · The gods gather at Teotihuacan</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=XCkmwxdWXTs" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>II</p>
+      <div>
+        <h3>Quinto Sol II · ¿Aquin tonatiuh yez? — quitoah</h3>
+        <p class="dur">1:56 · “Who shall be the sun?” they ask</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=200Khm0Mat4" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>III</p>
+      <div>
+        <h3>Quinto Sol III · Tlatzintlan, campa oc cenca tlayohuayan</h3>
+        <p class="dur">3:34 · Below, where it is still darkest</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=7GeRsjSKQhI" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>IV</p>
+      <div>
+        <h3>Quinto Sol IV · Niquinmaca in quetzalli</h3>
+        <p class="dur">3:42 · “I give them the quetzal feathers”</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=xWZmo9pBikg" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>V</p>
+      <div>
+        <h3>Quinto Sol V · Ye huitz in tletl</h3>
+        <p class="dur">3:28 · “Now comes the fire”</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=Fp4Wv50ZB8Y" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>VI</p>
+      <div>
+        <h3>Quinto Sol VI · Ce Ome Eyi Nahui</h3>
+        <p class="dur">3:54 · “One, two, three, four” — the count to the leap</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=UmTz1z9DLhw" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>VII</p>
+      <div>
+        <h3>Quinto Sol VII · Nehhuatl niyaz</h3>
+        <p class="dur">2:27 · “I myself shall go”</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=SCVHSCmYKwA" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+    <article class="scene">
+      <p class="num"><span class="lbl">Scene</span>VIII</p>
+      <div>
+        <h3>Quinto Sol VIII · Ye quiza in tonatiuh</h3>
+        <p class="dur">4:00 · “Now the sun comes forth”</p>
+      </div>
+      <a class="watch" href="https://www.youtube.com/watch?v=eWGnJ-n_ZdE" target="_blank" rel="noopener">▶ Watch on YouTube</a>
+    </article>
+
+  </section>
+
+  <!-- ================= THE SOUND ================= -->
+  <section id="sound">
+    <div class="sec-head"><h2 class="sec">The Sound</h2></div>
+    <div class="sound-grid">
+      <div class="sound-item">
+        <h3>Chamber Ensemble</h3>
+        <p>An acoustic, theatrical sound: a small string body, piano and woodwinds, with the wide dynamic range of a live hall — nothing between the voice and the listener.</p>
+      </div>
+      <div class="sound-item">
+        <h3>Soloists &amp; Small Chorus</h3>
+        <p>Arias, duets and through-composed scenes that follow the dramatic arc of the myth — the gathering of the gods, the sacrifice, the birth of the sun.</p>
+      </div>
+      <div class="sound-item">
+        <h3>Ancestral Percussion</h3>
+        <p>Documented Mesoamerican instruments — huehuetl and teponaztli drums, conch shells and clay flutes — grounding each score in the sound world of its culture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CREDITS ================= -->
+  <section id="credits">
+    <div class="sec-head"><h2 class="sec">Credits &amp; the Artefacts</h2></div>
+    <p class="credits-intro">Every production of the house is documented in full — who made it, from what sources, and in which forms it lives. Provenance is part of the work.</p>
+    <div class="ledger">
+      <div class="row"><span class="role">Music &amp; Libretto</span><span class="val">Sebastian Santana</span></div>
+      <div class="row"><span class="role">Performed by</span><span class="val">Imaginarium Lab — solo voices &amp; small chorus</span></div>
+      <div class="row"><span class="role">Forces</span><span class="val">Chamber ensemble · documented Mesoamerican percussion (huehuetl, teponaztli, conch, clay flutes)</span></div>
+      <div class="row"><span class="role">Language</span><span class="val">Nahuatl — sung in full; Spanish subtitles on the film</span></div>
+      <div class="row"><span class="role">Source Texts</span><span class="val">The Mexica Fifth Sun tradition — Cantares Mexicanos &amp; Florentine Codex lineages</span></div>
+      <div class="row"><span class="role">Production</span><span class="val">Imaginarium Waves Opera · Imaginarium Waves / Great Studios</span></div>
+    </div>
+    <p class="artefacts-head">One production, four artefacts:</p>
+    <div class="artefacts">
+      <div class="row"><span class="name">Cinematic film</span><span class="st">Complete on YouTube</span></div>
+      <div class="row"><span class="name">Album recording</span><span class="st">In preparation for streaming</span></div>
+      <div class="row"><span class="name">Libretto &amp; subtitles</span><span class="st">ES · EN · PT-BR</span></div>
+      <div class="row"><span class="name">Scene archive</span><span class="st">Permanent, below</span></div>
+    </div>
+  </section>
+
+  <!-- ================= CLOSER ================= -->
+  <section>
+    <div class="closer">
+      <h3>New to opera? Start with one scene.</h3>
+      <p>Chamber opera is the closest seat in the house: one voice, one drum, one story. Scene I takes less than four minutes — and a sun is born.</p>
+      <a class="btn-poster" href="https://www.youtube.com/@ImaginariumWavesOpera" target="_blank" rel="noopener">▶ Follow the house on YouTube</a>
+    </div>
+  </section>
+
+  <!-- ================= COMING SOON ================= -->
+  <section id="coming-soon">
+    <div class="soon">
+      <span class="badge">Coming soon</span>
+      <p>New productions are in preparation — more operas born of other cultures, languages and historical moments of the Americas. The next suns are being written.</p>
+    </div>
+  </section>
+
+  <!-- ================= ESPAÑOL ================= -->
+  <section id="espanol" lang="es">
+    <div class="sec-head"><h2 class="sec">En español</h2></div>
+    <div class="prose">
+      <p>Imaginarium Waves Opera es la casa de ópera de Imaginarium Waves y Great Studios: un escenario para óperas de cámara originales cantadas en las lenguas originarias de América.</p>
+      <p>Nuestra primera producción, QUINTO SOL, narra el mito mexica del Quinto Sol en Teotihuacán: los dioses se reúnen en la oscuridad y el humilde Nanahuatzin se arroja al fuego para que nazca un nuevo sol. Cantada íntegramente en náhuatl, con subtítulos en español.</p>
+      <p>Aquí encontrarás óperas completas, escenas, arias y el detrás de cámaras de las producciones que vienen: obras nuevas que tratan las lenguas ancestrales como voces vivas. Las ocho escenas de Quinto Sol ya están publicadas en YouTube — míralas desde la sección <a href="#scenes">The Eight Scenes</a>.</p>
+      <p><em>Suscríbete y sé testigo del nacimiento de un sol.</em></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="https://www.youtube.com/@ImaginariumWavesOpera" target="_blank" rel="noopener">YouTube — @ImaginariumWavesOpera</a>
+    <a href="https://aydea0260.github.io/imaginarium-lab-music/" target="_blank" rel="noopener">Imaginarium Lab Music — Catalog</a>
+  </div>
+  <p>Imaginarium Waves Opera · An Imaginarium Waves / Great Studios house · Chamber opera in the Indigenous languages of the Americas</p>
+</footer>
+
+</body>
+</html>

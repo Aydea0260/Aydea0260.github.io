@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opera Nova — Cinematic Sci-Fi Opera</title>
+<meta name="description" content="Opera Nova — Cinematic science-fiction music born from chamber opera. Futuristic, emotional, and otherworldly soundscapes for film, trailers, and deep listening. Where ancient voices meet the future.">
+<meta property="og:title" content="Opera Nova — Cinematic Sci-Fi Opera">
+<meta property="og:description" content="Cinematic science-fiction music born from chamber opera. Soaring voices, vast electronic atmospheres, and voices extended by AI beyond human limits.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#020308;
+    --bg-raise:#04050b;
+    --ink:#f0ebdf;
+    --ink-dim:#c9c4b4;
+    --muted:#969cae;
+    --faint:#5d6274;
+    --line:#2a2a30;
+    --line-soft:#16161c;
+    --sun:#ffb454;
+    --serif:"Didot","Bodoni MT","Playfair Display","Cochin",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    background:
+      radial-gradient(1200px 500px at 50% -8%, #070912 0%, rgba(7,9,18,0) 60%),
+      var(--bg);
+    color:var(--ink); min-height:100vh; overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--sun); color:#060402; }
+  .wrap{ position:relative; max-width:1180px; margin:0 auto; padding:0 24px; }
+  .measure{ max-width:720px; margin:0 auto; }
+  a{ color:var(--ink); }
+
+  .eyebrow{
+    font-size:.68rem; letter-spacing:.38em; text-transform:uppercase; color:var(--muted);
+    font-weight:600;
+  }
+  .eyebrow::before{
+    content:""; display:block; width:26px; height:1px; background:var(--sun);
+    margin:0 auto 14px;
+  }
+  .eyebrow.left::before{ margin:0 0 14px; }
+
+  /* ================= HERO — letterbox ================= */
+  header.hero{
+    position:relative; text-align:center;
+    padding:58px 20px 8px; overflow:hidden;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .hero-art{
+    position:absolute; top:0; left:50%; transform:translateX(-50%);
+    width:min(1500px,100%); height:640px; pointer-events:none; z-index:0;
+    -webkit-mask-image:linear-gradient(to bottom, #000 74%, transparent 99%);
+            mask-image:linear-gradient(to bottom, #000 74%, transparent 99%);
+  }
+  .hero-art svg{ width:100%; height:100%; display:block; }
+  .hero-inner{ position:relative; z-index:1; }
+  .presenter{
+    font-size:.7rem; letter-spacing:.46em; text-transform:uppercase; color:var(--ink-dim);
+    padding-left:.46em;
+  }
+  .presenter-rule{
+    width:1px; height:44px; background:linear-gradient(to bottom, rgba(240,235,223,0), var(--line), rgba(240,235,223,0));
+    margin:20px auto 0;
+  }
+  .hero h1{
+    margin-top:118px;
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(3.6rem, 11.5vw, 9rem);
+    letter-spacing:.17em; padding-left:.17em;
+    line-height:1.02; text-transform:uppercase; color:var(--ink);
+    text-shadow:0 4px 44px rgba(0,0,0,.75);
+  }
+  /* official logo plate — the poster brand plate of the letterbox hero */
+  .hero h1.brand{ margin-top:54px; }
+  .brand-logo{
+    display:block; width:min(400px,78vw); height:auto; margin:0 auto;
+    border:1px solid var(--line); outline:1px solid var(--line-soft); outline-offset:6px;
+  }
+  .hero .promise{
+    margin-top:26px;
+    font-family:var(--serif); font-style:italic;
+    font-size:clamp(1.25rem, 2.6vw, 1.6rem);
+    color:var(--sun); letter-spacing:.02em;
+  }
+  .hero .sub{
+    margin:30px auto 0; max-width:640px;
+    font-size:1.02rem; line-height:1.7; color:var(--ink-dim);
+  }
+  .cta-row{
+    margin-top:38px; display:flex; gap:44px; justify-content:center; flex-wrap:wrap;
+  }
+  .tlink{
+    font-size:.78rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+    text-decoration:none; padding:0 0 9px .3em; color:var(--ink);
+    border-bottom:1px solid var(--sun);
+    transition:color .18s ease, border-color .18s ease;
+  }
+  .tlink:hover{ color:var(--sun); }
+  .tlink.quiet{ color:var(--muted); border-bottom:1px solid var(--line); font-weight:600; }
+  .tlink.quiet:hover{ color:var(--ink); border-color:var(--ink-dim); }
+  .hero .handle{
+    margin-top:22px; font-size:.72rem; color:var(--faint);
+    letter-spacing:.24em; text-transform:uppercase;
+  }
+
+  /* intent index — a programme line, not pills */
+  .intent-nav{
+    margin-top:52px; display:flex; justify-content:center; flex-wrap:wrap;
+    border-top:1px solid var(--line-soft);
+  }
+  .intent-nav a{
+    font-size:.7rem; letter-spacing:.26em; text-transform:uppercase; font-weight:600;
+    color:var(--muted); text-decoration:none; padding:15px 20px 15px calc(20px + .26em);
+    transition:color .18s ease;
+  }
+  .intent-nav a + a{ border-left:1px solid var(--line-soft); }
+  .intent-nav a:hover{ color:var(--sun); }
+
+  /* proof — set like poster billing */
+  .proof{
+    display:flex; justify-content:center; flex-wrap:wrap;
+    padding:20px 0 4px;
+  }
+  .proof span{
+    font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted);
+    padding:2px 22px;
+  }
+  .proof span + span{ border-left:1px solid var(--line-soft); }
+  .proof b{
+    font-family:var(--serif); font-weight:400; font-style:italic;
+    font-size:1.05rem; letter-spacing:.04em; color:var(--ink); margin-right:.45em;
+    text-transform:none;
+  }
+  .license-line{
+    margin:26px auto 30px; max-width:680px; text-align:center;
+    font-size:.9rem; color:var(--muted); line-height:1.7;
+  }
+  .license-line b{ color:var(--ink); font-weight:600; }
+
+  /* ================= SECTIONS ================= */
+  section{ padding:96px 0 0; }
+  .sec-head{ text-align:center; margin-bottom:54px; }
+  .sec-head h2{
+    font-family:var(--serif); font-weight:400;
+    font-size:clamp(2.1rem, 4.8vw, 3.4rem);
+    letter-spacing:.015em; line-height:1.12; color:var(--ink); margin-top:16px;
+  }
+  .sec-head p{
+    margin:18px auto 0; max-width:680px; color:var(--muted);
+    line-height:1.7; font-size:.98rem;
+  }
+  .sec-head p strong{ color:var(--ink); font-weight:600; }
+  .credits-line{
+    margin-top:22px; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--faint); line-height:2;
+  }
+  .credits-line b{ color:var(--ink-dim); font-weight:600; }
+
+  /* numbered editorial columns — no cards */
+  .duo{ display:grid; grid-template-columns:1fr; gap:44px; max-width:940px; margin:0 auto; }
+  @media(min-width:760px){ .duo{ grid-template-columns:1fr 1fr; gap:64px; } }
+  .entry{ border-top:1px solid var(--line); padding-top:22px; }
+  .entry .num{
+    font-family:var(--serif); font-style:italic; font-size:1rem; color:var(--sun);
+    display:block; margin-bottom:14px;
+  }
+  .entry h3{ font-size:1.02rem; font-weight:700; letter-spacing:.04em; color:var(--ink); margin-bottom:10px; }
+  .entry p{ color:var(--muted); font-size:.93rem; line-height:1.7; }
+
+  .index4{ display:grid; grid-template-columns:1fr; gap:40px; max-width:1080px; margin:0 auto; }
+  @media(min-width:640px){ .index4{ grid-template-columns:1fr 1fr; gap:48px 56px; } }
+  @media(min-width:1020px){ .index4{ grid-template-columns:repeat(4,1fr); } }
+
+  /* ================= SIGNATURE — the diva column ================= */
+  .signature{
+    position:relative; text-align:center;
+    margin-top:96px; padding:104px 24px 96px;
+    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
+  }
+  .signature::before{
+    content:""; position:absolute; top:-10%; bottom:-10%; left:50%; width:420px;
+    transform:translateX(-50%); pointer-events:none;
+    background:radial-gradient(ellipse 46% 62% at 50% 38%, rgba(255,180,84,.13), rgba(255,180,84,0) 70%);
+  }
+  .signature .eyebrow{ position:relative; }
+  .signature blockquote{
+    position:relative; margin:30px auto 0; max-width:860px;
+    font-family:var(--serif); font-size:clamp(1.45rem, 3.1vw, 2.25rem);
+    line-height:1.5; color:var(--ink); font-weight:400;
+  }
+  .signature blockquote em{ color:var(--sun); }
+
+  /* ================= POSTER WALL (audiomachine grammar) ================= */
+  .poster-wall{ display:grid; grid-template-columns:1fr; gap:56px; }
+  @media(min-width:880px){
+    .poster-wall{ grid-template-columns:1fr 1fr; gap:64px 40px; }
+    .poster.feature{ grid-column:1 / -1; }
+  }
+  .poster{ background:var(--bg-raise); border:1px solid var(--line-soft); }
+  .poster-art{ position:relative; overflow:hidden; aspect-ratio:16 / 9; background:#01020a; }
+  .poster.feature .poster-art{ aspect-ratio:21 / 9; }
+  .poster-art svg{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .poster-art .kind{
+    position:absolute; top:18px; left:22px; z-index:2;
+    font-size:.66rem; letter-spacing:.32em; text-transform:uppercase; font-weight:600;
+    color:rgba(240,235,223,.92); text-shadow:0 1px 12px rgba(0,0,0,.9);
+  }
+  .poster-art .kind::after{
+    content:""; display:block; width:22px; height:1px; background:var(--sun); margin-top:9px;
+  }
+  .poster-body{ padding:30px 30px 0; }
+  .poster h3{
+    font-family:var(--serif); font-weight:400; color:var(--ink);
+    font-size:clamp(1.45rem, 2.4vw, 1.9rem); line-height:1.25; letter-spacing:.01em;
+  }
+  .poster.feature h3{ font-size:clamp(1.8rem, 3.4vw, 2.6rem); }
+  .poster .desc{ margin-top:12px; color:var(--muted); font-size:.93rem; line-height:1.7; max-width:56ch; }
+  .ptags{ margin-top:18px; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--faint); line-height:2; }
+  .ptags span + span::before{ content:"·"; margin:0 .7em; color:var(--line); }
+  .poster-credits{
+    margin-top:26px; border-top:1px solid var(--line-soft);
+    padding:16px 30px 20px;
+    display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .poster-credits .spec{
+    font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted);
+    line-height:1.9;
+  }
+  .plate{
+    flex:none;
+    font-size:.66rem; font-weight:700; letter-spacing:.34em; text-transform:uppercase;
+    color:var(--sun); padding:9px 14px 9px calc(14px + .34em);
+    border:1px solid rgba(255,180,84,.55);
+    box-shadow:inset 0 0 0 3px var(--bg-raise), inset 0 0 0 4px rgba(255,180,84,.28);
+  }
+
+  /* ================= TABLES — programme rules only ================= */
+  .fmt{ width:100%; border-collapse:collapse; }
+  .fmt th, .fmt td{ text-align:left; padding:16px 12px; font-size:.92rem; }
+  .fmt thead th{
+    font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; font-weight:600;
+    color:var(--faint); border-bottom:1px solid var(--line); padding-top:0;
+  }
+  .fmt tbody tr{ border-bottom:1px solid var(--line-soft); }
+  .fmt tbody tr:last-child{ border-bottom:1px solid var(--line); }
+  .fmt td:first-child{ color:var(--ink); }
+  .fmt td.len{ color:var(--sun); font-weight:600; white-space:nowrap; letter-spacing:.03em; }
+  .fmt td.use{ color:var(--muted); }
+  .tech-note{
+    text-align:center; color:var(--faint); font-size:.78rem; letter-spacing:.14em;
+    text-transform:uppercase; margin-top:22px; line-height:1.8;
+  }
+
+  /* ================= LICENSING — contract plate ================= */
+  .contract{
+    border:1px solid var(--line); outline:1px solid var(--line-soft); outline-offset:6px;
+    background:var(--bg-raise);
+    padding:56px 30px 48px; max-width:940px; margin:0 auto;
+  }
+  @media(min-width:760px){ .contract{ padding:64px 64px 56px; } }
+  .contract .sec-head{ margin-bottom:40px; }
+  .clauses{ border-top:1px solid var(--line); }
+  .clause{
+    display:grid; grid-template-columns:52px 1fr; gap:18px;
+    padding:22px 0; border-bottom:1px solid var(--line-soft);
+  }
+  .clause:last-child{ border-bottom:1px solid var(--line); }
+  .clause .no{
+    font-family:var(--serif); font-style:italic; font-size:1.15rem; color:var(--sun);
+    padding-top:1px;
+  }
+  .clause b{ display:block; color:var(--ink); font-size:.95rem; letter-spacing:.03em; margin-bottom:5px; }
+  .clause p{ color:var(--muted); font-size:.9rem; line-height:1.65; }
+
+  .honest{
+    position:relative; max-width:820px; margin:64px auto 0;
+    border:1px solid var(--line); background:#030409;
+    padding:40px 34px 34px; text-align:center;
+  }
+  .honest::before{
+    content:""; position:absolute; top:-5px; left:50%; width:9px; height:9px;
+    transform:translateX(-50%) rotate(45deg);
+    background:var(--sun);
+  }
+  .honest .h-label{
+    display:block; font-size:.68rem; font-weight:700; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--sun); margin-bottom:16px; padding-left:.36em;
+  }
+  .honest p{ color:var(--muted); font-size:.92rem; line-height:1.75; max-width:640px; margin:0 auto; }
+  .licensing-cta{ text-align:center; margin-top:44px; }
+
+  /* ================= ABOUT / FOOTER — billing block ================= */
+  .about{
+    text-align:center; max-width:700px; margin:0 auto;
+    color:var(--muted); line-height:1.85; font-size:1rem;
+  }
+  .about strong{ color:var(--ink); font-weight:600; }
+  .about .lead{
+    font-family:var(--serif); font-size:1.3rem; color:var(--ink); line-height:1.5;
+    display:block; margin-bottom:18px;
+  }
+  .hashtags{
+    text-align:center; margin-top:34px;
+    font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--faint);
+    line-height:2.2; word-spacing:.35em;
+  }
+  footer{
+    text-align:center; padding:44px 16px 54px; margin-top:110px;
+    border-top:1px solid var(--line-soft); color:var(--faint); font-size:.78rem; line-height:1.9;
+  }
+  footer .brand{
+    font-family:var(--serif); color:var(--ink);
+    letter-spacing:.34em; padding-left:.34em; text-transform:uppercase;
+    font-size:.95rem; margin-bottom:10px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="hSun" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffe3b0"/>
+            <stop offset="34%" stop-color="#ffb454"/>
+            <stop offset="68%" stop-color="rgba(255,150,60,.34)"/>
+            <stop offset="100%" stop-color="rgba(255,150,60,0)"/>
+          </radialGradient>
+          <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,170,80,.20)"/>
+            <stop offset="100%" stop-color="rgba(255,170,80,0)"/>
+          </radialGradient>
+          <linearGradient id="hFlare" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="rgba(255,180,84,0)"/>
+            <stop offset="38%" stop-color="rgba(255,180,84,.14)"/>
+            <stop offset="50%" stop-color="rgba(255,220,170,.75)"/>
+            <stop offset="62%" stop-color="rgba(255,180,84,.14)"/>
+            <stop offset="100%" stop-color="rgba(255,180,84,0)"/>
+          </linearGradient>
+          <linearGradient id="hSea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#01020a"/>
+            <stop offset="100%" stop-color="#020308"/>
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="640" fill="#020308"/>
+        <g fill="#ffffff">
+          <circle cx="90" cy="60" r="1.1" opacity=".34"/><circle cx="210" cy="150" r=".8" opacity=".2"/>
+          <circle cx="330" cy="42" r="1.4" opacity=".42"/><circle cx="452" cy="120" r=".7" opacity=".18"/>
+          <circle cx="560" cy="66" r="1" opacity=".28"/><circle cx="684" cy="150" r=".8" opacity=".16"/>
+          <circle cx="806" cy="48" r="1.2" opacity=".36"/><circle cx="918" cy="128" r=".7" opacity=".2"/>
+          <circle cx="1044" cy="58" r="1" opacity=".3"/><circle cx="1160" cy="164" r=".8" opacity=".17"/>
+          <circle cx="1276" cy="44" r="1.3" opacity=".4"/><circle cx="1370" cy="120" r=".8" opacity=".22"/>
+          <circle cx="150" cy="238" r=".7" opacity=".14"/><circle cx="1240" cy="232" r=".7" opacity=".15"/>
+          <circle cx="420" cy="208" r=".7" opacity=".13"/><circle cx="990" cy="206" r=".7" opacity=".13"/>
+          <circle cx="60" cy="330" r=".8" opacity=".1"/><circle cx="1388" cy="318" r=".8" opacity=".1"/>
+        </g>
+        <ellipse cx="720" cy="478" rx="660" ry="230" fill="url(#hGlow)"/>
+        <circle cx="720" cy="478" r="215" fill="url(#hSun)"/>
+        <circle cx="720" cy="478" r="72" fill="#ffd9a0" opacity=".9"/>
+        <rect x="0" y="478" width="1440" height="162" fill="url(#hSea)"/>
+        <rect x="0" y="476.6" width="1440" height="2.8" fill="url(#hFlare)"/>
+        <rect x="560" y="477.6" width="320" height="1" fill="rgba(255,230,190,.5)"/>
+        <g stroke="rgba(255,190,110,.16)" stroke-width="1">
+          <line x1="660" y1="520" x2="780" y2="520"/>
+          <line x1="676" y1="548" x2="764" y2="548"/>
+          <line x1="692" y1="574" x2="748" y2="574"/>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-inner">
+      <p class="presenter">Imaginarium Waves &middot; Great Studios</p>
+      <div class="presenter-rule"></div>
+      <h1 class="brand"><img class="brand-logo" src="assets/opera-nova-logo.jpg" alt="Opera Nova — official logo: a cosmic infinity loop over a planet horizon — Ancient Voices. Other Worlds."></h1>
+      <p class="promise">&ldquo;Where ancient voices meet the future.&rdquo;</p>
+      <p class="sub">Cinematic science-fiction music born from chamber opera. Futuristic, emotional, and otherworldly soundscapes for film, trailers, and deep listening.</p>
+      <div class="cta-row">
+        <a class="tlink" href="https://www.youtube.com/channel/UC5quYIeGdPP-jAeEL6WgWYA" target="_blank" rel="noopener">&#9654; Watch on YouTube</a>
+        <a class="tlink quiet" href="#releases">First Releases</a>
+      </div>
+      <p class="handle">YouTube &middot; @OperaNova-t2l</p>
+      <nav class="intent-nav" aria-label="For buyers">
+        <a href="#releases">Trailers</a>
+        <a href="#made-for">Film &amp; TV</a>
+        <a href="#made-for">Immersive</a>
+        <a href="#format">Versions &amp; Stems</a>
+        <a href="#licensing">Licensing</a>
+        <a href="https://www.youtube.com/channel/UC5quYIeGdPP-jAeEL6WgWYA" target="_blank" rel="noopener">Listen</a>
+      </nav>
+      <div class="proof">
+        <span><b>1</b> founding cycle — Fifth Sun</span>
+        <span><b>5</b> flagship versions</span>
+        <span><b>6</b> lengths per piece</span>
+        <span><b>5</b> stems, always</span>
+        <span><b>24-bit / 48 kHz</b> WAV masters</span>
+      </div>
+      <p class="license-line">Built for licensing from day one: <b>sync + master from a single source</b>, every length and every stem included in the package. Licensing opens in Phase 3 — sync libraries and direct music supervisors.</p>
+    </div>
+  </header>
+
+  <!-- ================= THE SOUND ================= -->
+  <section id="sound">
+    <div class="sec-head">
+      <p class="eyebrow">The Sound</p>
+      <h2>Ancient Voices, Other Worlds</h2>
+      <p>We transform cultural and sacred operatic works into futuristic, emotional, and otherworldly soundscapes — soaring operatic voices over vast electronic atmospheres, with epic cinematic arcs that feel like they belong in another world.</p>
+    </div>
+    <div class="duo">
+      <div class="entry">
+        <span class="num">01</span>
+        <h3>Soaring Operatic Voices</h3>
+        <p>Real operatic singing carried from the chamber stage into deep space — celestial, emotional, unmistakably human at its core.</p>
+      </div>
+      <div class="entry">
+        <span class="num">02</span>
+        <h3>Vast Electronic Atmospheres</h3>
+        <p>Synth pads, arpeggios, sub-bass and hybrid orchestral layers, wrapped in spatial sound design: risers, hits and braams built for the big screen.</p>
+      </div>
+    </div>
+    <div class="signature">
+      <p class="eyebrow">The Signature — Voices Beyond Human Limits</p>
+      <blockquote>Opera Nova&rsquo;s north star is the legendary diva of science-fiction cinema: a classical aria transformed by technology into a performance <em>no human throat could produce</em>. Our voices are extended by AI beyond physical possibility — ranges, timbres and articulations that do not exist in nature. Sounds for the future. Music that changes what is possible.</blockquote>
+    </div>
+  </section>
+
+  <!-- ================= MADE FOR ================= -->
+  <section id="made-for">
+    <div class="sec-head">
+      <p class="eyebrow">Made For</p>
+      <h2>Built for the Screen — and the Deep Listen</h2>
+    </div>
+    <div class="index4">
+      <div class="entry">
+        <span class="num">01</span>
+        <h3>Science-Fiction Films</h3>
+        <p>Scores and cues with the emotional weight of opera and the scale of deep space.</p>
+      </div>
+      <div class="entry">
+        <span class="num">02</span>
+        <h3>Trailers</h3>
+        <p>Epic edits with a build–impact–close arc, cut to hit in under two and a half minutes.</p>
+      </div>
+      <div class="entry">
+        <span class="num">03</span>
+        <h3>Immersive Experiences</h3>
+        <p>Long-form journeys and loopable atmospheres for installations and virtual worlds.</p>
+      </div>
+      <div class="entry">
+        <span class="num">04</span>
+        <h3>Deep Listening</h3>
+        <p>Extended cinematic journeys made to be heard in full, lights down, volume up.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RELEASES — POSTER WALL ================= -->
+  <section id="releases">
+    <div class="sec-head">
+      <p class="eyebrow">First Releases</p>
+      <h2>Fifth Sun — The First Cycle</h2>
+      <p>Born from <strong>QUINTO SOL</strong>, an original chamber opera sung entirely in Nahuatl that retells the Mexica myth of the Fifth Sun — the gods gather in darkness, and the humble Nanahuatzin leaps into the fire so that a new sun may be born. Five versions, one ascent.</p>
+      <p class="credits-line">Music — <b>Sebastian Santana</b> · Voices &amp; performance — <b>Imaginarium Lab</b> · An Imaginarium Waves / Great Studios production</p>
+    </div>
+    <div class="poster-wall">
+
+      <article class="poster feature">
+        <div class="poster-art">
+          <svg viewBox="0 0 1260 540" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="aSun" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffe3b0"/><stop offset="36%" stop-color="#ffb454"/>
+                <stop offset="70%" stop-color="rgba(255,150,60,.30)"/><stop offset="100%" stop-color="rgba(255,150,60,0)"/>
+              </radialGradient>
+              <linearGradient id="aFlare" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="rgba(255,180,84,0)"/><stop offset="42%" stop-color="rgba(255,180,84,.16)"/>
+                <stop offset="50%" stop-color="rgba(255,220,170,.7)"/><stop offset="58%" stop-color="rgba(255,180,84,.16)"/>
+                <stop offset="100%" stop-color="rgba(255,180,84,0)"/>
+              </linearGradient>
+            </defs>
+            <rect width="1260" height="540" fill="#01020a"/>
+            <g fill="#fff">
+              <circle cx="120" cy="70" r="1.1" opacity=".3"/><circle cx="300" cy="130" r=".8" opacity=".18"/>
+              <circle cx="505" cy="54" r="1.3" opacity=".38"/><circle cx="760" cy="96" r=".8" opacity=".2"/>
+              <circle cx="980" cy="50" r="1" opacity=".3"/><circle cx="1140" cy="140" r=".9" opacity=".2"/>
+              <circle cx="200" cy="220" r=".7" opacity=".13"/><circle cx="1075" cy="215" r=".7" opacity=".13"/>
+            </g>
+            <circle cx="630" cy="392" r="235" fill="url(#aSun)"/>
+            <circle cx="630" cy="392" r="86" fill="#ffd9a0" opacity=".92"/>
+            <rect x="0" y="392" width="1260" height="148" fill="#010206"/>
+            <rect x="0" y="390.6" width="1260" height="2.8" fill="url(#aFlare)"/>
+            <g stroke="rgba(255,190,110,.15)"><line x1="586" y1="428" x2="674" y2="428"/><line x1="600" y1="452" x2="660" y2="452"/></g>
+          </svg>
+          <p class="kind">Main Flagship Release</p>
+        </div>
+        <div class="poster-body">
+          <h3>Fifth Sun Rising – Cinematic Sci-Fi Opera (Official Audio) | Opera Nova</h3>
+          <p class="desc">The definitive statement: the complete Fifth Sun arc as a cinematic sci-fi opera — soaring voice, vast atmospheres, one rising sun.</p>
+          <p class="ptags"><span>cinematic sci-fi</span><span>sci-fi opera</span><span>space opera music</span><span>epic sci-fi soundtrack</span><span>cosmic music</span><span>otherworldly vocals</span></p>
+        </div>
+        <div class="poster-credits">
+          <p class="spec">Main version · 4:00 – 6:30 · WAV 24/48 · Full stems included</p>
+          <span class="plate">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="poster">
+        <div class="poster-art">
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="bSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#01020a"/><stop offset="62%" stop-color="#05060d"/><stop offset="100%" stop-color="#0a0a10"/>
+              </linearGradient>
+              <radialGradient id="bSun" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffd9a0"/><stop offset="45%" stop-color="rgba(255,180,84,.5)"/><stop offset="100%" stop-color="rgba(255,180,84,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="url(#bSky)"/>
+            <g fill="#fff">
+              <circle cx="80" cy="60" r="1" opacity=".3"/><circle cx="240" cy="110" r=".7" opacity=".16"/>
+              <circle cx="430" cy="48" r="1.2" opacity=".34"/><circle cx="620" cy="90" r=".7" opacity=".18"/>
+              <circle cx="730" cy="150" r=".9" opacity=".2"/>
+            </g>
+            <g fill="none" stroke="rgba(240,235,223,.07)"><path d="M0 300 Q 400 268 800 306"/><path d="M0 336 Q 400 306 800 340"/><path d="M0 372 Q 400 344 800 376"/></g>
+            <path d="M-10 356 C 200 322, 420 348, 610 330 S 790 306, 820 300" fill="none" stroke="rgba(255,180,84,.55)" stroke-width="1.4"/>
+            <circle cx="688" cy="318" r="52" fill="url(#bSun)"/>
+            <circle cx="688" cy="318" r="10" fill="#ffd9a0" opacity=".9"/>
+          </svg>
+          <p class="kind">Extended / Atmospheric Version</p>
+        </div>
+        <div class="poster-body">
+          <h3>Fifth Sun – Extended Cinematic Journey (15 Min) | Opera Nova</h3>
+          <p class="desc">The long-form journey: fifteen minutes of atmospheric sci-fi for deep listening and full immersion.</p>
+          <p class="ptags"><span>extended cinematic</span><span>sci-fi ambient</span><span>space ambient opera</span><span>atmospheric sci-fi</span><span>deep listening</span></p>
+        </div>
+        <div class="poster-credits">
+          <p class="spec">Extended journey · 15:00 · WAV 24/48 · Full stems included</p>
+          <span class="plate">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="poster">
+        <div class="poster-art">
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="cBeam" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="rgba(255,215,160,.85)"/><stop offset="45%" stop-color="rgba(255,180,84,.28)"/><stop offset="100%" stop-color="rgba(255,180,84,0)"/>
+              </linearGradient>
+              <radialGradient id="cRing" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(240,235,223,.10)"/><stop offset="80%" stop-color="rgba(240,235,223,.03)"/><stop offset="100%" stop-color="rgba(240,235,223,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="#01020a"/>
+            <g fill="#fff">
+              <circle cx="150" cy="300" r="1" opacity=".22"/><circle cx="330" cy="360" r=".8" opacity=".16"/>
+              <circle cx="540" cy="70" r="1.1" opacity=".3"/><circle cx="700" cy="330" r=".8" opacity=".15"/>
+            </g>
+            <circle cx="618" cy="150" r="118" fill="url(#cRing)"/>
+            <circle cx="618" cy="150" r="86" fill="none" stroke="rgba(240,235,223,.20)" stroke-width="1"/>
+            <polygon points="60,-20 210,-20 560,450 330,450" fill="url(#cBeam)" opacity=".8"/>
+            <polygon points="118,-20 152,-20 430,450 388,450" fill="rgba(255,232,190,.35)"/>
+            <rect x="0" y="428" width="800" height="22" fill="#010206"/>
+          </svg>
+          <p class="kind">Trailer / Epic Version</p>
+        </div>
+        <div class="poster-body">
+          <h3>Fifth Sun – Epic Sci-Fi Trailer Music | Opera Nova</h3>
+          <p class="desc">The trailer cut: dramatic, intense cinematic impact built for film trailers and epic previews.</p>
+          <p class="ptags"><span>epic trailer music</span><span>sci-fi trailer</span><span>film trailer music</span><span>epic orchestral electronic</span><span>intense cinematic</span></p>
+        </div>
+        <div class="poster-credits">
+          <p class="spec">Trailer edit · 1:30 – 2:30 · −12 to −9 LUFS impact master · Full stems included</p>
+          <span class="plate">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="poster">
+        <div class="poster-art">
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="dBeam" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(255,225,180,.95)"/><stop offset="55%" stop-color="rgba(255,180,84,.34)"/><stop offset="100%" stop-color="rgba(255,180,84,.05)"/>
+              </linearGradient>
+              <radialGradient id="dPool" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(255,190,110,.30)"/><stop offset="100%" stop-color="rgba(255,190,110,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="#01020a"/>
+            <g fill="#fff">
+              <circle cx="110" cy="80" r="1" opacity=".26"/><circle cx="250" cy="180" r=".7" opacity=".14"/>
+              <circle cx="560" cy="70" r="1.1" opacity=".3"/><circle cx="690" cy="190" r=".7" opacity=".15"/>
+              <circle cx="90" cy="330" r=".8" opacity=".12"/><circle cx="716" cy="330" r=".8" opacity=".12"/>
+            </g>
+            <polygon points="392,0 408,0 428,450 372,450" fill="url(#dBeam)" opacity=".85"/>
+            <rect x="397" y="0" width="6" height="450" fill="rgba(255,240,214,.5)"/>
+            <ellipse cx="400" cy="428" rx="150" ry="18" fill="url(#dPool)"/>
+          </svg>
+          <p class="kind">Intimate / Vocal Focus</p>
+        </div>
+        <div class="poster-body">
+          <h3>Fifth Sun Aria – Ethereal Sci-Fi Vocals | Opera Nova</h3>
+          <p class="desc">The close-up: one ethereal voice, exposed and celestial — the aria at the heart of the opera.</p>
+          <p class="ptags"><span>ethereal vocals</span><span>sci-fi aria</span><span>celestial vocals</span><span>emotional sci-fi music</span><span>cinematic vocals</span></p>
+        </div>
+        <div class="poster-credits">
+          <p class="spec">Vocal focus · Radio / sync length · WAV 24/48 · Vocal stem isolated</p>
+          <span class="plate">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="poster">
+        <div class="poster-art">
+          <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="eEmber" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(255,170,80,.8)"/><stop offset="40%" stop-color="rgba(255,140,60,.22)"/><stop offset="100%" stop-color="rgba(255,140,60,0)"/>
+              </radialGradient>
+              <radialGradient id="eSmoke1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(200,200,215,.05)"/><stop offset="100%" stop-color="rgba(200,200,215,0)"/>
+              </radialGradient>
+              <radialGradient id="eSmoke2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(160,160,180,.04)"/><stop offset="100%" stop-color="rgba(160,160,180,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="800" height="450" fill="#010103"/>
+            <ellipse cx="220" cy="140" rx="330" ry="170" fill="url(#eSmoke1)"/>
+            <ellipse cx="610" cy="330" rx="360" ry="180" fill="url(#eSmoke2)"/>
+            <g fill="#fff"><circle cx="140" cy="70" r=".8" opacity=".12"/><circle cx="660" cy="60" r=".8" opacity=".1"/></g>
+            <circle cx="400" cy="318" r="60" fill="url(#eEmber)"/>
+            <circle cx="400" cy="318" r="4.5" fill="#ffcf8f"/>
+            <rect x="0" y="392" width="800" height="58" fill="#000103"/>
+          </svg>
+          <p class="kind">Darker / Mysterious Version</p>
+        </div>
+        <div class="poster-body">
+          <h3>Fifth Sun – Dark Sci-Fi Soundscape | Opera Nova</h3>
+          <p class="desc">The night before creation: a dark, mysterious soundscape from the void the gods faced before the sun was born.</p>
+          <p class="ptags"><span>dark sci-fi</span><span>dark cinematic</span><span>mysterious soundscape</span><span>void music</span><span>cinematic tension</span></p>
+        </div>
+        <div class="poster-credits">
+          <p class="spec">Soundscape · Ambient / loopable family · WAV 24/48 · Full stems included</p>
+          <span class="plate">Coming Soon</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= THE FORMAT ================= -->
+  <section id="format">
+    <div class="sec-head">
+      <p class="eyebrow">The Format</p>
+      <h2>Every Piece, in Every Length the Screen Needs</h2>
+      <p>Each Opera Nova work is produced as a complete family of versions — mastered in WAV 24-bit / 48 kHz, with full stems (vocals, pads, percussion, bass, FX) ready for licensing and sync.</p>
+    </div>
+    <div class="measure" style="max-width:860px">
+      <table class="fmt">
+        <thead><tr><th>Version</th><th>Length</th><th>Best For</th></tr></thead>
+        <tbody>
+          <tr><td>Main / Official</td><td class="len">4:00 – 6:30</td><td class="use">YouTube, streaming, the main release</td></tr>
+          <tr><td>Trailer / Epic Edit</td><td class="len">1:30 – 2:30</td><td class="use">Film trailers, ads, social media</td></tr>
+          <tr><td>Extended / Journey</td><td class="len">10:00 – 18:00</td><td class="use">Deep listening, immersive, long-form</td></tr>
+          <tr><td>Short / Hook</td><td class="len">0:45 – 1:15</td><td class="use">Shorts, reels, quick discovery</td></tr>
+          <tr><td>Ambient / Loopable</td><td class="len">8:00 – 20:00+</td><td class="use">Installations, background, study and sleep</td></tr>
+          <tr><td>Radio / Sync Edit</td><td class="len">3:00 – 3:45</td><td class="use">Radio, playlists, easier licensing</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tech-note">Releases roll out in phases: YouTube first, then streaming, then sync &amp; licensing libraries.</p>
+    <div style="height:64px"></div>
+    <div class="sec-head">
+      <p class="eyebrow">The Matcher</p>
+      <h2>Which Cut Fits Your Project?</h2>
+    </div>
+    <div class="measure" style="max-width:860px">
+      <table class="fmt">
+        <thead><tr><th>You Are Cutting</th><th>Start With</th><th>Where the Voice Lands</th></tr></thead>
+        <tbody>
+          <tr><td>Theatrical / streaming trailer</td><td class="use">Trailer / Epic Edit</td><td class="use">The AI-extended aria crowns the final impact</td></tr>
+          <tr><td>Teaser &amp; social cut-downs</td><td class="use">Short / Hook (0:45 – 1:15)</td><td class="use">One impossible vocal gesture, up front</td></tr>
+          <tr><td>Title sequence / series theme</td><td class="use">Main / Official</td><td class="use">Full arc — voice enters as the theme</td></tr>
+          <tr><td>Game trailer / gameplay reveal</td><td class="use">Trailer Edit + stems</td><td class="use">Rebuild the hits around your edit with the stem pack</td></tr>
+          <tr><td>Immersive installation / VR</td><td class="use">Ambient / Loopable + Extended</td><td class="use">Voice as atmosphere — no hard ending</td></tr>
+          <tr><td>Broadcast promo / radio</td><td class="use">Radio / Sync Edit</td><td class="use">The aria, distilled to a single statement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= LICENSING ================= -->
+  <section id="licensing">
+    <div class="contract">
+      <div class="sec-head">
+        <p class="eyebrow">Licensing</p>
+        <h2>One Source. Every Version. No Drama.</h2>
+        <p>Opera Nova is a named composer&rsquo;s catalogue — not an anonymous library. Licensing opens in Phase 3 through sync libraries (Musicbed · Artlist · Pond5 · AudioJungle) and direct relationships with music supervisors.</p>
+      </div>
+      <div class="clauses">
+        <div class="clause">
+          <span class="no">01</span>
+          <div><b>Sync + master, together</b><p>One transaction covers both sides — no separate publisher chase.</p></div>
+        </div>
+        <div class="clause">
+          <span class="no">02</span>
+          <div><b>The full version stack</b><p>Main, trailer, extended, short, ambient and radio/sync edits of every piece.</p></div>
+        </div>
+        <div class="clause">
+          <span class="no">03</span>
+          <div><b>Full stems, always</b><p>Vocals · pads · percussion · bass · FX — reshape the cue to your cut.</p></div>
+        </div>
+        <div class="clause">
+          <span class="no">04</span>
+          <div><b>Supervisor-ready specs</b><p>Duration, loudness and format printed on every release — WAV 24-bit / 48 kHz + MP3 320.</p></div>
+        </div>
+      </div>
+      <div class="licensing-cta">
+        <a class="tlink quiet" href="https://www.youtube.com/channel/UC5quYIeGdPP-jAeEL6WgWYA" target="_blank" rel="noopener">Licensing &amp; commissions — via the channel</a>
+      </div>
+    </div>
+    <div class="honest">
+      <span class="h-label">Stated plainly</span>
+      <p>Catalog licenses are non-exclusive; exclusive buyouts and custom commissions are quoted per project by the studio. Buying or streaming a track is not a license — when Phase 3 opens, every cue here will carry its license terms on its own page, including how Content ID claims are cleared.</p>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="sec-head">
+      <p class="eyebrow">About</p>
+      <h2>Opera Nova</h2>
+    </div>
+    <p class="about">
+      <span class="lead">Opera Nova — Cinematic science-fiction music born from chamber opera.</span>
+      We transform cultural and sacred operatic works into futuristic, emotional, and otherworldly soundscapes.
+      Music designed for science-fiction films, trailers, immersive experiences, and deep listening.
+      Expect soaring voices, vast electronic atmospheres, and epic cinematic arcs that feel like they belong in another world.
+      New releases explore the intersection of opera, electronic music, and science fiction — from intimate chamber origins to expansive cosmic journeys.
+      <strong>Opera Nova is where ancient voices meet the future.</strong>
+    </p>
+    <p class="hashtags">#OperaNova #SciFiMusic #CinematicMusic #ScienceFiction #SpaceOpera #ElectronicOpera #TrailerMusic #CinematicSoundtrack #FuturisticMusic #CosmicMusic</p>
+    <div class="cta-row" style="margin-top:36px">
+      <a class="tlink" href="https://www.youtube.com/channel/UC5quYIeGdPP-jAeEL6WgWYA" target="_blank" rel="noopener">&#9654; Subscribe on YouTube</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">Opera Nova</p>
+    <p>An Imaginarium Waves / Great Studios production &middot; New releases drop on the published cadence &mdash; follow the channel for the latest cinematic sci-fi opera.</p>
+  </footer>
+
+</div>
+</body>
+</html>

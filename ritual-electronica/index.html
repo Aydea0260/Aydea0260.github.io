@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ritual Electronica — Electronic Ritual Music from World Cultures</title>
+<meta name="description" content="Ritual Electronica: electronic ritual music from world cultures. Chamber operas and sacred cultural stories transformed into powerful electronic versions made for the dancefloor — Organic House, Tribal House, Melodic Techno, Progressive Psy, Forest Psy, Ethno Electronica, Downtempo & ceremonial styles. DJ-ready releases with full stems.">
+<style>
+  :root{
+    --night:#0a0503;
+    --night-2:#0d0704;
+    --bone:#f0e7d7;
+    --bone-dim:#b3a189;
+    --bone-faint:#7d6c55;
+    --ember:#e07b39;
+    --ember-hi:#f5a55c;
+    --sun:#f2cd72;
+    --line:rgba(240,231,215,.16);
+    --line-soft:rgba(240,231,215,.08);
+    --grotesque:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --mono:ui-monospace,"SF Mono","Roboto Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--grotesque);
+    background:var(--night);
+    color:var(--bone);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--ember); color:#160a02}
+  a{color:inherit}
+  .wrap{width:min(1240px,100% - clamp(40px,8vw,128px)); margin:0 auto}
+
+  /* ============ HERO — the place is sacred (Cercle grammar) ============ */
+  header.hero{
+    position:relative; min-height:112svh; overflow:hidden;
+    display:flex; flex-direction:column;
+    background:
+      radial-gradient(55% 38% at 50% 78%, rgba(232,128,52,.50) 0%, rgba(200,95,32,.20) 46%, rgba(0,0,0,0) 72%),
+      linear-gradient(180deg,#030202 0%,#070302 38%,#0c0503 58%,#150904 78%,#1e0d05 100%);
+  }
+  /* stars — faint points in the upper sky only */
+  .sky{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(circle 1.4px at 9% 12%, rgba(246,224,178,.85) 98%, transparent),
+      radial-gradient(circle 1px at 17% 26%, rgba(246,224,178,.5) 98%, transparent),
+      radial-gradient(circle 1.6px at 26% 8%, rgba(246,224,178,.7) 98%, transparent),
+      radial-gradient(circle 1px at 38% 19%, rgba(246,224,178,.45) 98%, transparent),
+      radial-gradient(circle 1.3px at 47% 10%, rgba(246,224,178,.6) 98%, transparent),
+      radial-gradient(circle 1px at 58% 22%, rgba(246,224,178,.4) 98%, transparent),
+      radial-gradient(circle 1.5px at 66% 7%, rgba(246,224,178,.75) 98%, transparent),
+      radial-gradient(circle 1px at 74% 17%, rgba(246,224,178,.5) 98%, transparent),
+      radial-gradient(circle 1.4px at 83% 10%, rgba(246,224,178,.65) 98%, transparent),
+      radial-gradient(circle 1px at 90% 24%, rgba(246,224,178,.45) 98%, transparent),
+      radial-gradient(circle 1.2px at 95% 6%, rgba(246,224,178,.55) 98%, transparent),
+      radial-gradient(circle 1px at 32% 30%, rgba(246,224,178,.35) 98%, transparent);
+  }
+  /* the low sun, sitting on the horizon */
+  .sun{
+    position:absolute; z-index:1; left:50%; top:78%;
+    width:clamp(280px,32vw,380px); aspect-ratio:1; border-radius:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle at 50% 50%,
+      #ffedb8 0%, #f8d67e 26%, #f0a84e 52%, #e07b39 74%, rgba(224,123,57,0) 78%);
+    box-shadow:0 0 120px 24px rgba(224,123,57,.35), 0 0 300px 80px rgba(217,140,50,.14);
+  }
+  /* dune ridges — layered ellipses in front of the sun */
+  .dune{position:absolute; border-radius:50%; pointer-events:none}
+  .dune-a{
+    z-index:2; width:150%; height:48%; left:-38%; bottom:-30%;
+    background:linear-gradient(180deg,#261304 0%,#170b03 22%,#120802 100%);
+  }
+  .dune-b{
+    z-index:3; width:135%; height:44%; right:-32%; bottom:-27%;
+    background:linear-gradient(180deg,#1a0d03 0%,#0d0501 30%,#090401 100%);
+  }
+  .dune-c{
+    z-index:4; width:130%; height:38%; left:-12%; bottom:-26%;
+    background:linear-gradient(180deg,#120801 0%,#060201 26%,#060201 100%);
+  }
+  .hero-top{
+    position:relative; z-index:5;
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+    padding:26px clamp(20px,4vw,48px) 20px;
+    border-bottom:1px solid var(--line-soft);
+    font-size:.72rem; letter-spacing:3px; text-transform:uppercase;
+  }
+  .hero-top .wordmark{font-weight:700; color:var(--bone)}
+  .hero-top .hero-cat{color:var(--ember-hi); font-family:var(--mono); letter-spacing:2px}
+  .hero-core{
+    position:relative; z-index:5; flex:1;
+    display:flex; flex-direction:column; justify-content:flex-start;
+    padding:clamp(36px,6vh,60px) clamp(20px,4vw,48px) 0;
+    text-align:center; align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(3.2rem,10.5vw,8.2rem);
+    font-weight:800; line-height:.94; letter-spacing:-.015em; text-transform:uppercase;
+    color:var(--bone);
+    text-shadow:0 2px 44px rgba(0,0,0,.45);
+  }
+  /* official logo plate — the hero's brand mark (the plate carries its own sun) */
+  .hero.has-logo .sun{display:none}
+  .hero-logo{
+    display:block; width:min(640px,88vw); height:auto; margin:4px auto 8px;
+    box-shadow:0 24px 70px rgba(0,0,0,.5);
+  }
+  .hero .tagline{
+    margin-top:20px; font-family:var(--serif); font-style:italic;
+    font-size:clamp(1.25rem,2.6vw,1.7rem); color:var(--sun);
+    text-shadow:0 1px 24px rgba(0,0,0,.55);
+  }
+  .hero .sub{
+    margin-top:12px; max-width:680px;
+    font-size:.98rem; line-height:1.65; color:rgba(240,231,215,.82);
+    text-shadow:0 1px 18px rgba(0,0,0,.6);
+  }
+  .cta-row{margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    display:inline-block; padding:15px 30px;
+    font-size:.76rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+    text-decoration:none; border:1px solid rgba(240,231,215,.4);
+    color:var(--bone); background:rgba(10,5,3,.28); backdrop-filter:blur(2px);
+    transition:border-color .2s ease,color .2s ease,background .2s ease;
+  }
+  .btn:hover{border-color:var(--ember); color:var(--ember-hi); background:rgba(10,5,3,.45)}
+  .btn-quiet{border-color:rgba(240,231,215,.18); color:rgba(240,231,215,.75)}
+  .hero-scroll{
+    position:relative; z-index:5; align-self:center;
+    width:1px; height:64px; margin-bottom:26px;
+    background:linear-gradient(180deg, rgba(240,231,215,0), rgba(240,231,215,.55));
+  }
+
+  /* anchor nav — quiet text row, no chips */
+  nav.anchors{
+    display:flex; gap:clamp(18px,4vw,44px); justify-content:center; flex-wrap:wrap;
+    padding:22px 16px; border-bottom:1px solid var(--line-soft);
+  }
+  nav.anchors a{
+    font-size:.74rem; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--bone-dim); text-decoration:none; transition:color .2s ease;
+  }
+  nav.anchors a:hover{color:var(--ember-hi)}
+
+  /* ============ SECTIONS — air, hairlines, big type ============ */
+  section{padding:clamp(88px,13vh,148px) 0 0}
+  .sec-head{border-top:1px solid var(--line); padding-top:26px; margin-bottom:clamp(40px,6vh,64px)}
+  .sec-no{
+    font-family:var(--mono); font-size:.8rem; letter-spacing:2px; color:var(--ember);
+    display:block; margin-bottom:14px;
+  }
+  h2.sec{
+    font-size:clamp(2.3rem,5.6vw,4.1rem); font-weight:800; line-height:1;
+    letter-spacing:-.01em; text-transform:uppercase; color:var(--bone);
+  }
+  p.sec-sub{margin-top:18px; max-width:560px; font-size:1rem; line-height:1.65; color:var(--bone-dim)}
+
+  /* The Sound — one large statement */
+  .manifesto{
+    max-width:980px;
+    font-size:clamp(1.45rem,3.1vw,2.15rem); line-height:1.42; font-weight:500;
+    color:var(--bone-dim); letter-spacing:-.005em;
+  }
+  .manifesto strong{color:var(--bone); font-weight:700}
+
+  /* The Genres — typographic index, BPM as data */
+  .gindex{list-style:none; border-top:1px solid var(--line)}
+  .grow{
+    display:grid; grid-template-columns:56px 1fr auto; gap:clamp(14px,3vw,36px);
+    align-items:baseline; padding:26px 10px 28px;
+    border-bottom:1px solid var(--line-soft);
+    transition:background .3s ease;
+  }
+  .grow:hover{background:linear-gradient(90deg, rgba(224,123,57,.07), rgba(224,123,57,0) 68%)}
+  .g-no{font-family:var(--mono); font-size:.8rem; color:var(--bone-faint); letter-spacing:1px}
+  .g-main h3{
+    font-size:clamp(1.65rem,4.2vw,3rem); font-weight:700; line-height:1.05;
+    letter-spacing:-.01em; text-transform:uppercase; color:var(--bone);
+    transition:color .25s ease, transform .25s ease;
+  }
+  .grow:hover .g-main h3{color:#fff; transform:translateX(6px)}
+  .g-main p{margin-top:8px; max-width:520px; font-size:.92rem; line-height:1.55; color:var(--bone-dim)}
+  .g-data{font-family:var(--mono); text-align:right; color:var(--bone); white-space:nowrap}
+  .g-data .val{font-size:clamp(1.05rem,2.2vw,1.45rem); letter-spacing:.5px}
+  .g-data .unit{display:block; margin-top:3px; font-size:.62rem; letter-spacing:2.5px; color:var(--ember); text-transform:uppercase}
+  .g-data .lbl{font-size:clamp(.82rem,1.6vw,1rem); letter-spacing:1px; color:var(--bone-dim); text-transform:uppercase}
+
+  /* Every Release Includes — format index with length as data column */
+  .findex{list-style:none; border-top:1px solid var(--line)}
+  .frow{
+    display:grid; grid-template-columns:170px 1fr; gap:clamp(14px,3vw,40px);
+    align-items:baseline; padding:28px 10px 30px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .f-len{font-family:var(--mono); font-size:clamp(1rem,2vw,1.3rem); color:var(--ember-hi); letter-spacing:.5px; white-space:nowrap}
+  .f-len small{display:block; margin-top:4px; font-size:.62rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--bone-faint)}
+  .frow h3{font-size:clamp(1.4rem,3vw,2.1rem); font-weight:700; line-height:1.1; text-transform:uppercase; letter-spacing:-.005em; color:var(--bone)}
+  .frow p{margin-top:8px; max-width:600px; font-size:.94rem; line-height:1.6; color:var(--bone-dim)}
+  .frow-stems{
+    margin-top:clamp(28px,4vh,44px); border:1px solid var(--line);
+    padding:clamp(26px,4vw,44px); background:var(--night-2);
+  }
+  .frow-stems .f-len{margin-bottom:14px}
+  .frow-stems h3{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+  .frow-stems p{margin-top:10px; max-width:680px}
+
+  /* For DJs — formal technical plate */
+  .plate{border:1px solid var(--line); background:var(--night-2); padding:clamp(10px,2.5vw,26px) clamp(18px,3.5vw,40px)}
+  .djtable{width:100%; border-collapse:collapse}
+  .djtable th,.djtable td{text-align:left; padding:17px 8px; border-bottom:1px solid var(--line-soft); vertical-align:top}
+  .djtable tr:last-child td{border-bottom:none}
+  .djtable th{
+    font-size:.68rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--bone-faint);
+    font-weight:600; padding-top:10px;
+  }
+  .djtable td{font-size:.95rem; line-height:1.6; color:var(--bone-dim)}
+  .djtable td:first-child{
+    font-family:var(--mono); font-size:.85rem; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--ember-hi); white-space:nowrap; width:190px; padding-right:22px;
+  }
+
+  /* The First Ritual — the release as a record sleeve */
+  .ritual{display:grid; grid-template-columns:340px 1fr; gap:clamp(36px,5vw,80px); align-items:start}
+  .cat-no{
+    font-size:clamp(4.6rem,8.5vw,7.6rem); font-weight:800; line-height:.92; letter-spacing:-.01em;
+    color:rgba(224,123,57,.16);
+    -webkit-text-stroke:1.5px rgba(224,123,57,.55);
+    margin-bottom:30px;
+  }
+  .meta{border-top:1px solid var(--line)}
+  .meta div{
+    display:flex; justify-content:space-between; gap:18px; padding:13px 2px;
+    border-bottom:1px solid var(--line-soft); font-size:.8rem;
+  }
+  .meta dt{letter-spacing:2px; text-transform:uppercase; color:var(--bone-faint)}
+  .meta dd{font-family:var(--mono); letter-spacing:1px; color:var(--bone); text-transform:uppercase; text-align:right}
+  .kicker{font-size:.74rem; letter-spacing:3px; text-transform:uppercase; color:var(--ember)}
+  .ritual h3{
+    margin-top:14px; font-size:clamp(2.2rem,5vw,3.9rem); font-weight:800; line-height:1;
+    letter-spacing:-.01em; text-transform:uppercase; color:var(--bone);
+  }
+  .artist-line{margin-top:14px; font-size:.8rem; letter-spacing:3px; text-transform:uppercase; color:var(--sun)}
+  .ritual .body{margin-top:22px; max-width:620px; font-size:1rem; line-height:1.7; color:var(--bone-dim)}
+  .vtable{width:100%; border-collapse:collapse; margin-top:36px}
+  .vtable th,.vtable td{text-align:left; padding:14px 8px; border-bottom:1px solid var(--line-soft)}
+  .vtable th{font-size:.68rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--bone-faint); font-weight:600}
+  .vtable td{font-size:.94rem; color:var(--bone)}
+  .vtable td.len{font-family:var(--mono); color:var(--ember-hi); white-space:nowrap}
+  .vtable td.st{color:var(--bone-dim); white-space:nowrap; font-size:.86rem}
+  .quote{
+    margin-top:40px; max-width:640px;
+    font-family:var(--serif); font-style:italic;
+    font-size:clamp(1.2rem,2.4vw,1.55rem); line-height:1.55; color:var(--bone);
+  }
+  .quote small{
+    display:block; margin-top:14px; font-family:var(--grotesque); font-style:normal;
+    font-size:.7rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--bone-faint);
+  }
+  .soon{
+    margin-top:38px; padding-top:20px; border-top:1px solid var(--ember);
+    font-size:.8rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--ember-hi);
+  }
+
+  /* Follow */
+  .follow-link{
+    display:inline-block; margin-top:8px;
+    font-size:clamp(1.3rem,3vw,2rem); font-weight:700; letter-spacing:-.005em;
+    color:var(--bone); text-decoration:none;
+    border-bottom:2px solid var(--ember); padding-bottom:6px;
+    transition:color .2s ease,border-color .2s ease;
+  }
+  .follow-link:hover{color:var(--ember-hi); border-color:var(--ember-hi)}
+
+  footer{margin-top:clamp(100px,15vh,160px); border-top:1px solid var(--line); padding:44px 0 0; overflow:hidden}
+  footer .f-main{font-size:.95rem; color:var(--bone)}
+  footer p{max-width:620px; font-size:.86rem; line-height:1.65; color:var(--bone-dim)}
+  footer p + p{margin-top:12px}
+  footer a{color:var(--sun); text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .foot-mark{
+    margin-top:44px; text-align:center; user-select:none;
+    font-size:clamp(3rem,10.4vw,9.2rem); font-weight:800; line-height:.86;
+    letter-spacing:-.01em; text-transform:uppercase; white-space:nowrap;
+    color:transparent; -webkit-text-stroke:1px rgba(224,123,57,.22);
+    transform:translateY(18%);
+  }
+
+  @media(max-width:900px){
+    .ritual{grid-template-columns:1fr}
+    .cat-no{margin-bottom:22px}
+  }
+  @media(max-width:640px){
+    .grow{grid-template-columns:38px 1fr; }
+    .g-data{grid-column:2; text-align:left; margin-top:6px}
+    .g-data .unit{display:inline; margin-left:8px}
+    .frow{grid-template-columns:1fr}
+    .f-len small{display:inline; margin-left:10px}
+    .djtable td:first-child{width:auto}
+    .hero-top{letter-spacing:2px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero has-logo">
+  <div class="sky" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="dune dune-a" aria-hidden="true"></div>
+  <div class="dune dune-b" aria-hidden="true"></div>
+  <div class="dune dune-c" aria-hidden="true"></div>
+
+  <div class="hero-top">
+    <span class="wordmark">Ritual Electronica</span>
+    <span class="hero-cat">Catalogue · RE 001</span>
+  </div>
+
+  <div class="hero-core">
+    <h1><img class="hero-logo" src="assets/ritual-electronica-logo.jpg" alt="Ritual Electronica — official logo: a golden sun rising over a desert dune, gold wordmark on black"></h1>
+    <p class="tagline">Electronic ritual music from world cultures.</p>
+    <p class="sub">We transform chamber operas and sacred cultural stories into powerful electronic versions made for the dancefloor. Created for Burning Man, desert festivals, transformational events, and deep underground sets.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://www.youtube.com/@RitualElectronica" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn btn-quiet" href="#first-ritual">The First Ritual</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true"></div>
+</header>
+
+<nav class="anchors" aria-label="Sections">
+  <a href="#sound">The Sound</a>
+  <a href="#genres">The Genres</a>
+  <a href="#formats">Release Formats</a>
+  <a href="#for-djs">For DJs</a>
+  <a href="#first-ritual">The First Ritual</a>
+</nav>
+
+<main class="wrap">
+
+  <section id="sound" aria-label="About">
+    <div class="sec-head">
+      <span class="sec-no">01</span>
+      <h2 class="sec">The Sound</h2>
+    </div>
+    <p class="manifesto">Ancient voices, tribal percussion and sacred stories — rebuilt as <strong>DJ-ready electronic music</strong>. Every track is produced for real dancefloors: clean intros and outros for mixing, defined keys for harmonic blending, and the original ritual vocals at the center of the journey. <strong>Music for the body, the spirit, and the night.</strong></p>
+  </section>
+
+  <section id="genres" aria-label="Genres">
+    <div class="sec-head">
+      <span class="sec-no">02</span>
+      <h2 class="sec">The Genres</h2>
+      <p class="sec-sub">The sounds DJs actually search for — each ritual is produced inside the genre that fits its energy.</p>
+    </div>
+    <ul class="gindex">
+      <li class="grow">
+        <span class="g-no">01</span>
+        <div class="g-main"><h3>Organic House</h3><p>Warm, earthy grooves built on live percussion and ancestral textures.</p></div>
+        <span class="g-data"><span class="val">118–123</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">02</span>
+        <div class="g-main"><h3>Tribal House</h3><p>Drums first. Ceremonial rhythms driving the peak of the night.</p></div>
+        <span class="g-data"><span class="val">122–128</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">03</span>
+        <div class="g-main"><h3>Melodic Techno</h3><p>Emotional, hypnotic techno where the ritual voice becomes the lead.</p></div>
+        <span class="g-data"><span class="val">118–126</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">04</span>
+        <div class="g-main"><h3>Progressive Psy</h3><p>Long, evolving journeys — the ceremony at full speed.</p></div>
+        <span class="g-data"><span class="val">135–142</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">05</span>
+        <div class="g-main"><h3>Forest Psy</h3><p>Deep, dark and organic psychedelia from the heart of the forest.</p></div>
+        <span class="g-data"><span class="val">146–155</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">06</span>
+        <div class="g-main"><h3>Ethno Electronica</h3><p>Traditional instruments and voices from world cultures, electrified.</p></div>
+        <span class="g-data"><span class="lbl">World Electronic</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">07</span>
+        <div class="g-main"><h3>Downtempo / Psychill</h3><p>Slower versions for sunrise, chill-out floors and deep listening.</p></div>
+        <span class="g-data"><span class="val">70–110</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">08</span>
+        <div class="g-main"><h3>Breaks / Midtempo</h3><p>Broken beats and heavy grooves when the ritual turns raw.</p></div>
+        <span class="g-data"><span class="val">95–110</span><span class="unit">BPM</span></span>
+      </li>
+      <li class="grow">
+        <span class="g-no">09</span>
+        <div class="g-main"><h3>Ritual / Ceremonial</h3><p>Pure ceremony: chants, drums and atmosphere, built as an offering.</p></div>
+        <span class="g-data"><span class="lbl">Ceremonial Electronic</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="formats" aria-label="Release formats">
+    <div class="sec-head">
+      <span class="sec-no">03</span>
+      <h2 class="sec">Every Release Includes</h2>
+      <p class="sec-sub">Five deliverables in every drop — everything a DJ needs to play it anywhere in the world.</p>
+    </div>
+    <ul class="findex">
+      <li class="frow">
+        <span class="f-len">7–12 min</span>
+        <div><h3>Club / Festival Version</h3><p>The main weapon. Clean intros and outros made for seamless mixing, at full dancefloor energy.</p></div>
+      </li>
+      <li class="frow">
+        <span class="f-len">15–25 min</span>
+        <div><h3>Extended Journey Mix</h3><p>The complete ceremony as one continuous trip — for long sets, desert sunrises and deep floors.</p></div>
+      </li>
+      <li class="frow">
+        <span class="f-len">3:30–4:30</span>
+        <div><h3>Radio Edit</h3><p>The ritual distilled to its essence — the version for everyone, everywhere.</p></div>
+      </li>
+      <li class="frow">
+        <span class="f-len">Sunrise</span>
+        <div><h3>Ambient / Sunrise Version</h3><p>Slower, atmospheric and weightless — made for the first light over the desert.</p></div>
+      </li>
+    </ul>
+    <div class="frow-stems">
+      <div class="f-len">For DJs &amp; Remixers</div>
+      <h3>Full Stems</h3>
+      <p>Drums · Bass · Ancestral Vocals · Pads · Tribal Percussion — every element separated, ready to remix, mash up and rebuild live. The vocals are a stem of their own: the differentiator of Ritual Electronica.</p>
+    </div>
+  </section>
+
+  <section id="for-djs" aria-label="For DJs">
+    <div class="sec-head">
+      <span class="sec-no">04</span>
+      <h2 class="sec">For DJs</h2>
+      <p class="sec-sub">The working data, in the open — everything you need to program a Ritual Electronica track into a set before you ever press play.</p>
+    </div>
+    <div class="plate">
+      <table class="djtable">
+        <tr><th>Data</th><th>Standard on every release</th></tr>
+        <tr><td>BPM</td><td>Printed per track and per version — matched to its genre (see The Genres)</td></tr>
+        <tr><td>Key</td><td>Defined key on every version, chosen for harmonic mixing</td></tr>
+        <tr><td>Intro / Outro</td><td>Clean, beat-only mixing zones on Club / Festival and Extended versions</td></tr>
+        <tr><td>Stems</td><td>Full stem pack with every release: Drums · Bass · Ancestral Vocals · Pads · Tribal Percussion</td></tr>
+        <tr><td>Masters</td><td>WAV 24-bit / 48 kHz production masters; streaming loudness −14 LUFS</td></tr>
+        <tr><td>Set proof</td><td>Timestamped tracklists published with every set video — hear where each ritual sits in a real journey</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="first-ritual" aria-label="First ritual">
+    <div class="sec-head">
+      <span class="sec-no">05</span>
+      <h2 class="sec">The First Ritual</h2>
+    </div>
+    <div class="ritual">
+      <div>
+        <div class="cat-no" aria-hidden="true">RE<br>001</div>
+        <dl class="meta">
+          <div><dt>Catalogue</dt><dd>RE 001</dd></div>
+          <div><dt>Status</dt><dd>In Production</dd></div>
+          <div><dt>Format</dt><dd>Full DJ Set</dd></div>
+        </dl>
+      </div>
+      <div>
+        <div class="kicker">Launch Production</div>
+        <h3>Fifth Sun — The Nahuatl Ritual</h3>
+        <p class="artist-line">Ritual Electronica</p>
+        <p class="body">The series opens with the Mexica myth of the Fifth Sun: the gods gather in darkness at Teotihuacan, and the humble Nanahuatzin leaps into the fire so a new sun may be born. Sung in Nahuatl, transformed into a full DJ set — and the first of many rituals from many cultures to come.</p>
+        <table class="vtable">
+          <tr><th>Version</th><th>Length</th><th>Status</th></tr>
+          <tr><td>Club / Festival Version</td><td class="len">7–12 min</td><td class="st">In production</td></tr>
+          <tr><td>Extended Journey Mix</td><td class="len">15–25 min</td><td class="st">In production</td></tr>
+          <tr><td>Radio Edit</td><td class="len">3:30–4:30</td><td class="st">In production</td></tr>
+          <tr><td>Ambient / Sunrise Version</td><td class="len">Sunrise length</td><td class="st">In production</td></tr>
+          <tr><td>Full Stems Pack</td><td class="len">5 stems</td><td class="st">With the drop</td></tr>
+        </table>
+        <p class="quote">“We don’t remix an opera. We carry its fire onto the dancefloor — the voice stays sacred; everything around it learns to dance.”<small>Ritual Electronica — production note, RE 001</small></p>
+        <p class="soon">Coming Soon — First Drop in Production</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Listen">
+    <div class="sec-head">
+      <span class="sec-no">06</span>
+      <h2 class="sec">Follow the Ritual</h2>
+      <p class="sec-sub">New ritual drops regularly. Follow the channel for the latest ceremonial electronic music — streaming releases follow on the publication cadence.</p>
+    </div>
+    <a class="follow-link" href="https://www.youtube.com/@RitualElectronica" target="_blank" rel="noopener">Ritual Electronica on YouTube</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="f-main"><strong>Ritual Electronica</strong> — music for the body, the spirit, and the night.</p>
+    <p>Every ritual is made with reverence for the culture that carries it — original languages, documented sources, living voices. Drops arrive as chapters, on the house cadence: never all at once.</p>
+    <p>A Great Studios · Imaginarium Waves production · <a href="https://www.youtube.com/@RitualElectronica" target="_blank" rel="noopener">youtube.com/@RitualElectronica</a></p>
+  </div>
+  <div class="foot-mark" aria-hidden="true">Ritual Electronica</div>
+</footer>
+
+</body>
+</html>
